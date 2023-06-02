@@ -1,0 +1,16 @@
+{
+  "cronPattern": "30 22 * * *",
+  "email": "APP-CMS-NSLATAM@thomsonreuters.com",
+  "publishingName": "GCMS Services Availability Tests",
+  "enableSonarScan": false,
+  "sonarScanName": "GCMS_AvailabilityTests",
+  "enableCoberage": false,
+  "enableVeracode": true,
+  "enableVeracodePipeline": false,
+  "enableVeracodePolicyScan": false,
+  "veracodeName": "GCMS Availability Tests",
+  "enableDeploy": false,
+  "reportDir": "automation/GCMSServices/TestReport",
+  "ReportFiles": "Extentreport.html",
+  "teamswebhook": "https://trten.webhook.office.com/webhookb2/dd92e521-e8d4-45d9-ac83-5e7bbdf87bbd@62ccb864-6a1a-4b5d-8e1c-397dec1a8258/IncomingWebhook/a58a433b5bd74a5292fb7056afda6490/8c2dc933-e82f-4448-99a0-220736b9e04b"
+}

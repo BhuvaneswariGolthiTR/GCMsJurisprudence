@@ -1,0 +1,152 @@
+buildscript {
+    ext {
+        DEFAULT_VERSION = '1.0-SNAPSHOT'
+        targetEnvironment = project.findProperty('targetEnvironment')?: 'prod'
+    }
+    repositories {
+        maven {
+            url "https://tr1.jfrog.io/tr1/libs-release/"
+            credentials {
+                username project.findProperty('TRJFrogArtifactory_user')
+                password project.findProperty('TRJFrogArtifactory_pass')
+            }
+        }
+        mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.7.1"
+        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.15.2"
+        classpath "com.googlecode.htmlcompressor:htmlcompressor:1.5.2"
+        classpath "com.thomsonreuters.gcms:generic-configuration-gradle-plugin:4.2.5"
+    }
+}
+
+plugins {
+  id "jacoco"
+  id "org.sonarqube" version "3.3"
+  id "com.srcclr.gradle" version "3.1.10"
+  id "com.commercehub.cucumber-jvm" version "0.11"
+  }
+
+apply plugin: 'generic-configuration-gradle-plugin'
+
+group = 'com.thomsonretuers.gcms.testing'
+version = "${DEFAULT_VERSION}"
+description = 'gcms-core-jurisprudence-tests'
+genericSettings {
+    artifactId = 'gcms-core-jurisprudence-tests'
+    versionize = true
+}
+
+task setTargetEnvironmentProperties(type: Copy){
+    // We want that this is executed always 
+    outputs.upToDateWhen { false }
+    from ("src/test/resources"){
+        include "gcms-${targetEnvironment}.properties"
+        rename ("gcms-${targetEnvironment}.properties",'gcms.properties')
+    }
+    into 'src/test/resources'
+
+    doLast {
+        println "********************************************"
+        println ""
+        println "Using gcms-${targetEnvironment}.properties content in gcms.properties"
+        println ""
+        new File("src/test/resources/gcms.properties").eachLine { line ->
+            if (line.contains('http')) {
+                println "    " + line
+            }
+        }
+        println ""
+        println "********************************************"
+        println ""
+    }
+}
+configurations {
+    cucumberRuntime {
+        extendsFrom api
+    }
+}
+
+task cucumber() {
+    dependsOn assemble, testClasses
+    doLast {
+        javaexec {
+            main = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = ['--plugin', 'pretty', '--glue','com.epam','src/test/resources','--tags','@gcms']
+        }
+    }
+}
+
+test {
+    systemProperty "cucumber.options" , System.getProperty("cucumber.options")
+    systemProperty "cucumber.filter.tags" , System.getProperty("cucumber.filter.tags")
+}
+
+processResources.dependsOn setTargetEnvironmentProperties
+
+dependencies {
+    api 'io.rest-assured:rest-assured:4.3.3'
+    api 'org.reflections:reflections:0.9.12'
+    // Selenium dependencies
+    api 'org.seleniumhq.selenium:selenium-java:4.8.1'
+    api 'org.seleniumhq.selenium:selenium-ie-driver:4.8.1'
+    api 'io.github.bonigarcia:webdrivermanager:5.3.2'
+    //  -------------------------------
+    api 'com.epam.reportportal:agent-java-testng:5.0.0'
+    // Logging dependencies
+    api 'org.slf4j:slf4j-api:1.7.30'
+    api 'org.slf4j:slf4j-jdk14:1.7.30'
+    api 'org.apache.logging.log4j:log4j-core:2.14.0'
+    api 'org.apache.logging.log4j:log4j-api:2.14.0'
+    api 'log4j:log4j:1.2.17'
+    api 'ch.qos.logback:logback-classic:1.2.3'
+    api 'com.epam.reportportal:logger-java-logback:5.1.3'
+    //  -------------------------------
+    api 'com.aventstack:extentreports:4.1.6'
+    api 'org.freemarker:freemarker:2.3.29'
+    api 'commons-beanutils:commons-beanutils:1.9.4'
+    api 'commons-io:commons-io:2.6'
+    api 'org.apache.commons:commons-lang3:3.11'
+    //  --- Cucumber dependencies ---
+    api 'io.cucumber:cucumber-java:5.7.0'
+    api 'io.cucumber:cucumber-junit:5.7.0'
+    api 'io.cucumber:cucumber-core:5.7.0'
+    api 'com.vimalselvam:cucumber-extentsreport:3.0.2'
+    api 'com.epam.reportportal:agent-java-cucumber5:5.0.1'
+    api 'tech.grasshopper:extentreports-cucumber5-adapter:1.5.1'
+    //  -------------------------------
+    api 'com.google.code.gson:gson:2.8.5'
+    api 'com.googlecode.json-simple:json-simple:1.1.1'
+    api 'org.assertj:assertj-core:3.18.1'
+    api 'org.eclipse.jgit:org.eclipse.jgit:3.5.0.201409260305-r'
+    api 'com.saucelabs:saucerest:1.0.43'
+    api 'io.vavr:vavr:0.10.3'
+    api 'org.projectlombok:lombok:1.18.22'
+    api 'javax.xml.bind:jaxb-api:2.1'
+    api 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.9.8'
+    api 'com.fasterxml.jackson.core:jackson-annotations:2.12.1'
+    api 'com.fasterxml.jackson.core:jackson-core:2.12.1'
+    api 'com.fasterxml.jackson.core:jackson-databind:2.12.1'
+    api 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.12.1'
+    api 'com.jayway.jsonpath:json-path:2.5.0'
+    api 'commons-dbutils:commons-dbutils:1.7'
+    api 'mysql:mysql-connector-java:8.0.23'
+    api 'com.microsoft.sqlserver:mssql-jdbc:9.2.1.jre8'
+    api 'com.oracle.ojdbc:ojdbc8:19.3.0.0'
+    api 'postgresql:postgresql:9.1-901-1.jdbc4'
+    api 'org.xerial:sqlite-jdbc:3.34.0'
+    api 'fun.mike:diff-match-patch:0.0.2'
+    api 'jakarta.annotation:jakarta.annotation-api:1.3.5'
+    api 'com.github.ulisesbocchio:jasypt-spring-boot-starter:3.0.4'
+    api 'com.google.guava:guava:31.1-jre'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.0'
+    testImplementation 'org.junit.vintage:junit-vintage-engine:5.7.2'
+}
+
+
+

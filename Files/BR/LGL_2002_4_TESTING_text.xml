@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<docs>
+	<legis>
+		<marginal valor="LGL\2002\4">
+			<nmp>LGL</nmp>
+			<nma>2002</nma>
+			<nmn>4</nmn>
+		</marginal>
+		<textos>
+			<texto idioma="por" definitivo="S">
+				<unidad>
+					<unidad unidad="EP">
+						<capa papel="S">
+							<capa.texto>
+								<parrafo alineacion-texto="centrado" espaciado-anterior="simple">
+									<en-origen decoracion-texto="ninguna" estilo-fuente="normal" peso-fuente="negrita" transformacion-texto="ninguna">INSTRUÇÃO NORMATIVA 20, DE 7 DE NOVEMBRO DE 2002, DO TRIBUNAL SUPERIOR DO TRABALHO - TST</en-origen>
+								</parrafo>
+							</capa.texto>
+						</capa>
+					</unidad>
+					<unidad unidad="EM">
+						<capa papel="S">
+							<capa.texto>
+								<parrafo alineacion-texto="centrado" espaciado-anterior="simple">
+									<en-origen decoracion-texto="ninguna" estilo-fuente="cursiva" peso-fuente="normal" transformacion-texto="ninguna">Dispõe sobre os procedimentos para o recolhimento de custas e emolumentos devidos à União no âmbito da Justiça do Trabalho.</en-origen>
+								</parrafo>
+							</capa.texto>
+						</capa>
+					</unidad>
+					<unidad unidad="PRE">
+						<capa papel="S">
+							<capa.texto>
+								<parrafo alineacion-texto="justificado" espaciado-anterior="simple">O Tribunal Superior do Trabalho, em sua composição Plena,</parrafo>
+								<parrafo alineacion-texto="justificado" espaciado-anterior="simple">Considerando o disposto na <ca>
+										<to>Lei 10.537, de 27 de agosto de 2002</to>
+										<ta>
+ (
+<cita ref="LGL\2002\510">LGL 2002\510</cita>
+)
+</ta>
+									</ca>, que alterou os arts. 789 e 790 da Consolidação das Leis do Trabalho - <ca>
+										<to>CLT</to>
+										<ta>
+ (
+<cita ref="LGL\1943\5">LGL 1943\5</cita>
+)
+</ta>
+									</ca>, sobre custas e emolumentos na Justiça do Trabalho,</parrafo>
+								<parrafo alineacion-texto="justificado" espaciado-anterior="simple">RESOLVEU</parrafo>
+								<parrafo alineacion-texto="justificado" espaciado-anterior="simple">Expedir as seguintes instruções:</parrafo>
+							</capa.texto>
+						</capa>
+					</unidad>
+					<unidad unidad="IT" parte="I">
+						<capa papel="S">
+							<capa.texto>
+								<paragraph id="CAPUT">
+									<parrafo alineacion-texto="justificado" espaciado-anterior="simple">I - O pagamento das custas e dos emolumentos no âmbito da Justiça do Trabalho deverá ser realizado, exclusivamente, mediante Guia de Recolhimento da União - GRU Judicial, em 4 (quatro) vias, sendo ônus da parte interessada realizar seu correto preenchimento, observando-se as seguintes instruções:</parrafo>
+								</paragraph>
+								<paragraph id="ALN.a">
+									<parrafo alineacion-texto="justificado" espaciado-anterior="simple">a) o preenchimento da GRU Judicial será online, no sítio da Secretaria do Tesouro Nacional na internet;</parrafo>
+								</paragraph>
+								<paragraph id="ALN.b">
+									<parrafo alineacion-texto="justificado" espaciado-anterior="simple">b) o pagamento da GRU — Judicial poderá ser efetivado em dinheiro, na Caixa Econômica Federal e no Banco do Brasil S/A, ou em cheque, apenas no Banco do Brasil S/A.</parrafo>
+								</paragraph>
+								<paragraph id="ALN.c">
+									<parrafo alineacion-texto="justificado" espaciado-anterior="simple">c) o campo inicial da GRU Judicial, denominado Unidade Gestora (UG), será preenchido com o código correspondente ao Tribunal Superior do Trabalho ou ao Tribunal Regional do Trabalho onde se encontra o processo. Os códigos constam do Anexo I;</parrafo>
+								</paragraph>
+								<paragraph id="ALN.d">
+									<parrafo alineacion-texto="justificado" espaciado-anterior="simple">d) o campo denominado Gestão será preenchido, sempre, com a seguinte numeração: 00001 — Tesouro Nacional.</parrafo>
+								</paragraph>
+							</capa.texto>
+						</capa>
+					</unidad>
+					<unidad unidad="IT" parte="II">
+						<capa papel="S">
+							<capa.texto>
+								<parrafo alineacion-texto="justificado" espaciado-anterior="simple">II - As 4 (quatro) vias serão assim distribuídas: uma ficará retida no banco arrecadador; a segunda deverá ser anexada ao processo mediante petição do interessado; a terceira será entregue pelo interessado na secretaria do órgão judicante; a quarta ficará na posse de quem providenciou o recolhimento.</parrafo>
+							</capa.texto>
+						</capa>
+					</unidad>
+					<unidad unidad="IT" parte="III">
+						<capa papel="S">
+							<capa.texto>
+								<parrafo alineacion-texto="justificado" espaciado-anterior="simple">III - É ônus da parte zelar pela exatidão do recolhimento das custas e/ou dos emolumentos, bem como requerer a juntada aos autos dos respectivos comprovantes.</parrafo>
+							</capa.texto>
+						</capa>
+					</unidad>
+					<unidad unidad="IT" parte="IV">
+						<capa papel="S">
+							<capa.texto>
+								<parrafo alineacion-texto="justificado" espaciado-anterior="simple">IV - (Revogado).</parrafo>
+							</capa.texto>
+						</capa>
+					</unidad>
+					<unidad unidad="IT" parte="V">
+						<capa papel="S">
+							<capa.texto>
+								<paragraph id="CAPUT">
+									<parrafo alineacion-texto="justificado" espaciado-anterior="simple">V - O recolhimento das custas e emolumentos será realizado nos seguintes códigos:</parrafo>
+								</paragraph>
+								<paragraph id="ALN.a">
+									<parrafo alineacion-texto="justificado" espaciado-anterior="simple">a) 18740-2 - STN - CUSTAS JUDICIAIS (CAIXA/BB);</parrafo>
+								</paragraph>
+								<paragraph id="ALN.b">
+									<parrafo alineacion-texto="justificado" espaciado-anterior="simple">b) 18770-4 - STN - EMOLUMENTOS (CAIXA/BB). Para esses códigos de arrecadação, os pagamentos não estão submetidos à restrição de valores inferiores a R$ 10,00 (dez reais), de conformidade com a nota SRF/Corat/Codac/Dirar/ 174, de 14 de outubro de 2002.</parrafo>
+								</paragraph>
+							</capa.texto>
+						</capa>
+					</unidad>
+					<unidad unidad="IT" parte="VI">
+						<capa papel="S">
+							<capa.texto>
+								<parrafo alineacion-texto="justificado" espaciado-anterior="simple">VI - As secretarias das Varas do Trabalho e dos Tribunais Regionais do Trabalho informarão, mensalmente, aos setores encarregados pela elaboração da estatística do órgão, os valores de arrecadação de custas e emolumentos, baseando-se nas GRUs Judiciais que deverão manter arquivadas.</parrafo>
+							</capa.texto>
+						</capa>
+					</unidad>
+					<unidad unidad="IT" parte="VII">
+						<capa papel="S">
+							<capa.texto>
+								<parrafo alineacion-texto="justificado" espaciado-anterior="simple">VII - (Revogado).</parrafo>
+							</capa.texto>
+						</capa>
+					</unidad>
+					<unidad unidad="IT" parte="VIII">
+						<capa papel="S">
+							<capa.texto>
+								<parrafo alineacion-texto="justificado" espaciado-anterior="simple">VIII - O comprovante de pagamento efetuado por meio de transferência eletrônica de fundos deverá ser apresentado pela parte em duas vias: a primeira será anexada ao processo, a segunda ficará arquivada na secretaria.</parrafo>
+							</capa.texto>
+						</capa>
+					</unidad>
+					<unidad unidad="IT" parte="VIII" compl="A">
+						<capa papel="S">
+							<capa.texto>
+								<parrafo alineacion-texto="justificado" espaciado-anterior="simple">VIII-A - requerimento de restituição dos valores indevidamente recolhidos, por meio de GRU judicial, de forma total ou parcial, a título de custas processuais e/ou emolumentos, deverá ser formalizado pelo interessado na Unidade Judiciária em que tramita o processo, acompanhado dos documentos comprobatórios das alegações, juntamente com o número do CNPJ ou CPF e dos respectivos dados bancários.</parrafo>
+							</capa.texto>
+						</capa>
+					</unidad>
+					<unidad unidad="IT" parte="IX">
+						<capa papel="S">
+							<capa.texto>
+								<parrafo alineacion-texto="justificado" espaciado-anterior="simple">IX - Nos dissídios coletivos, as partes vencidas responderão solidariamente pelo pagamento das custas.</parrafo>
+							</capa.texto>
+						</capa>
+					</unidad>
+					<unidad unidad="IT" parte="X">
+						<capa papel="S">
+							<capa.texto>
+								<parrafo alineacion-texto="justificado" espaciado-anterior="simple">X - Não serão fixadas, no processo de conhecimento, custas inferiores a R$ 10,64 (dez reais e sessenta e quatro centavos), ainda que o resultado do cálculo seja inferior a este valor.</parrafo>
+							</capa.texto>
+						</capa>
+					</unidad>
+					<unidad unidad="IT" parte="XI">
+						<capa papel="S">
+							<capa.texto>
+								<parrafo alineacion-texto="justificado" espaciado-anterior="simple">XI - As custas serão satisfeitas pelo vencido, após o trânsito em julgado da decisão. Em caso de recurso, a parte deverá recolher as custas e comprovar o seu pagamento no prazo recursal.</parrafo>
+							</capa.texto>
+						</capa>
+					</unidad>
+					<unidad unidad="IT" parte="XII">
+						<capa papel="S">
+							<capa.texto>
+								<parrafo alineacion-texto="justificado" espaciado-anterior="simple">XII - O preparo de recurso da competência do Supremo Tribunal Federal será feito no prazo e na forma do disposto no Regimento Interno daquela Corte e segundo a sua “Tabela de Custas”.</parrafo>
+							</capa.texto>
+						</capa>
+					</unidad>
+					<unidad unidad="IT" parte="XIII">
+						<capa papel="S">
+							<capa.texto>
+								<parrafo alineacion-texto="justificado" espaciado-anterior="simple">XIII - No processo de execução, as custas não serão exigidas por ocasião do recurso, devendo ser suportadas pelo executado ao final.</parrafo>
+							</capa.texto>
+						</capa>
+					</unidad>
+					<unidad unidad="IT" parte="XIV">
+						<capa papel="S">
+							<capa.texto>
+								<parrafo alineacion-texto="justificado" espaciado-anterior="simple">XIV - a tabela de custas da Justiça do Trabalho, referente ao processo de execução, vigorará com os seguintes valores:</parrafo>
+								<parrafo alineacion-texto="justificado" espaciado-anterior="simple">a) AUTOS DE ARREMATAÇÃO, DE ADJUDICAÇÃO E DE REMIÇÃO: 5% (cinco por cento) sobre o respectivo valor, até o máximo de R$ 1.915,38 (um mil, novecentos e quinze reais e trinta e oito centavos);</parrafo>
+								<parrafo alineacion-texto="justificado" espaciado-anterior="simple">b) ATOS DOS OFICIAIS DE JUSTIÇA, POR DILIGÊNCIA CERTIFICADA: b1) em zona urbana: R$ 11,06 (onze reais e seis centavos);</parrafo>
+								<parrafo alineacion-texto="justificado" espaciado-anterior="simple">b2) em zona rural: R$ 22,13 (vinte e dois reais e treze centavos);</parrafo>
+								<parrafo alineacion-texto="justificado" espaciado-anterior="simple">c) AGRAVO DE INSTRUMENTO: R$ 44,26 (quarenta e quatro reais e vinte e seis centavos);</parrafo>
+								<parrafo alineacion-texto="justificado" espaciado-anterior="simple">d) AGRAVO DE PETIÇÃO: R$ 44,26 (quarenta e quatro reais e vinte e seis centavos);</parrafo>
+								<parrafo alineacion-texto="justificado" espaciado-anterior="simple">e) EMBARGOS À EXECUÇÃO, EMBARGOS DE TERCEIRO E EMBARGOS À ARREMATAÇÃO: R$ 44,26 (quarenta e quatro reais e vinte e seis centavos);</parrafo>
+								<parrafo alineacion-texto="justificado" espaciado-anterior="simple">f) RECURSO DE REVISTA: R$ 55,35 (cinqüenta e cinco reais e trinta e cinco centavos);</parrafo>
+								<parrafo alineacion-texto="justificado" espaciado-anterior="simple">g) IMPUGNAÇÃO À SENTENÇA DE LIQÜIDAÇÃO: R$ 55,35 (cinqüenta e cinco reais e trinta e cinco centavos);</parrafo>
+								<parrafo alineacion-texto="justificado" espaciado-anterior="simple">h) DESPESA DE ARMAZENAGEM EM DEPÓSITO JUDICIAL: por dia: 0,1% (um décimo por cento) do valor da avaliação;</parrafo>
+								<parrafo alineacion-texto="justificado" espaciado-anterior="simple">i) CÁLCULOS DE LIQUIDAÇÃO REALIZADOS PELO CONTADOR DO JUÍZO: Sobre o valor liquidado: 0,5% (cinco décimos por cento) até o limite de R$ 638,46 (seiscentos e trinta e oito reais e quarenta e seis centavos).</parrafo>
+							</capa.texto>
+						</capa>
+					</unidad>
+					<unidad unidad="IT" parte="XV">
+						<capa papel="S">
+							<capa.texto>
+								<parrafo alineacion-texto="justificado" espaciado-anterior="simple">XV - A tabela de emolumentos da Justiça do Trabalho vigorará com os seguintes valores:</parrafo>
+								<parrafo alineacion-texto="justificado" espaciado-anterior="simple">a) AUTENTICAÇÃO DE TRASLADO DE PEÇAS MEDIANTE CÓPIA REPROGRÁFICA APRESENTADA PELAS PARTES: por folha: R$ 0,55 (cinqüenta e cinco centavos de real);</parrafo>
+								<parrafo alineacion-texto="justificado" espaciado-anterior="simple">b) FOTOCÓPIA DE PEÇAS: por folha: R$ 0,28 (vinte e oito centavos de real);</parrafo>
+								<parrafo alineacion-texto="justificado" espaciado-anterior="simple">c) AUTENTICAÇÃO DE PEÇAS: por folha: R$ 0,55 (cinqüenta e cinco centavos de real);</parrafo>
+								<parrafo alineacion-texto="justificado" espaciado-anterior="simple">d) CARTAS DE SENTENÇA, DE ADJUDICAÇÃO, DE REMIÇÃO E DE ARREMATAÇÃO: por folha: R$ 0,55 (cinqüenta e cinco centavos de real);</parrafo>
+								<parrafo alineacion-texto="justificado" espaciado-anterior="simple">e) CERTIDÕES: por folha: R$ 5,53 (cinco reais e cinqüenta e três centavos de real)</parrafo>
+							</capa.texto>
+						</capa>
+					</unidad>
+					<unidad unidad="IT" parte="XVI">
+						<capa papel="S">
+							<capa.texto>
+								<parrafo alineacion-texto="justificado" espaciado-anterior="simple">XVI - Os emolumentos serão suportados pelo requerente.</parrafo>
+							</capa.texto>
+						</capa>
+					</unidad>
+					<unidad unidad="IT" parte="XVII">
+						<capa papel="S">
+							<capa.texto>
+								<parrafo alineacion-texto="justificado" espaciado-anterior="simple">XVII - Os órgãos da Justiça do Trabalho não estão obrigados a manter serviços de reprografia para atendimento ao público externo, tampouco autenticar fotocópias apresentadas pelas partes.</parrafo>
+							</capa.texto>
+						</capa>
+					</unidad>
+					<unidad unidad="IT" parte="XVIII">
+						<capa papel="S">
+							<capa.texto>
+								<parrafo alineacion-texto="justificado" espaciado-anterior="simple">XVIII - As requisições de traslados serão atendidas sem o comprometimento das atividades normais das secretarias.</parrafo>
+							</capa.texto>
+						</capa>
+					</unidad>
+					<unidad unidad="ASS">
+						<capa papel="S">
+							<capa.texto>
+								<parrafo>Sala de Sessões, 07 de novembro de 2002.</parrafo>
+								<parrafo>VALÉRIO AUGUSTO FREITAS DO CARMO</parrafo>
+								<parrafo>
+									<en-origen estilo-fuente="cursiva">Diretor-Geral de Coordenação Judiciária</en-origen>
+								</parrafo>
+							</capa.texto>
+						</capa>
+					</unidad>
+				</unidad>
+			</texto>
+		</textos>
+	</legis>
+</docs>
