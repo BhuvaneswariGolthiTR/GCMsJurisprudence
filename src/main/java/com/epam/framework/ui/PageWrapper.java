@@ -618,4 +618,33 @@ public abstract class PageWrapper extends Browser {
         }
     }
 
+    public void selectOptionFromDropDownUsingRobot(String elementLocator,String option) throws AWTException, InterruptedException {
+        Robot robot = new Robot();
+        WebElement e = getElement(formatLocator(elementLocator));
+        e.sendKeys("");
+        option = option.toUpperCase();
+        char[] c = option.toCharArray();
+        for (int k = 0; k < c.length; k++) {
+            int keyCode = (int) c[k];
+            if(keyCode == 40){
+                robot.keyPress(KeyEvent.VK_SHIFT);
+                Thread.sleep(200);
+                robot.keyPress(KeyEvent.VK_9);
+                Thread.sleep(200);
+                robot.keyRelease(KeyEvent.VK_9);
+                Thread.sleep(200);
+                robot.keyRelease(KeyEvent.VK_SHIFT);
+            }
+            else if (keyCode == 32) {
+                robot.keyPress(KeyEvent.VK_SPACE);
+                Thread.sleep(200);
+                robot.keyRelease(KeyEvent.VK_SPACE);
+            } else {
+                robot.keyPress(keyCode);
+                Thread.sleep(200);
+                robot.keyRelease(keyCode);
+            }
+        }
+    }
+
 }

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<docs>
+	<cases-doc>
+		<marginal>
+			<marginal-pub>NONUM</marginal-pub>
+			<marginal-year>2016</marginal-year>
+			<marginal-num/>
+		</marginal>
+		<cases-metadata analysis-level="4" quality="D1">
+			<decision>
+				<court>
+					<court.name>TST</court.name>
+					<courtroom>
+						<courtroom.name>7.ª Turma</courtroom.name>
+					</courtroom>
+				</court>
+				<decision-data>
+					<decision-class>
+						<decision-class.value>Acórdão</decision-class.value>
+					</decision-class>
+					<decision-date>14/12/2016</decision-date>
+				</decision-data>
+				<appeals>
+					<appeal order="1">
+						<appeal-name>
+							<appeal-name.value>Recurso de Revista</appeal-name.value>
+						</appeal-name>
+						<appeal-number order="1">
+							<appeal-number.full-number>53-04.2011.5.15.0082</appeal-number.full-number>
+						</appeal-number>
+					</appeal>
+				</appeals>
+				<deponents>
+					<deponent order="1">
+						<deponent.name>Douglas Alencar Rodrigues</deponent.name>
+					</deponent>
+				</deponents>
+				<publications>
+					<publication order="1">
+						<publication.name>
+							<publication.name.value>WEB</publication.name.value>
+						</publication.name>
+						<publication.type>O</publication.type>
+						<publication.pub-id>
+							<publication.pub-id.year>2016</publication.pub-id.year>
+						</publication.pub-id>
+					</publication>
+				</publications>
+			</decision>
+			<acquired-data>
+				<acquired-data.source>Web_Oficial</acquired-data.source>
+				<acquired-data.format>Tecleada</acquired-data.format>
+				<acquired-data.filename>NONUM_BR_2016_00000X.ok</acquired-data.filename>
+			</acquired-data>
+			<resumen-jur>
+				<resumen>
+					<parrafo>I. AGRAVO DE INSTRUMENTO EM RECURSO DE REVISTA INTERPOSTO ANTERIORMENTE À VIGÊNCIA DA LEI 13.015/2014. TURNOS ININTERRUPTOS DE REVEZAMENTO. CONFIGURAÇÃO. ALTERNÂNCIA DE TURNOS. SEMANAL. QUINZENAL. MENSAL. BIMESTRAL. Ante a possível contrariedade à Orientação Jurisprudencial 360/SBDI-1/TST, dá-se provimento ao agravo de instrumento para determinar o processamento do recurso de revista. Agravo de instrumento provido. </parrafo>
+					<ementa oficial="s">
+						<parrafo>
+							<en-origen peso-fuente="negrita">I. AGRAVO DE INSTRUMENTO EM RECURSO DE </en-origen>
+							<en-origen peso-fuente="negrita">REVISTA INTERPOSTO ANTERIORMENTE À </en-origen>
+							<en-origen peso-fuente="negrita">VIGÊNCIA DA LEI 13.015/2014. TURNOS </en-origen>
+							<en-origen peso-fuente="negrita">ININTERRUPTOS DE REVEZAMENTO. </en-origen>
+							<en-origen peso-fuente="negrita">CONFIGURAÇÃO. ALTERNÂNCIA DE TURNOS. </en-origen>
+							<en-origen peso-fuente="negrita">SEMANAL. QUINZENAL. MENSAL. BIMESTRAL.</en-origen> Ante a possível contrariedade à Orientação Jurisprudencial 360/SBDI-1/TST, dá-se provimento ao agravo de instrumento para determinar o processamento do recurso de revista. <en-origen peso-fuente="negrita">Agravo de instrumento provido.</en-origen>
+						</parrafo>
+						<parrafo>
+							<en-origen peso-fuente="negrita">II. RECURSO DE REVISTA. TURNOS </en-origen>
+							<en-origen peso-fuente="negrita">ININTERRUPTOS DE REVEZAMENTO. </en-origen>
+							<en-origen peso-fuente="negrita">CONFIGURAÇÃO. ALTERNÂNCIA DE TURNOS </en-origen>
+							<en-origen peso-fuente="negrita">SEMANAL. QUINZENAL. MENSAL. BIMESTRAL.</en-origen> Discute-se se a alternância na jornada de trabalho – quinzenal, mensal e/ou bimestral - configura turno ininterrupto de revezamento. Na hipótese dos autos, consignou o Regional que não estava caracterizado o trabalho do Reclamante em turno ininterrupto de revezamento, exemplificando a mudança de escala de forma bimestral. Delineou as seguintes premissas fáticas: <en-origen peso-fuente="negrita">i)</en-origen> o Reclamante trabalhou entre 29/7/2008 e 30/9/2009, em regime 5x1, com escala de revezamentos semanal, quinzenal ou mensal, abrangendo os seguintes horários: três dias das 6h00 às 17h00, dois dias das 6h00 às 18/19h00, dois dias das 18h00 às 6/7h00, três dias das 23h00 às 8h00 e <en-origen peso-fuente="negrita">ii)</en-origen> a partir de 1º/10/2009, passou a trabalhar em escala 6x1, ora das 7h00 às 18h00, ora das 18h00 às 7h00. Ainda com base nos controles de jornada, concluiu que o fato de haver alternância de horários a cada bimestre, descaracteriza o trabalho em turnos ininterruptos de revezamento. É entendimento desta Corte, no entanto, que nessas circunstâncias resta caracterizado o trabalho no aludido regime especial. Registre-se que, havendo o trabalho com a alternância periódica de horário, de modo que esteja o empregado submetido, no todo ou em parte, ao horário diurno e noturno, aplica-se a jornada especial prevista no artigo 7º, XIV, da Constituição Federal, consoante dispõe a Orientação Jurisprudencial 360 da SBDI-1 do TST. Assim, estabelecida a alternância de turnos, o que acarreta um maior desgaste para a saúde e para a vida familiar e social do trabalhador, resta caracterizado o aludido regime. Precedentes. <en-origen peso-fuente="negrita">Recurso de revista </en-origen>
+							<en-origen peso-fuente="negrita">conhecido e provido. 2. DANOS MORAIS. </en-origen>
+							<en-origen peso-fuente="negrita">ASSÉDIO MORAL. EXPOSIÇÃO DE IMAGEM. </en-origen>
+							<en-origen peso-fuente="negrita">ARTIGOS 5º, V E X, DA CONSTITUIÇÃO E 1896 </en-origen>
+							<en-origen peso-fuente="negrita">E 927 DO CÓDIGO CIVIL. VIOLAÇÃO. NÃO </en-origen>
+							<en-origen peso-fuente="negrita">CONFIGURAÇÃO. MATÉRIA FÁTICA</en-origen>. Para o deferimento de indenização por danos morais é necessário que ocorra a violação de algum dos valores imateriais do cidadão, como a honra, a imagem, o nome, a intimidade e a privacidade, que englobam os chamados direitos da personalidade. A referida indenização justifica-se nos casos em que há patente ofensa a direitos personalíssimos do trabalhador no curso da relação empregatícia ou dela decorrente. No caso, o TRT indeferiu o pedido de indenização por danos morais, decorrente de assédio moral, consignando que a única testemunha ouvida em Juízo, líder do setor de almoxarife, reconheceu que havia brincadeiras no ambiente de trabalho. Estão descritas na decisão regional as seguintes informações dadas pela única testemunha ouvida: <en-origen estilo-fuente="cursiva">“... que a imagem de fl. 45 </en-origen>
+							<en-origen estilo-fuente="cursiva">foi, de fato, afixada no mural da empresa, sendo </en-origen>
+							<en-origen estilo-fuente="cursiva">desconhecida sua autoria, acrescentando que assim </en-origen>
+							<en-origen estilo-fuente="cursiva">que tomou conhecimento, o demandante a retirou </en-origen>
+							<en-origen estilo-fuente="cursiva">imediatamente, o que impossibilitou qualquer atitude </en-origen>
+							<en-origen estilo-fuente="cursiva">de sua parte”</en-origen> (fl. 927). Registre-se que a foto a que se refere o Regional se encontra à fl. 106 dos autos, reproduzida na revista à fl. 942. Concluiu o Regional, no entanto, que não restou demonstrado o dano e o assédio moral, pois <en-origen estilo-fuente="cursiva">“A fragilidade do conjunto probatório </en-origen>
+							<en-origen estilo-fuente="cursiva">não respalda a condenação pretendida. Em que pese o </en-origen>
+							<en-origen estilo-fuente="cursiva">fato ocorrido e eventual aborrecimento dele derivado, </en-origen>
+							<en-origen estilo-fuente="cursiva">trata-se de acontecimento isolado, que pressupõe uma </en-origen>
+							<en-origen estilo-fuente="cursiva">brincadeira, não havendo indícios de que o autor tenha </en-origen>
+							<en-origen estilo-fuente="cursiva">efetivamente sofrido ofensa à sua dignidade e </en-origen>
+							<en-origen estilo-fuente="cursiva">imagem.”</en-origen> (fl. 927). Considerando as premissas fáticas delineadas no acórdão regional, baseadas na prova produzida, não há como se concluir que o Reclamante sofreu assédio moral alegado. Ademais, as alegações de que foi exposto ao ridículo com a exposição da “imagem”, que foi alvo de inúmeras gozações, chacotas, brincadeiras de mau gosto por parte de seus colegas de trabalho, demandam o revolvimento de fatos e provas. O caso atrai a incidência da Súmula 126 do TST. Não configurada a violação dos dispositivos legais e constitucionais invocados, tampouco o dissenso de julgados. <en-origen peso-fuente="negrita">Recurso de </en-origen>
+							<en-origen peso-fuente="negrita">revista não conhecido.</en-origen>
+						</parrafo>
+					</ementa>
+				</resumen>
+			</resumen-jur>
+		</cases-metadata>
+		<file-name>NONUM_BR_2016_00000X.ok</file-name>
+	</cases-doc>
+</docs>

@@ -42,7 +42,7 @@ Feature: Performing CRUD operations after Jurisprudence search
     Then User clicks on "Delete" link to delete both created relationships
     Then Verify if "Relationships" section is empty or not
 
-  @subTopic
+  @subTopicUsingFilter
   Scenario: Validate user able to add topic-subtopic entries using filter
     When User views the searched document details
     Then User expands "Analysis Data" section
@@ -51,7 +51,16 @@ Feature: Performing CRUD operations after Jurisprudence search
     When User clicks on "New" button under "SubTopic" section
     And Search and select the "SubTopic" value in the filter box
     Then Verify selected values are displayed under Topic and Subtopic fields
-#    And Delete the both added topic and subtopic values
-#    Then
+    And Delete the both added topic and subtopic values
+    Then Validate the deletion of topic-subtopic entries
+
+  @subTopicUsingCode
+  Scenario: Validate user able to add topic-subtopic entries using code
+    When User views the searched document details
+    Then User expands "Analysis Data" section
+    And User clicks on "Add new using Code" button under "SubTopic" section
+    Then Enter topic-subtopic values in text box of new window
+    When Click on Transfer option in the pop up
+    Then Verify selected value entries using code displayed under Topic and Subtopic fields
 
     

@@ -32,7 +32,9 @@ public class GCMSJurisprudenceStepDefTest extends BaseStepDefTest {
     public void userIsLoggedToIntoTheApplication() throws IOException, InterruptedException, AWTException {
         ImportApplicationVariables.setVariables();
         loginPage.accessURL(ImportApplicationVariables.loginURL);
+        Thread.sleep(4000);
         loginPage.setLanguage();
+        Thread.sleep(4000);
         loginPage.setUsername(ImportApplicationVariables.username);
         loginPage.setPassword(ImportApplicationVariables.password);
         loginPage.clickLoginButton();
@@ -46,6 +48,7 @@ public class GCMSJurisprudenceStepDefTest extends BaseStepDefTest {
     @When("User searches the document")
     public void userSearchesTheDocument() throws InterruptedException, AWTException {
         searchPage.selectDocumentIdFull();
+        Thread.sleep(3000);
         searchPage.enterFullMarginalId(ImportApplicationVariables.fullMarginalId);
         searchPage.clickSearchButton();
     }
@@ -75,15 +78,23 @@ public class GCMSJurisprudenceStepDefTest extends BaseStepDefTest {
     }
 
     @And("User clicks on {string} button under {string} section")
-    public void userClicksOnButtonUnderSection(String newBtn, String section) throws InterruptedException {
-        if (section.equals("Classification Entries")) {
-            classificationEntryPage.clickNewButton(newBtn);
-        } else if (section.equals("Relationships")) {
-            relationshipPage.clickAddMultipleButton();
-        } else if (section.equals("Topic")) {
-            topicPage.clickNewButton();
-        } else if (section.equals("SubTopic")) {
-            topicPage.clickSubTopicNewButton();
+    public void userClicksOnButtonUnderSection(String button, String section) throws InterruptedException {
+        switch (section) {
+            case "Classification Entries":
+                classificationEntryPage.clickNewButton(button);
+                break;
+            case "Relationships":
+                relationshipPage.clickAddMultipleButton();
+                break;
+            case "Topic":
+                topicPage.clickNewButton();
+                break;
+            case "SubTopic":
+                if (button.equals("Add new using Code"))
+                    topicPage.clickOnAddNewCodeButton();
+                else
+                    topicPage.clickSubTopicNewButton();
+                break;
         }
     }
 
@@ -116,9 +127,9 @@ public class GCMSJurisprudenceStepDefTest extends BaseStepDefTest {
     }
 
     @When("User selects {string} and {string} parameters and passes the values")
-    public void userSelectsAndParametersAndPassesTheValues(String arg0, String arg1) throws InterruptedException {
+    public void userSelectsAndParametersAndPassesTheValues(String arg0, String arg1) throws InterruptedException, AWTException {
         reportsPage.selectDocumentYear();
-        reportsPage.setYear(ImportApplicationVariables.reportYear);
+        reportsPage.setYear();
         reportsPage.selectDocumentNumber();
         Thread.sleep(4000);
         reportsPage.selectOperator();
@@ -187,10 +198,6 @@ public class GCMSJurisprudenceStepDefTest extends BaseStepDefTest {
         relationshipPage.deleteMultipleRelationships();
     }
 
-    @Then("Verify if Relationships section is empty or not")
-    public void verifyRelationshipsSectionIfItIsEmptyOrNot() {
-    }
-
     @Then("Verify if {string} section is empty or not")
     public void verifyIfSectionIsEmptyOrNot(String section) {
         if (section.equals("Relationships")) {
@@ -220,4 +227,30 @@ public class GCMSJurisprudenceStepDefTest extends BaseStepDefTest {
         topicVerification.verifySelectedTopicValueDisplayed();
         topicVerification.verifySelectedSubTopicValueDisplayed();
     }
+
+    @And("Delete the both added topic and subtopic values")
+    public void deleteTheBothAddedTopicAndSubtopicValues() {
+        topicPage.deleteTopicAndSubTopicEntries();
+    }
+
+    @Then("Validate the deletion of topic-subtopic entries")
+    public void validateTheDeletionOfTopicSubtopicEntries() {
+        topicVerification.verifySubTopicDeletion();
+    }
+
+    @Then("Enter topic-subtopic values in text box of new window")
+    public void enterTopicSubtopicValuesInTextBoxOfNewWindow() {
+        topicPage.enterTopicSuTopicValuesUsingCode();
+    }
+
+    @When("Click on Transfer option in the pop up")
+    public void clickOnTransferOptionInThePopUp() {
+        topicPage.clickOnTransferButton();
+    }
+
+    @Then("Verify selected value entries using code displayed under Topic and Subtopic fields")
+    public void verifySelectedValueEntriesUsingCodeDisplayedUnderTopicAndSubtopicFields() {
+        topicVerification.verifyTopicSubTopicEntriesUsingCodeAreDisplayed();
+    }
+
 }

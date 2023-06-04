@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<docs>
+	<cases-doc>
+		<marginal>
+			<marginal-pub>PROV</marginal-pub>
+			<marginal-year>2018</marginal-year>
+			<marginal-num/>
+		</marginal>
+		<cases-metadata analysis-level="1" quality="A3">
+			<decision>
+				<court>
+					<court.name>Tribunal de Justicia de la Unión Europea</court.name>
+					<court.abbr>TJUE</court.abbr>
+					<courtroom>
+						<courtroom.name>Gran Sala</courtroom.name>
+					</courtroom>
+				</court>
+				<decision-data>
+					<decision-class>
+						<decision-class.value>Sentencia</decision-class.value>
+					</decision-class>
+					<decision-date>20/12/2018</decision-date>
+					<decision-number>
+						<decision-number.num>1</decision-number.num>
+						<decision-number.note>test</decision-number.note>
+						<decision-number.year>2018</decision-number.year>
+						<decision-number.note-year>test</decision-number.note-year>
+					</decision-number>
+				</decision-data>
+				<expedient>
+					<expedient-value>
+						<expedient-value.value>Asunto</expedient-value.value>
+						<expedient-value.value-pl>Asuntos</expedient-value.value-pl>
+					</expedient-value>
+					<expedient-number order="1">
+						<expedient-number.number>521</expedient-number.number>
+						<expedient-number.pre-note>C</expedient-number.pre-note>
+						<expedient-number.year>2015</expedient-number.year>
+					</expedient-number>
+				</expedient>
+				<appeals>
+					<appeal order="1">
+						<appeal-name>
+							<appeal-name.value>Recurso de Anulación</appeal-name.value>
+						</appeal-name>
+						<appeal-number order="1">
+							<appeal-number.num>1</appeal-number.num>
+							<appeal-number.note>test</appeal-number.note>
+							<appeal-number.year>2018</appeal-number.year>
+							<appeal-number.year-note>test</appeal-number.year-note>
+						</appeal-number>
+					</appeal>
+				</appeals>
+				<deponents>
+					<deponent order="1">
+						<deponent.name>J. Malenovsky</deponent.name>
+					</deponent>
+				</deponents>
+			</decision>
+			<acquired-data>
+				<acquired-data.source>Web_Oficial_xml</acquired-data.source>
+				<acquired-data.format>Tecleada</acquired-data.format>
+				<acquired-data.filename>PROV.2018.XXXXXX.ok</acquired-data.filename>
+			</acquired-data>
+			<competence>
+				<competence.value>Comunitario</competence.value>
+			</competence>
+			<practice-areas>
+				<practice-area principal="S">
+					<name-area>Comunitario</name-area>
+				</practice-area>
+				<practice-area principal="N">
+					<name-area>Mercantil</name-area>
+				</practice-area>
+			</practice-areas>
+			<internal-note>*Lengua de procedimiento: español.</internal-note>
+			<alternative-identifiers>
+				<alternative-identifier identifier-type="ECLI" object-type="Documento">EU:C:2017:982 TEST</alternative-identifier>
+			</alternative-identifiers>
+		</cases-metadata>
+		<file-name>PROV.2018.XXXXXX.ok</file-name>
+	</cases-doc>
+</docs>

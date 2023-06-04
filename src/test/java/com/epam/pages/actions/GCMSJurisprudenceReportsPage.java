@@ -1,7 +1,9 @@
 package com.epam.pages.actions;
 
 import com.epam.framework.ui.PageWrapper;
+import com.epam.setup.systemsettings.ImportApplicationVariables;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -22,26 +24,74 @@ public class GCMSJurisprudenceReportsPage extends PageWrapper {
     private static final String checkBoxesToDelete = "xpath -> //input[@id='botonSeleccionar']";
     private static final String discard = "xpath -> //input[@value='Discard marked' or @value='Excluir seleção']";
 
-
     public GCMSJurisprudenceReportsPage(WebDriver webDriver) {
         super(webDriver);
     }
 
-    public void selectDocumentYear() {
+    public void selectDocumentYear() throws AWTException, InterruptedException {
+        Robot robot = new Robot();
+        WebElement e = getElement(formatLocator(marginalDropdownOne));
+        e.sendKeys("");
+        String fine = "Document id (year";
+        fine = fine.toUpperCase();
+        char[] c = fine.toCharArray();
+        for (int k = 0; k < c.length; k++) {
+            int keyCode = (int) c[k];
+            if(keyCode == 40){
+                robot.keyPress(KeyEvent.VK_SHIFT);
+                Thread.sleep(200);
+                robot.keyPress(KeyEvent.VK_9);
+                Thread.sleep(200);
+                robot.keyRelease(KeyEvent.VK_9);
+                Thread.sleep(200);
+                robot.keyRelease(KeyEvent.VK_SHIFT);
+            }
+            else if (keyCode == 32) {
+                robot.keyPress(KeyEvent.VK_SPACE);
+                Thread.sleep(200);
+                robot.keyRelease(KeyEvent.VK_SPACE);
+            } else {
+                robot.keyPress(keyCode);
+                Thread.sleep(200);
+                robot.keyRelease(keyCode);
+            }
+        }
 //        setTextUsingJS(marginalDropdownOne, "Document year", "NMA");
-//        select
     }
 
-    public void selectDocumentNumber() {
-        setTextUsingJS(marginalDropdownTwo, "Document number", "NMN");
+    public void selectDocumentNumber() throws AWTException, InterruptedException {
+        Robot robot = new Robot();
+        WebElement e = getElement(formatLocator(marginalDropdownTwo));
+        e.sendKeys("");
+        String fine = "Document id (number";
+        fine = fine.toUpperCase();
+        char[] c = fine.toCharArray();
+        for (int k = 0; k < c.length; k++) {
+            int keyCode = (int) c[k];
+            if(keyCode == 40){
+                robot.keyPress(KeyEvent.VK_SHIFT);
+                Thread.sleep(200);
+                robot.keyPress(KeyEvent.VK_9);
+                Thread.sleep(200);
+                robot.keyRelease(KeyEvent.VK_9);
+                Thread.sleep(200);
+                robot.keyRelease(KeyEvent.VK_SHIFT);
+            }
+            else if (keyCode == 32) {
+                robot.keyPress(KeyEvent.VK_SPACE);
+                Thread.sleep(200);
+                robot.keyRelease(KeyEvent.VK_SPACE);
+            } else {
+                robot.keyPress(keyCode);
+                Thread.sleep(200);
+                robot.keyRelease(keyCode);
+            }
+        }
+//        setTextUsingJS(marginalDropdownTwo, "Document number", "NMN");
     }
 
     public void selectOperator() {
         setTextUsingJS(searchOperator, "Operator", "<=");
-    }
-
-    public void setYear(String value) {
-        setTextUsingJS(year, "Year filed", value);
     }
 
     public void setNumber(String value) {
@@ -90,8 +140,12 @@ public class GCMSJurisprudenceReportsPage extends PageWrapper {
         robot.keyPress(KeyEvent.VK_O);
         robot.keyRelease(KeyEvent.VK_O);
         robot.keyRelease(KeyEvent.VK_ALT);
-        Thread.sleep(10000);
-        switchToNewWindow();
+//        switchToNewWindow();
         switchToParentWindow();
+        Thread.sleep(6000);
+    }
+
+    public void setYear() {
+        setTextUsingJS(year,"Year", ImportApplicationVariables.reportYear);
     }
 }

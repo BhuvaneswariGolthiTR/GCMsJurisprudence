@@ -29,6 +29,21 @@ public class ImportApplicationVariables {
 	public static String relationshipDataNoteTwo;
 	public static String topic;
 	public static String subTopic;
+	public static String topicSubtopicCode;
+	public static String hostFileName;
+	public static String serverName;
+	public static String fileName;
+	public static String metadataLoadedFolder;
+	public static String metadataRejectedFolder;
+	public static String metadataAcceptedFolder;
+	public static String metadataInputFolder;
+	public static String metadataOutputFolder;
+	public static String metadataLoadProcessFile;
+	public static String metadataFileName;
+	public static String documentName;
+	public static String marginalNumber;
+	public static String serverUsername;
+	public static String serverPassword;
 	public static Properties prop;
 
 	public static void setVariables() throws IOException {
@@ -62,6 +77,24 @@ public class ImportApplicationVariables {
 
 		topic = prop.getProperty("gcms.topicValue");
 		subTopic = prop.getProperty("gcms.subTopicValue");
+
+		topicSubtopicCode = prop.getProperty("gcms.topicSubTopicCode");
+
+		hostFileName = prop.getProperty("hostFileName");
+		serverUsername = prop.getProperty("username");
+		serverPassword = prop.getProperty("password");
+		serverName =prop.getProperty("serverName");
+		fileName=prop.getProperty("file");
+		metadataLoadedFolder=prop.getProperty("metadataLoadedFolder");
+		metadataRejectedFolder=prop.getProperty("metadataRejectedFolder");
+		metadataAcceptedFolder=prop.getProperty("metadataAcceptedFolder");
+//		url = prop.getProperty("gcms.br.direct.url");
+		metadataInputFolder=prop.getProperty("metadataInputFolderPath");
+		metadataOutputFolder=prop.getProperty("metadataOutputFolderPath");
+		metadataLoadProcessFile=prop.getProperty("metadataLoadProcessFile");
+		metadataFileName=prop.getProperty("metadataFileName");
+		documentName=prop.getProperty("documentName");
+		marginalNumber=prop.getProperty("marginalNumber");
 	}
 
 }

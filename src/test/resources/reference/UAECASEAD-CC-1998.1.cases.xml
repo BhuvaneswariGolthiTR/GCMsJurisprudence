@@ -1,0 +1,40 @@
+<docs>
+	<cases-doc>
+		<marginal>
+			<marginal-pub>UAECASEAD-CC</marginal-pub>
+			<marginal-year>1998</marginal-year>
+			<marginal-num>1</marginal-num>
+			<marginal-text>cases</marginal-text>
+		</marginal>
+		<cases-metadata>
+			<decision>
+				<court>
+					<court.name>Abu Dhabi Court of Cassation</court.name>
+				</court>
+				<decision-data>
+					<decision-class>
+						<decision-class.value>Judgment</decision-class.value>
+					</decision-class>
+					<decision-date>06/03/1999</decision-date>
+					<decision-number>
+						<decision-number.full-number>Objection for Cassation No. 91 of 1998</decision-number.full-number>
+						<decision-number.num>91</decision-number.num>
+						<decision-number.year>1998</decision-number.year>
+					</decision-number>
+				</decision-data>
+				<judges>
+					<judge order="1">Zaki Ibrahim Al-Masri</judge>
+					<judge order="2">Al-Hadi Mohammed Al-Jadeedy</judge>
+					<judge order="3">Mohammed Nabil Mohammed Riad</judge>
+					<judge order="4">Khalaf Fat-helbab Metwally</judge>
+				</judges>
+				<president>Mustafa Kira</president>
+			</decision>
+			<acquired-data>
+				<acquired-data.filename>UAECASEAD-CC-1998.1.cases</acquired-data.filename>
+			</acquired-data>
+			<internal-note>serial (33) - Rights</internal-note>
+		</cases-metadata>
+		<file-name>UAECASEAD-CC-1998.1.cases</file-name>
+	</cases-doc>
+</docs>

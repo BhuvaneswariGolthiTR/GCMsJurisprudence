@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<docs>
+	<cases-doc>
+		<marginal>
+			<marginal-pub>NONUM</marginal-pub>
+			<marginal-year>2018</marginal-year>
+			<marginal-num/>
+		</marginal>
+		<cases-metadata analysis-level="1" quality="A1">
+			<decision>
+				<court>
+					<court.name>Suprema Corte de Justicia de la Nación</court.name>
+					<court-location>
+						<location.name1>
+							<location.value>Ciudad de México</location.value>
+						</location.name1>
+					</court-location>
+					<courtroom order="20">
+						<courtroom.name>Primera Sala</courtroom.name>
+					</courtroom>
+				</court>
+				<decision-data>
+					<decision-class>
+						<decision-class.value>Jurisprudencia</decision-class.value>
+					</decision-class>
+					<decision-date>01/08/2018</decision-date>
+					<decision-number>
+						<decision-number.note-year>1a./J. 32/2018 (10a.)</decision-number.note-year>
+					</decision-number>
+				</decision-data>
+				<appeals>
+					<appeal order="1">
+						<appeal-name>
+							<appeal-name.value>Jurisprudencia por Contradicción</appeal-name.value>
+						</appeal-name>
+					</appeal>
+				</appeals>
+				<publications>
+					<publication order="1">
+						<publication.name>
+							<publication.name.value>Semanario Judicial de la Federación y su Gaceta</publication.name.value>
+						</publication.name>
+						<publication.type>O</publication.type>
+						<publication.date value="01/08/2018" precision="dd/MM/yyyy"/>
+						<publication.pub-id>
+							<publication.pub-id.year-note>Libro 57, Tomo I</publication.pub-id.year-note>
+						</publication.pub-id>
+						<publication.page>781</publication.page>
+					</publication>
+				</publications>
+			</decision>
+			<acquired-data>
+				<acquired-data.source>RT Fast</acquired-data.source>
+				<acquired-data.format>Tecleada</acquired-data.format>
+				<acquired-data.filename>JUR_SEJUFE_201808_781_00244.ok</acquired-data.filename>
+			</acquired-data>
+			<resumen-jur>
+				<resumen>
+					<parrafo>ACCIÓN PAULIANA DERIVADA DE UN PROCEDIMIENTO LABORAL POR DESPIDO INJUSTIFICADO. PARA SU PROCEDENCIA ES INNECESARIA LA EXISTENCIA DE UN LAUDO CONDENATORIO FIRME QUE DECLARE EL DERECHO DEL ACREEDOR (LEGISLACIONES DE LOS ESTADOS DE TLAXCALA Y CAMPECHE).</parrafo>
+				</resumen>
+			</resumen-jur>
+			<practice-areas>
+				<practice-area principal="S">
+					<name-area>Civil</name-area>
+				</practice-area>
+				<practice-area principal="N">
+					<name-area>Laboral</name-area>
+				</practice-area>
+			</practice-areas>
+		</cases-metadata>
+		<file-name>JUR_SEJUFE_201808_781_00244.ok</file-name>
+	</cases-doc>
+</docs>
