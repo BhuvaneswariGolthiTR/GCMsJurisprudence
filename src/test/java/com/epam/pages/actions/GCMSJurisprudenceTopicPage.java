@@ -22,6 +22,8 @@ public class GCMSJurisprudenceTopicPage extends PageWrapper {
     private static final String addNewUsingCodeButton = "xpath -> //input[@id='btnNewUsingCode']";
     private static final String addNewUsingCodeSearch = " xpath -> //input[@id='listaSubmaterias']";
     private static final String transferButton = " xpath -> //input[@id='btnSubmit']";
+    private static final String deleteTopic = "xpath -> //input[@id='btnDeleteTopic']";
+    private static final String analysisDataLink = "xpath -> //img[@id='clicker_datosAnalisisFichas']";
 
     public GCMSJurisprudenceTopicPage(WebDriver webDriver) {
         super(webDriver);
@@ -82,6 +84,15 @@ public class GCMSJurisprudenceTopicPage extends PageWrapper {
     public void clickOnTransferButton() {
         clickElementUsingJS(transferButton, "Transfer Button" );
         switchToParentWindow();
+    }
+
+    public void clickOnTopicDeleteButton() {
+        clickElementUsingJS(deleteTopic, "topic delete button" );
+        switchToNewWindow();
+    }
+
+    public void clickAnalysisDataLink() {
+        clickElementUsingJS(analysisDataLink, "Analysis Data Section");
     }
 
     private void setSubTopicValue(String value) {

@@ -3,7 +3,6 @@ package com.epam.pages.actions;
 import com.epam.framework.ui.PageWrapper;
 import com.epam.setup.systemsettings.ImportApplicationVariables;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -20,7 +19,7 @@ public class GCMSJurisprudenceReportsPage extends PageWrapper {
     private static final String reviewFormat = "xpath -> //td[@id='txtoriginal']/preceding-sibling::td/input";
     private static final String okButton = "xpath -> //input[@value='Ok' or @value='Aceitar']";
     private static final String jurisprudenceReports = "xpath -> //a[@id='itemTextLink15']";
-    private static final String viewLink = "xpath -> //a[text()='View' or text()='Visualizar']";
+    private static final String viewLink = "xpath -> (//a[text()='View' or text()='Visualizar'])[1]";//td[contains(text(),'Correct')]//following::a
     private static final String checkBoxesToDelete = "xpath -> //input[@id='botonSeleccionar']";
     private static final String discard = "xpath -> //input[@value='Discard marked' or @value='Excluir seleção']";
 
@@ -29,65 +28,11 @@ public class GCMSJurisprudenceReportsPage extends PageWrapper {
     }
 
     public void selectDocumentYear() throws AWTException, InterruptedException {
-        Robot robot = new Robot();
-        WebElement e = getElement(formatLocator(marginalDropdownOne));
-        e.sendKeys("");
-        String fine = "Document id (year";
-        fine = fine.toUpperCase();
-        char[] c = fine.toCharArray();
-        for (int k = 0; k < c.length; k++) {
-            int keyCode = (int) c[k];
-            if(keyCode == 40){
-                robot.keyPress(KeyEvent.VK_SHIFT);
-                Thread.sleep(200);
-                robot.keyPress(KeyEvent.VK_9);
-                Thread.sleep(200);
-                robot.keyRelease(KeyEvent.VK_9);
-                Thread.sleep(200);
-                robot.keyRelease(KeyEvent.VK_SHIFT);
-            }
-            else if (keyCode == 32) {
-                robot.keyPress(KeyEvent.VK_SPACE);
-                Thread.sleep(200);
-                robot.keyRelease(KeyEvent.VK_SPACE);
-            } else {
-                robot.keyPress(keyCode);
-                Thread.sleep(200);
-                robot.keyRelease(keyCode);
-            }
-        }
-//        setTextUsingJS(marginalDropdownOne, "Document year", "NMA");
+        selectOptionFromDropDownUsingRobot(marginalDropdownOne,"Document id (year");
     }
 
     public void selectDocumentNumber() throws AWTException, InterruptedException {
-        Robot robot = new Robot();
-        WebElement e = getElement(formatLocator(marginalDropdownTwo));
-        e.sendKeys("");
-        String fine = "Document id (number";
-        fine = fine.toUpperCase();
-        char[] c = fine.toCharArray();
-        for (int k = 0; k < c.length; k++) {
-            int keyCode = (int) c[k];
-            if(keyCode == 40){
-                robot.keyPress(KeyEvent.VK_SHIFT);
-                Thread.sleep(200);
-                robot.keyPress(KeyEvent.VK_9);
-                Thread.sleep(200);
-                robot.keyRelease(KeyEvent.VK_9);
-                Thread.sleep(200);
-                robot.keyRelease(KeyEvent.VK_SHIFT);
-            }
-            else if (keyCode == 32) {
-                robot.keyPress(KeyEvent.VK_SPACE);
-                Thread.sleep(200);
-                robot.keyRelease(KeyEvent.VK_SPACE);
-            } else {
-                robot.keyPress(keyCode);
-                Thread.sleep(200);
-                robot.keyRelease(keyCode);
-            }
-        }
-//        setTextUsingJS(marginalDropdownTwo, "Document number", "NMN");
+        selectOptionFromDropDownUsingRobot(marginalDropdownTwo,"Document id (number");
     }
 
     public void selectOperator() {
@@ -111,8 +56,9 @@ public class GCMSJurisprudenceReportsPage extends PageWrapper {
         clickElementUsingJS(reviewFormat, "Review Format Check Box");
     }
 
-    public void clickOkButton() {
+    public void clickOkButton() throws InterruptedException {
         clickElementUsingJS(okButton, "Ok");
+        Thread.sleep(4000);
     }
 
     public void clickJurisprudenceReports() throws InterruptedException {
@@ -122,6 +68,7 @@ public class GCMSJurisprudenceReportsPage extends PageWrapper {
 
     public void clickViewLink() {
         clickElementUsingJS(viewLink, "View");
+
     }
 
     public void clickCheckBoxToDelete() {
@@ -133,19 +80,39 @@ public class GCMSJurisprudenceReportsPage extends PageWrapper {
         Thread.sleep(5000);
     }
 
-    public void openReports() throws AWTException, InterruptedException {
+    public void downloadReportWith_RTF_Format() throws AWTException, InterruptedException {
         Robot robot = new Robot();
         robot.delay(250);
-        robot.keyPress(KeyEvent.VK_ALT);
-        robot.keyPress(KeyEvent.VK_O);
-        robot.keyRelease(KeyEvent.VK_O);
-        robot.keyRelease(KeyEvent.VK_ALT);
+        robot.keyPress(KeyEvent.VK_DOWN);
+        robot.keyRelease(KeyEvent.VK_DOWN);
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
+        Thread.sleep(10000);
 //        switchToNewWindow();
-        switchToParentWindow();
+//        switchToParentWindow();
         Thread.sleep(6000);
     }
 
     public void setYear() {
         setTextUsingJS(year,"Year", ImportApplicationVariables.reportYear);
+    }
+
+    public void openDownloadedReport() throws AWTException, InterruptedException {
+        Robot robot = new Robot();
+        robot.delay(250);
+        robot.keyPress(KeyEvent.VK_CONTROL);
+        robot.keyPress(KeyEvent.VK_J);
+        robot.keyRelease(KeyEvent.VK_J);
+        robot.keyRelease(KeyEvent.VK_CONTROL);
+        Thread.sleep(3000);
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
+        Thread.sleep(20000);
+        robot.keyPress(KeyEvent.VK_ALT);
+        robot.keyPress(KeyEvent.VK_F4);
+        robot.keyRelease(KeyEvent.VK_F4);
+        robot.keyRelease(KeyEvent.VK_ALT);
+//        Thread.sleep(6000);
+
     }
 }

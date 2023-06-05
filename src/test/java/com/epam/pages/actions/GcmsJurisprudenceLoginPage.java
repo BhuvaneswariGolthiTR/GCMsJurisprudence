@@ -72,7 +72,7 @@ public class GcmsJurisprudenceLoginPage extends PageWrapper {
             Robot robot = new Robot();
             WebElement e = getElement(formatLocator(languageDropdown));
             e.sendKeys("");
-            String fine = "E";
+            String fine = "En";
             fine = fine.toUpperCase();
             char[] c = fine.toCharArray();
             for (int k = 0; k < c.length; k++) {

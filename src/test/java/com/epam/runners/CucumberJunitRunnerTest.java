@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
                 "com.epam.framework.runners.cucumber"},
         plugin = {"pretty",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
-        tags = "@multipleRelationships"
+        tags = "@reports"
 )
 public class CucumberJunitRunnerTest {
 }

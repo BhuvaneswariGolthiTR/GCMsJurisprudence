@@ -163,6 +163,7 @@ public class GCMSClassificationEntriesPage extends PageWrapper {
 
     public void deleteClassificationEntry() {
         try{
+            scrollInView("xpath -> //a[text()='Delete' or text()='Apagar' or text()='Borrar']");
             clickElementUsingJS("xpath -> //a[text()='Delete' or text()='Apagar' or text()='Borrar']", "Delete");
         }catch (StaleElementReferenceException e){
             WebElement delete = getElement("xpath -> //a[text()='Delete' or text()='Apagar' or text()='Borrar']");

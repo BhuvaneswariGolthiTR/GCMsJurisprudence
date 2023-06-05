@@ -5,15 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad806cf7-55e6-42e6-8bad-5e62dde67075" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GCMSWinScpServerConnectionPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GcmsUploadingMetadataPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/epam/pages/verifications/GcmsUploadingMetadataVerificationPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/gcmsUploadMetadata.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/reference/NONUM_BR_2016_00000X.ok.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/reference/PROV.2018.XXXXXX.ok.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/reference/UAECASEAD-CC-1998.1.cases.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GcmsCoreDocumentWorkFlowPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/epam/pages/verifications/GcmsCoreDocumentWorkFlowVerificationPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/epam/stepdefinitions/WorkFlowStepDefTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/gcmsCoreSpainWorkflow.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/reference/PROV_2019_89063.XML" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/reference/PROV_2019_89063.finalized.XML" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/reference/PROV_2019_89063.original.XML" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/framework/ui/PageWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/framework/ui/PageWrapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GCMSClassificationEntriesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GCMSClassificationEntriesPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GCMSJurisprudenceReportsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GCMSJurisprudenceReportsPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GCMSJurisprudenceSearchPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GCMSJurisprudenceSearchPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GCMSJurisprudenceTopicPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GCMSJurisprudenceTopicPage.java" afterDir="false" />
@@ -23,12 +24,11 @@
       <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/runners/CucumberJunitRunnerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/runners/CucumberJunitRunnerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/setup/systemsettings/ImportApplicationVariables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/setup/systemsettings/ImportApplicationVariables.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/stepdefinitions/GCMSJurisprudenceStepDefTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/stepdefinitions/GCMSJurisprudenceStepDefTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/stepdefinitions/SpainStepDefTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/features/gcmsCoreJurisprudenceSearch.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/gcmsCoreJurisprudenceSearch.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/gcmsCoreSpain.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/gcmsUploadMetadata.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/gcmsUploadMetadata.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/gcms-arz-client.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/gcms-arz-client.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/gcms-br-client.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/gcms-br-client.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/gcms-gulf-client.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/gcms-gulf-client.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/gcms-mex-client.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/gcms-mex-client.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/gcms.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/gcms.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -117,8 +117,10 @@
   </component>
   <component name="RunManager" selected="Gradle.CucumberJunitRunnerTest">
     <configuration name="Runner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.epam.framework.ui.pageobjectgenerator.Runner" />
-      <module name="gcms_testing-services-availability.main" />
+      <module name="gcms_core_jurisprudence_services_testing.main" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.epam.framework.ui.pageobjectgenerator.*" />
@@ -189,8 +191,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.CucumberJunitRunnerTest" />
-        <item itemvalue="Gradle.gcmsServiceTests [clean]" />
         <item itemvalue="Application.Runner" />
+        <item itemvalue="Gradle.gcmsServiceTests [clean]" />
       </list>
     </recent_temporary>
   </component>

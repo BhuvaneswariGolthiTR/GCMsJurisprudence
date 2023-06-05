@@ -10,6 +10,7 @@ public class ImportApplicationVariables {
 	
 	public static String loginURL;
 	public static String username;
+	public static String analystUsername;
 	public static String password;
 	public static String region;
 	public static String fullMarginalId;
@@ -44,12 +45,22 @@ public class ImportApplicationVariables {
 	public static String marginalNumber;
 	public static String serverUsername;
 	public static String serverPassword;
+	public static String agentFilterValue;
+	public static String agentValue;
+	public static String NMNValue;
+	public static String NMAValue;
+	public static String analysisValue;
+	public static String qualityValue;
+	public static String citatorValue;
+	public static String areaValue;
+	public static String analistaValue;
+	public static String workFlowMarginalNumber;
 	public static Properties prop;
 
 	public static void setVariables() throws IOException {
 		prop = new Properties();
 		String userPath = System.getProperty("user.dir");
-		FileInputStream fs = new FileInputStream(userPath + "\\src\\test\\resources\\gcms-gulf-client.properties");
+		FileInputStream fs = new FileInputStream(userPath + "\\src\\test\\resources\\gcms-br-client.properties");
 		prop.load(fs);
 
 		loginURL = prop.getProperty("gcms.login.url");
@@ -95,6 +106,19 @@ public class ImportApplicationVariables {
 		metadataFileName=prop.getProperty("metadataFileName");
 		documentName=prop.getProperty("documentName");
 		marginalNumber=prop.getProperty("marginalNumber");
+
+		agentValue=prop.getProperty("agentValue");
+		agentFilterValue=prop.getProperty("agentFilterValue");
+		areaValue=prop.getProperty("areaValue");
+		analistaValue=prop.getProperty("analistaValue");
+		analysisValue=prop.getProperty("AnalysisValue");
+		NMNValue= prop.getProperty("NMNValue");
+		NMAValue=prop.getProperty("NMAValue");
+		citatorValue=prop.getProperty("citatorValue");
+		qualityValue=prop.getProperty("QualityValue");
+		workFlowMarginalNumber=prop.getProperty("workFlowMarginalNumber");
+
+		analystUsername = PageWrapper.decode(prop.getProperty("analyst.username"));
 	}
 
 }

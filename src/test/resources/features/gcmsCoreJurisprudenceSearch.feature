@@ -4,13 +4,13 @@ Feature: Performing CRUD operations after Jurisprudence search
     Given User is logged to into the application
     When User navigates to search option in JURISPRUDENCE
 
-  @search
-  Scenario: Validating displayed full document in JURISPRUDENCE
+  @search @spain
+  Scenario: Validate Searching and Displaying full document in JURISPRUDENCE
     When User searches the document
     And Clicks on the document to view the details
     Then User validates if document is displayed successfully or not
 
-  @classificationEntry
+  @classificationEntry @spain
   Scenario: Validate user able to add and delete unique "Classification Entries" in the Analysis section
     When User views the searched document details
     Then User expands "Analysis Data" section
@@ -21,7 +21,7 @@ Feature: Performing CRUD operations after Jurisprudence search
     And User clicks on "Delete" button to remove added classification entry
     Then Verify if "Classification Entries" section is empty or not
 
-  @reports
+  @reports @spain
   Scenario: Validate user able view and delete the created reports from Result list
     When User selects "year" and "number" parameters and passes the values
     And User clicks on search button to get list of matching documents
@@ -30,7 +30,7 @@ Feature: Performing CRUD operations after Jurisprudence search
     Then User opens reports
     Then User deletes the generated reports
 
-  @multipleRelationships
+  @multipleRelationships @spain
   Scenario: Validate user able to add and delete multiple "Relationship" in the Analysis report section
     When User views the searched document details
     Then User expands "Analysis Data" section
@@ -42,7 +42,7 @@ Feature: Performing CRUD operations after Jurisprudence search
     Then User clicks on "Delete" link to delete both created relationships
     Then Verify if "Relationships" section is empty or not
 
-  @subTopicUsingFilter
+  @subTopicUsingFilter @spain
   Scenario: Validate user able to add topic-subtopic entries using filter
     When User views the searched document details
     Then User expands "Analysis Data" section
@@ -54,7 +54,7 @@ Feature: Performing CRUD operations after Jurisprudence search
     And Delete the both added topic and subtopic values
     Then Validate the deletion of topic-subtopic entries
 
-  @subTopicUsingCode
+  @subTopicUsingCode @spain
   Scenario: Validate user able to add topic-subtopic entries using code
     When User views the searched document details
     Then User expands "Analysis Data" section

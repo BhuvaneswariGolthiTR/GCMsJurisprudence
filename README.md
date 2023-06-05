@@ -1,3 +1,3 @@
 # gcmsServiceTests
 
-gradlew clean test -PtargetEnvironment=br-client -Dcucumber.filter.tags="@reports"
+gradlew clean test -PtargetEnvironment=arz-client -Dcucumber.filter.tags="@spain"

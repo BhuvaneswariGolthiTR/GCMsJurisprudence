@@ -160,14 +160,14 @@ public class GCMSJurisprudenceStepDefTest extends BaseStepDefTest {
 
     @Then("User opens reports")
     public void userOpensReports() throws AWTException, InterruptedException {
-        reportsPage.openReports();
+        reportsPage.downloadReportWith_RTF_Format();
     }
 
     @Then("User deletes the generated reports")
-    public void userDeletesTheGeneratedReports() throws InterruptedException {
+    public void userDeletesTheGeneratedReports() throws InterruptedException, AWTException {
         reportsPage.clickCheckBoxToDelete();
         reportsPage.clickDiscard();
-
+        reportsPage.openDownloadedReport();
     }
 
     @Then("User fills fields in Multiple Relationship Page")

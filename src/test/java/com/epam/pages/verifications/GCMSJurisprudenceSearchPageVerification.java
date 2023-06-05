@@ -24,4 +24,10 @@ public class GCMSJurisprudenceSearchPageVerification extends GCMSJurisprudenceSe
         sendTextUsingRobot(getSearchField(),"Document",metadataFile);
         clickSearchButton();
     }
+
+    public void navigateToControlSectionWorkFlow(String value) throws InterruptedException {
+            navigateToJurisprudenceControlDataSection();
+            clickDocument(value);
+
+    }
 }
