@@ -20,7 +20,7 @@ public class Runner {
 
         BasicTextEncryptor textEncryptor = new BasicTextEncryptor();
         textEncryptor.setPasswordCharArray("Value".toCharArray());
-        String encryptUsername = textEncryptor.encrypt("C290266");
+        String encryptUsername = textEncryptor.encrypt("C290276");
         System.out.println(encryptUsername);
 //        String encryptPassword=textEncryptor.encrypt("***");
 //        System.out.println(encryptPassword);

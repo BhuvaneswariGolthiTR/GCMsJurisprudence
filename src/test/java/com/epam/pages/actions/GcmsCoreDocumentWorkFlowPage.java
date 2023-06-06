@@ -8,7 +8,7 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 
 public class GcmsCoreDocumentWorkFlowPage extends PageWrapper {
-    private static final String controlDataSection = "xpath -> //img[@id='clicker_datosControl']";
+    private static final String controlDataSection = "xpath -> //*[@id='clicker_datosControl']";
     private static final String deleteWFButton = "xpath -> //input[@id='btnDeleteWF']";
     private static final String restartProcess = "xpath -> //input[@id='startProcess']";
     private static final String loadOrginalTextButton = "xpath -> //input[@id='btnLoadOrgininalText']";
@@ -107,7 +107,10 @@ public class GcmsCoreDocumentWorkFlowPage extends PageWrapper {
     }
 
     public void clickOnEditButton() {
+        scrollToBottomOfPage();
         clickElementUsingJS(editButton, "Edit button");
+        System.err.println("Edit");
+        scrollToBottomOfPage();
     }
 
     public void clickOnEndPreSelectionButton() throws InterruptedException {

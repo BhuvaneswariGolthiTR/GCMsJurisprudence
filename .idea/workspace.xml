@@ -5,31 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad806cf7-55e6-42e6-8bad-5e62dde67075" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GcmsCoreDocumentWorkFlowPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/epam/pages/verifications/GcmsCoreDocumentWorkFlowVerificationPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/epam/stepdefinitions/WorkFlowStepDefTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/gcmsCoreSpainWorkflow.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/reference/PROV_2019_89063.XML" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/reference/PROV_2019_89063.finalized.XML" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/reference/PROV_2019_89063.original.XML" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GCMSClassificationEntriesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GCMSClassificationEntriesPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GCMSJurisprudenceReportsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GCMSJurisprudenceReportsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GCMSJurisprudenceSearchPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GCMSJurisprudenceSearchPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/framework/ui/pageobjectgenerator/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/framework/ui/pageobjectgenerator/Runner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GCMSJurisprudenceTopicPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GCMSJurisprudenceTopicPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GcmsJurisprudenceLoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GcmsJurisprudenceLoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GcmsCoreDocumentWorkFlowPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GcmsCoreDocumentWorkFlowPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/pages/verifications/GCMSJurisprudenceSearchPageVerification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/pages/verifications/GCMSJurisprudenceSearchPageVerification.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/pages/verifications/GCMSJurisprudenceTopicPageVerification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/pages/verifications/GCMSJurisprudenceTopicPageVerification.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/runners/CucumberJunitRunnerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/runners/CucumberJunitRunnerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/setup/systemsettings/ImportApplicationVariables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/setup/systemsettings/ImportApplicationVariables.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/stepdefinitions/GCMSJurisprudenceStepDefTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/stepdefinitions/GCMSJurisprudenceStepDefTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/stepdefinitions/SpainStepDefTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/gcmsCoreJurisprudenceSearch.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/gcmsCoreJurisprudenceSearch.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/gcmsUploadMetadata.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/gcmsUploadMetadata.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/stepdefinitions/WorkFlowStepDefTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/stepdefinitions/WorkFlowStepDefTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/gcmsCoreSpainWorkflow.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/gcmsCoreSpainWorkflow.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/gcms-arz-client.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/gcms-arz-client.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/gcms-br-client.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/gcms-br-client.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/gcms.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/gcms.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,18 +71,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/C288876/Documents/MyGit/GCMsJurisprudence/src/test/resources/reference",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "editor.preferences.tabs"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/C288876/Documents/MyGit/GCMsJurisprudence/src/test/resources/reference&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\C288876\Documents\MyGit\GCMsJurisprudence\src\test\resources\reference" />

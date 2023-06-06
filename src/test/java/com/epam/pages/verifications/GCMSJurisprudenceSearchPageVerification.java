@@ -28,6 +28,5 @@ public class GCMSJurisprudenceSearchPageVerification extends GCMSJurisprudenceSe
     public void navigateToControlSectionWorkFlow(String value) throws InterruptedException {
             navigateToJurisprudenceControlDataSection();
             clickDocument(value);
-
     }
 }

@@ -10,7 +10,7 @@ Feature: Performing gcms core workflow execution
     When Click on the marginal numberHighlighted in blue
     Then Delete the existing workflow if any
     And  Click on Initialize the full workflow
-    When Expand analysis data section
+#    When Expand analysis data section
     And  Delete topic subtopic information and Delete practice area if exists
 
   @WorkflowExecution

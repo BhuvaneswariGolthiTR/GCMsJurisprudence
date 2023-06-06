@@ -2,6 +2,7 @@ package com.epam.pages.actions;
 
 import com.epam.framework.ui.PageWrapper;
 import com.epam.setup.systemsettings.ImportApplicationVariables;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -23,7 +24,9 @@ public class GCMSJurisprudenceTopicPage extends PageWrapper {
     private static final String addNewUsingCodeSearch = " xpath -> //input[@id='listaSubmaterias']";
     private static final String transferButton = " xpath -> //input[@id='btnSubmit']";
     private static final String deleteTopic = "xpath -> //input[@id='btnDeleteTopic']";
-    private static final String analysisDataLink = "xpath -> //img[@id='clicker_datosAnalisisFichas']";
+    private static final String analysisDataLink = "xpath -> (//*[contains(@id,'Fichas')])[1]";
+    private static final String okButton = "xpath -> //input[@type='button' and contains(@onclick,'disabled') or @id='btnEdit' or @type='submit']";
+    private static final String removePracticeArea = "xpath -> //input[@name='resDTO.resAreasObj[0].AAA' and @alt='X']";
 
     public GCMSJurisprudenceTopicPage(WebDriver webDriver) {
         super(webDriver);
@@ -93,6 +96,8 @@ public class GCMSJurisprudenceTopicPage extends PageWrapper {
 
     public void clickAnalysisDataLink() {
         clickElementUsingJS(analysisDataLink, "Analysis Data Section");
+//        WebElement element = getElement("xpath -> //tr[@id='datosAnalisisFichas']/preceding-sibling::tr//img");
+//        javascriptExecutor.executeScript("arguments[0].click()",element);
     }
 
     private void setSubTopicValue(String value) {
@@ -142,6 +147,16 @@ public class GCMSJurisprudenceTopicPage extends PageWrapper {
     public void enterTopicSuTopicValuesUsingCode() {
         switchToNewWindow();
         setTextUsingJS(addNewUsingCodeSearch, "add new using code search", ImportApplicationVariables.topicSubtopicCode);
+    }
+
+
+    public void setRemovePracticeArea(){
+        clickElementUsingJS(removePracticeArea,"remove practice area");
+    }
+
+
+    public void clickOnOkButton() {
+        clickElementUsingJS(okButton, "ok button");
     }
 
 }

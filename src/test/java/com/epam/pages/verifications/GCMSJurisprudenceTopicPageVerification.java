@@ -67,4 +67,18 @@ public class GCMSJurisprudenceTopicPageVerification extends GCMSJurisprudenceTop
     public void deleteExistingTopicAndSubTopics() throws InterruptedException {
             verifyTopicAndSubTopicDataIsPresent();
     }
+
+    public void deletePracticeAreaIfExists() {
+        List<WebElement> element = webDriver.findElements(By.xpath("//table[@id='tablaPlantillaAreas0']"));
+        if (element.size() > 0) {
+            System.err.println("Practice Area exists");
+            for (int i = 0; i < element.size(); i++) {
+                setRemovePracticeArea();
+                clickOnOkButton();
+            }
+        } else {
+            System.err.println("Practice Area deleted");
+        }
+    }
+
 }
