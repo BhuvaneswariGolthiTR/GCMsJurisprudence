@@ -2,10 +2,8 @@ package com.epam.pages.verifications;
 
 import com.epam.pages.actions.GcmsCoreDocumentWorkFlowPage;
 import org.apache.commons.io.FilenameUtils;
-import org.openqa.selenium.By;
+import org.openqa.selenium.*;
 import org.openqa.selenium.Dimension;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -59,6 +57,7 @@ public class GcmsCoreDocumentWorkFlowVerificationPage extends GcmsCoreDocumentWo
     }
 
     public void verifyDocumentEditionTextPageIsDisplayed() {
+        WebElement element = webDriver.findElement(By.id("btnText"));
         verifyIsElementDisplayed("Document Edition text is displayed", "xpath -> //input[@id='btnText']", true, "Document Edition text");
     }
 
@@ -232,32 +231,48 @@ public class GcmsCoreDocumentWorkFlowVerificationPage extends GcmsCoreDocumentWo
         throw new Exception("File Not Downloaded");
     }
 
-    public static void editXMLDocument(String param) throws ParserConfigurationException, IOException, SAXException, TransformerException {
-        String filepath = "C:\\Users\\C288577\\Downloads\\PROV_2019_89063 (12).XML";
-        DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder docBuilder;
-        docBuilder = docFactory.newDocumentBuilder();
-        Document doc = docBuilder.parse(filepath);
-        Node company = doc.getFirstChild();
+    public void editXMLDocument(String param) throws ParserConfigurationException, IOException, SAXException, TransformerException, InterruptedException, AWTException {
+        saveAsFileUsingRobot(param);
+        try {
+            String filepath = param;
+            DocumentBuilderFactory docFactory = DocumentBuilderFactory
+                    .newInstance();
+            DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+            Document doc = docBuilder.parse(filepath);
 
-        /**
-         * Get the param from xml and set value
-         */
-        Node search = doc.getElementsByTagName("parrafo").item(0);
-        NamedNodeMap attr = search.getAttributes();
-        Node nodeAttr = attr.getNamedItem("T.S.J.ASTURIAS SALA CIV/PE");
-        nodeAttr.setTextContent(param);
+            // Get the root element
+            Node data= doc.getFirstChild();
 
-        /**
-         * write it back to the xml
-         */
-        TransformerFactory transformerFactory = TransformerFactory.newInstance();
-        Transformer transformer = transformerFactory.newTransformer();
-        DOMSource source = new DOMSource(doc);
-        StreamResult result = new StreamResult(new File(filepath));
-        transformer.transform(source, result);
+            Node startdate = doc.getElementsByTagName("en-origen").item(0);
 
-        System.out.println("Done");
+            // I am not doing any thing with it just for showing you
+            String currentStartdate = startdate.getNodeValue();
+            System.err.println("present value:" +currentStartdate);
+            startdate.setTextContent("CITEDVERSION T.S.J.ASTURIAS SALA CIV/PE");
+
+            // write the content into xml file
+            TransformerFactory transformerFactory = TransformerFactory
+                    .newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            DOMSource source = new DOMSource(doc);
+            StreamResult result = new StreamResult(new File(filepath));
+            transformer.transform(source, result);
+
+            System.err.println("Done");
+
+        } catch (ParserConfigurationException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (TransformerException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (SAXException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
 
     public void uploadDownLoadedFile() throws InterruptedException {
@@ -288,6 +303,42 @@ public class GcmsCoreDocumentWorkFlowVerificationPage extends GcmsCoreDocumentWo
 
 
     // }
+    public void navigateToControlSectionWorkFlow(String value) throws InterruptedException {
+        navigateToJurisprudenceControlDataSection();
+        clickDocument(value);
+    }
+
+    public void verifyUploadXmlDocumentsSuccessfully(String document) throws InterruptedException {
+        WebElement element = webDriver.findElement(By.xpath("//td[@class='messageHeader']"));
+        if (element.getText().contains("Error")) {
+            clickOnGoBackButton();
+            System.err.println("load is Unsuccessful");
+            navigateToControlSectionWorkFlow(document);
+            Thread.sleep(2000);
+            clickOnLoadOrginalTextButton();
+            UploadFile();
+            Thread.sleep(2000);
+            clickOnOkButton();
+            Thread.sleep(2000);
+            verifyOperationSuccessMessageIsDisplayed();
+            Thread.sleep(2000);
+            clickOnGoBackButton();
+        } else {
+            verifyOperationSuccessMessageIsDisplayed();
+            System.err.println("load is successful");
+            Thread.sleep(2000);
+            clickOnGoBackButton();
+            Thread.sleep(2000);
+        }
+    }
+
+    public void deleteTheExistingFile(String filePath) {
+        File file = new File(filePath);
+        if(file.exists()){
+            file.delete();
+        }
+    }
+
 }
 
 

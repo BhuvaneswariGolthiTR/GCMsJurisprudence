@@ -16,7 +16,7 @@ public class GCMSJurisprudenceTopicPageVerification extends GCMSJurisprudenceTop
         super(webDriver);
     }
     public boolean flag;
-    public void verifySelectedTopicValueDisplayed() {
+    public void verifySelectedTopicValueDisplayed() throws InterruptedException {
         switchToTopicFrame();
         scrollInView(getSubTopic());
         verifyElementText("Selected Topic value is not displayed",getTopic(),ImportApplicationVariables.topic);
@@ -35,7 +35,7 @@ public class GCMSJurisprudenceTopicPageVerification extends GCMSJurisprudenceTop
         }
     }
 
-    public void verifyTopicSubTopicEntriesUsingCodeAreDisplayed() {
+    public void verifyTopicSubTopicEntriesUsingCodeAreDisplayed() throws InterruptedException {
         switchToTopicFrame();
         verifyIsElementDisplayed("Selected Topic value displayed", String.format("xpath -> //td[text()[normalize-space()='%s']]","Actividades y sectores"),true, "topic value");
         verifyIsElementDisplayed("Selected sub topic value displayed", String.format("xpath -> //td[text()[normalize-space()='%s']]","Agricultura"),true, "sub topic value");
@@ -69,7 +69,7 @@ public class GCMSJurisprudenceTopicPageVerification extends GCMSJurisprudenceTop
     }
 
     public void deletePracticeAreaIfExists() {
-        List<WebElement> element = webDriver.findElements(By.xpath("//table[@id='tablaPlantillaAreas0']"));
+        List<WebElement> element = webDriver.findElements(By.id("tablaPlantillaAreas0"));
         if (element.size() > 0) {
             System.err.println("Practice Area exists");
             for (int i = 0; i < element.size(); i++) {

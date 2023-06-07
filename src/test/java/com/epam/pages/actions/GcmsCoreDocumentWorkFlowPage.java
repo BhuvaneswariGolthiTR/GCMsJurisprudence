@@ -44,6 +44,10 @@ public class GcmsCoreDocumentWorkFlowPage extends PageWrapper {
     private static final String removePracticeArea = "xpath -> //input[@name='resDTO.resAreasObj[0].AAA' and @alt='X']";
     private static final String analystLink= "xpath -> //a[@id='itemTextLink20']";
 
+    private static final String decisionsLink = "xpath -> //a[@id='itemTextLink11']";
+    private static final String resultSetsLink = "xpath -> //a[@id='itemTextLink13']";
+    private static final String documentLink = "xpath -> //a[contains(text(),'%s')]";
+
     public GcmsCoreDocumentWorkFlowPage(WebDriver webDriver) {
         super(webDriver);
     }
@@ -107,10 +111,10 @@ public class GcmsCoreDocumentWorkFlowPage extends PageWrapper {
     }
 
     public void clickOnEditButton() {
-        scrollToBottomOfPage();
+//        scrollToBottomOfPage();
         clickElementUsingJS(editButton, "Edit button");
         System.err.println("Edit");
-        scrollToBottomOfPage();
+//        scrollToBottomOfPage();
     }
 
     public void clickOnEndPreSelectionButton() throws InterruptedException {
@@ -196,6 +200,15 @@ public class GcmsCoreDocumentWorkFlowPage extends PageWrapper {
     }
     public void setRemovePracticeArea(){
         clickElementUsingJS(removePracticeArea,"remove practice area");
+    }
+    public void navigateToJurisprudenceControlDataSection() throws InterruptedException {
+        clickElementUsingJS(jurisprudenceLink, "jurisprudenceLink");
+        clickElementUsingJS(decisionsLink, "decisionsLink");
+        clickElementUsingJS(resultSetsLink, "resultSetLink");
+        Thread.sleep(3000);
+    }
+    public void clickDocument(String value){
+        clickElementUsingJS(String.format(documentLink,value), "documentId");
     }
 }
 

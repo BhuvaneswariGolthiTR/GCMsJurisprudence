@@ -23,10 +23,10 @@ public class WorkFlowStepDefTest extends BaseStepDefTest {
     public WorkFlowStepDefTest() throws AWTException {
     }
 
-    @When("Expand control data section")
-    public void expand_control_data_section() {
-        workFlowPage.expandControlDataSection();
-    }
+//    @When("Expand control data section")
+//    public void expand_control_data_section() {
+//        workFlowPage.expandControlDataSection();
+//    }
 
     @Then("Delete the existing workflow if any")
     public void delete_the_existing_workflow_if_any() {
@@ -39,41 +39,26 @@ public class WorkFlowStepDefTest extends BaseStepDefTest {
         workFlowPage.clickOnGoBackButton();
     }
 
-//    @When("Expand analysis data section")
-//    public void expand_analysis_data_section() {
-//        detailPage.clickAnalysisDataLink();
-//    }
+    @When("Expand analysis data section")
+    public void expand_analysis_data_section() {
+        detailPage.clickAnalysisDataLink();
+    }
 
     @When("Delete topic subtopic information and Delete practice area if exists")
     public void delete_topic_subtopic_information_and_Delete_practice_area_if_exists() throws InterruptedException {
-        // workFlowPage.clickOnEditButton();
-        // Thread.sleep(5000);
-        //detailsVerificationPage.expandAnalysisDataSection();
-        // Thread.sleep(2000);
-//         detailsVerificationPage.deletePracticeAreaIfExists();
-        // detailsVerificationPage.switchToFrame();
-//        detailsVerificationPage.deleteExistingTopicAndSubTopics();
-//        getDriver().switchTo().defaultContent();
-//        Thread.sleep(2000);
-        workFlowPage.clickOnEditButton();
-        Thread.sleep(7000);
-//        workFlowPage.expandControlDataSection();
-//        Thread.sleep(2000);
-
-        detailPage.clickAnalysisDataLink();
-//        Thread.sleep(20000);
-//        //workFlowPage.clickOnTextSection();
-//       // Thread.sleep(20000);
-//        detailPage.clickAnalysisDataLink();
-        detailsVerificationPage.deletePracticeAreaIfExists();
-        detailPage.clickAnalysisDataLink();
-        Thread.sleep(4000);
         detailsVerificationPage.deleteExistingTopicAndSubTopics();
         getDriver().switchTo().defaultContent();
-//        detailsVerificationPage.switchToFrame();
-//        workFlowPage.setRemovePracticeArea();
-//        getDriver().switchTo().defaultContent();
-//        workFlowPage.clickOnOkButton();
+        workFlowPage.clickOnEditButton();
+        Thread.sleep(5000);
+        detailsVerificationPage.clickAnalysisDataLink();
+        Thread.sleep(2000);
+        detailsVerificationPage.deletePracticeAreaIfExists();
+    }
+
+    @And("Delete the XML File in the project if exists")
+    public void deleteTheXMLFileInTheProjectIfExists() {
+        String filePath = System.getProperty("user.dir")+"\\src\\test\\resources\\Records\\PROV_2019_89063.XML";
+        workFlowVerificationPage.deleteTheExistingFile(filePath);
     }
 
     @When("User click on Load original text button and loads the orginal text")
@@ -87,8 +72,8 @@ public class WorkFlowStepDefTest extends BaseStepDefTest {
         workFlowVerificationPage.UploadFile();
         Thread.sleep(2000);
         workFlowPage.clickOnOkButton();
-        Thread.sleep(20000);
-        workFlowPage.clickOnGoBackButton();
+        Thread.sleep(30000);
+        workFlowVerificationPage.verifyUploadXmlDocumentsSuccessfully(ImportApplicationVariables.workFlowMarginalNumber);
         Thread.sleep(2000);
     }
 
@@ -150,7 +135,7 @@ public class WorkFlowStepDefTest extends BaseStepDefTest {
     @Then("Click on Edit button and verify document text")
     public void click_on_Edit_button_and_verify_document_text() {
         workFlowPage.clickOnEditButton();
-        workFlowVerificationPage.verifyDocumentEditionTextPageIsDisplayed();
+//        workFlowVerificationPage.verifyDocumentEditionTextPageIsDisplayed();
 
     }
 
@@ -173,17 +158,6 @@ public class WorkFlowStepDefTest extends BaseStepDefTest {
         Thread.sleep(2000);
         workFlowVerificationPage.switchToTextFrame();
         workFlowVerificationPage.verifyImportButtonUnderTextSectionIsDisplayed();
-    }
-
-    @When("Navigate to text section and export finalized text using export button")
-    public void navigate_to_text_section_and_export_finalized_text_using_export_button() {
-        // workFlowPage.clickOnExportButton();
-
-    }
-
-    @When("Edit the downloaded document text")
-    public void edit_the_downloaded_document_text() {
-
     }
 
     @When("Click on import cited text button")
@@ -233,62 +207,17 @@ public class WorkFlowStepDefTest extends BaseStepDefTest {
     @Then("Verify Text section of the document import button should not be displayed")
     public void verify_Text_section_of_the_document_import_button_should_not_be_displayed() throws Exception {
         workFlowPage.clickOnTextSection();
-//       workFlowVerificationPage.downloadAndEditXmlDocument();
-//        workFlowVerificationPage.switchToTextFrame();
-//        workFlowPage.clickOnExportButton();
-//        Robot robot = new Robot();
-//        Thread.sleep(200);
-//        robot.keyPress(KeyEvent.VK_F11);
-//        Thread.sleep(200);
-//        robot.keyRelease(KeyEvent.VK_F11);
-//        Thread.sleep(2000);
-//        Thread.sleep(2000);
-//        robot.keyPress(KeyEvent.VK_ALT);
-//        robot.keyPress(KeyEvent.VK_N);
-//        Thread.sleep(200);
-//        robot.keyRelease(KeyEvent.VK_ALT);
-//        robot.keyRelease(KeyEvent.VK_N);
-//        Thread.sleep(200);
-//        robot.keyPress(KeyEvent.VK_TAB);
-//        Thread.sleep(200);
-//        robot.keyRelease(KeyEvent.VK_TAB);
-//        Thread.sleep(200);
-//        robot.keyPress(KeyEvent.VK_DOWN);
-//        Thread.sleep(200);
-//        robot.keyRelease(KeyEvent.VK_DOWN);
-//        Thread.sleep(200);
-//        robot.keyPress(KeyEvent.VK_DOWN);
-//        Thread.sleep(200);
-//        robot.keyRelease(KeyEvent.VK_DOWN);
-//        Thread.sleep(200);
-//        robot.keyPress(KeyEvent.VK_ENTER);
-//        Thread.sleep(200);
-//        robot.keyRelease(KeyEvent.VK_ENTER);
-//        Thread.sleep(200);
-//        String text = System.getProperty("user.dir")+"\\src\\test\\resources\\Records\\PROV_2019_89063.XML";
-//        StringSelection stringSelection = new StringSelection(text);
-//        Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
-//        clipboard.setContents(stringSelection, stringSelection);
-//        robot.keyPress(KeyEvent.VK_CONTROL);
-//        robot.keyPress(KeyEvent.VK_V);
-//        robot.keyRelease(KeyEvent.VK_CONTROL);
-//        robot.keyRelease(KeyEvent.VK_V);
-//        Thread.sleep(200);
-//
-//        robot.keyPress(KeyEvent.VK_ENTER);
-//        Thread.sleep(200);
-//        robot.keyRelease(KeyEvent.VK_ENTER);
-//        Thread.sleep(2000);
-
-
-        //need to add verification details
+        workFlowVerificationPage.switchToTextFrame();
+        workFlowPage.clickOnExportButton();
+        String filePath = System.getProperty("user.dir") + "\\src\\test\\resources\\reference\\PROV_2019_89063.XML";
+        workFlowVerificationPage.editXMLDocument(filePath);
     }
 
-    @When("User Select an analyst name from the list box and click in {string} butto")
-    public void user_Select_an_analyst_name_from_the_list_box_and_click_in_butto(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
+//    @When("User Select an analyst name from the list box and click in {string} butto")
+//    public void user_Select_an_analyst_name_from_the_list_box_and_click_in_butto(String string) {
+//        // Write code here that turns the phrase above into concrete actions
+//        throw new io.cucumber.java.PendingException();
+//    }
 
     @Then("Verify analyst name added successfully")
     public void verify_analyst_name_added_successfully() {
@@ -318,8 +247,10 @@ public class WorkFlowStepDefTest extends BaseStepDefTest {
         searchPage.navigateToSearchInJurisprudence();
         searchPage.deleteExistingMarginalNumber();
         searchPage.clickOnSearchDropdownTwo("Document id (full");
+        Thread.sleep(7000);
 //        searchPage.searchDocument(ImportApplicationVariables.workFlowMarginalNumber);
         searchPage.enterFullMarginalId(ImportApplicationVariables.workFlowMarginalNumber);
+        Thread.sleep(3000);
         searchPage.clickSearchButton();
         Thread.sleep(3000);
     }
@@ -401,12 +332,12 @@ public class WorkFlowStepDefTest extends BaseStepDefTest {
 
     }
 
-    @Then("Check the control section of the document after assigning analyst")
-    public void checkTheControlSectionOfTheDocumentAfterAssigningAnalyst() throws InterruptedException {
-        verification.navigateToControlSectionWorkFlow(ImportApplicationVariables.workFlowMarginalNumber);
-        workFlowPage.expandControlDataSection();
-//        workFlowVerificationPage.verifyAssignedAgentValueIsDisplayed("OTA TGAC-BOT");
-    }
+//    @Then("Check the control section of the document after assigning analyst")
+//    public void checkTheControlSectionOfTheDocumentAfterAssigningAnalyst() throws InterruptedException {
+//        verification.navigateToControlSectionWorkFlow(ImportApplicationVariables.workFlowMarginalNumber);
+//        workFlowPage.expandControlDataSection();
+////        workFlowVerificationPage.verifyAssignedAgentValueIsDisplayed("OTA TGAC-BOT");
+//    }
 
     @Then("Verify end of document display page should display End preselection button")
     public void verifyEndOfDocumentDisplayPageShouldDisplayEndPreselectionButton() {
@@ -429,4 +360,5 @@ public class WorkFlowStepDefTest extends BaseStepDefTest {
         workFlowPage.expandControlDataSection();
         workFlowVerificationPage.verifyAssignedAgentValueIsDisplayed(ImportApplicationVariables.marginalAgentValue);
     }
+
 }

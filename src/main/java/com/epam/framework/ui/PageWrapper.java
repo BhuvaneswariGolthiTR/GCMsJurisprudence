@@ -647,4 +647,59 @@ public abstract class PageWrapper extends Browser {
         }
     }
 
+    public void saveAsFileUsingRobot(String filePath) throws InterruptedException, AWTException {
+        Robot robot = new Robot();
+        Thread.sleep(200);
+        robot.keyPress(KeyEvent.VK_F11);
+        Thread.sleep(200);
+        robot.keyRelease(KeyEvent.VK_F11);
+        Thread.sleep(2000);
+        Thread.sleep(2000);
+        robot.keyPress(KeyEvent.VK_ALT);
+        robot.keyPress(KeyEvent.VK_N);
+        Thread.sleep(200);
+        robot.keyRelease(KeyEvent.VK_ALT);
+        robot.keyRelease(KeyEvent.VK_N);
+        Thread.sleep(200);
+        robot.keyPress(KeyEvent.VK_TAB);
+        Thread.sleep(200);
+        robot.keyRelease(KeyEvent.VK_TAB);
+        Thread.sleep(200);
+        robot.keyPress(KeyEvent.VK_DOWN);
+        Thread.sleep(200);
+        robot.keyRelease(KeyEvent.VK_DOWN);
+        Thread.sleep(200);
+        robot.keyPress(KeyEvent.VK_DOWN);
+        Thread.sleep(200);
+        robot.keyRelease(KeyEvent.VK_DOWN);
+        Thread.sleep(200);
+        robot.keyPress(KeyEvent.VK_ENTER);
+        Thread.sleep(200);
+        robot.keyRelease(KeyEvent.VK_ENTER);
+        Thread.sleep(2000);
+        StringSelection stringSelection = new StringSelection(filePath);
+        Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+        clipboard.setContents(stringSelection, stringSelection);
+        robot.keyPress(KeyEvent.VK_CONTROL);
+        robot.keyPress(KeyEvent.VK_V);
+        robot.keyRelease(KeyEvent.VK_CONTROL);
+        robot.keyRelease(KeyEvent.VK_V);
+        Thread.sleep(2000);
+        robot.keyPress(KeyEvent.VK_ENTER);
+        Thread.sleep(200);
+        robot.keyRelease(KeyEvent.VK_ENTER);
+        Thread.sleep(2000);
+        robot.keyPress(KeyEvent.VK_F11);
+        Thread.sleep(200);
+        robot.keyRelease(KeyEvent.VK_F11);
+        Thread.sleep(200);
+        robot.keyPress(KeyEvent.VK_ALT);
+        robot.keyPress(KeyEvent.VK_F4);
+        robot.keyRelease(KeyEvent.VK_ALT);
+        robot.keyRelease(KeyEvent.VK_F4);
+
+        Thread.sleep(2000);
+
+    }
+
 }

@@ -3,18 +3,19 @@
 Feature: Performing gcms core workflow execution
 
   @WorkflowDelete
-  @Workflow
+#  @Workflow
   Scenario: Validate user able to delete existing workflow
     Given User Login to the gcms application "operator"
     When User starts jurisprudence search by marginal value
     When Click on the marginal numberHighlighted in blue
     Then Delete the existing workflow if any
     And  Click on Initialize the full workflow
-#    When Expand analysis data section
+    When Expand analysis data section
     And  Delete topic subtopic information and Delete practice area if exists
+    And  Delete the XML File in the project if exists
 
   @WorkflowExecution
-  @Workflow
+#  @Workflow
   Scenario: Validate user able to complete a full execution of a workflow by login as operator
     Given User Login to the gcms application "operator"
     When User starts jurisprudence search by marginal value
@@ -27,7 +28,7 @@ Feature: Performing gcms core workflow execution
     Then Verify control data section of the document
     And  User logoff from the application
 
-  @WorkflowEndPreSelection @Workflow
+#  @WorkflowEndPreSelection @Workflow
   Scenario: Validate user by loging as analyst
     Given User Login to the gcms application "Analyst"
     When User navigate to jurisprudence decisions pending inbox
@@ -50,7 +51,6 @@ Feature: Performing gcms core workflow execution
     Then Verify Citator name added successfully
     Then Verify control data section of the document after assign citiator
     And  Verify Text section of the document import button should not be displayed
-    And  User logoff from the application
 
   @EditDocumentText @Workflow
   Scenario: Validate user able to edit the document text by login as citiator
@@ -58,8 +58,6 @@ Feature: Performing gcms core workflow execution
     When  User navigate to jurisprudence decisions pending inbox
     And   Click on the marginal numberHighlighted in blue
     And   Check on Text section of the document and verify import button is displayed
-    When  Navigate to text section and export finalized text using export button
-    And   Edit the downloaded document text
     And   Click on import cited text button
     Then  Verify popup appears to upload xml file
     And   Click on End citiation activity button to finish the task

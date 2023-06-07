@@ -223,13 +223,13 @@ public class GCMSJurisprudenceStepDefTest extends BaseStepDefTest {
     }
 
     @Then("Verify selected values are displayed under Topic and Subtopic fields")
-    public void verifySelectedValuesAreDisplayedUnderTopicAndSubtopicFields() {
+    public void verifySelectedValuesAreDisplayedUnderTopicAndSubtopicFields() throws InterruptedException {
         topicVerification.verifySelectedTopicValueDisplayed();
         topicVerification.verifySelectedSubTopicValueDisplayed();
     }
 
     @And("Delete the both added topic and subtopic values")
-    public void deleteTheBothAddedTopicAndSubtopicValues() {
+    public void deleteTheBothAddedTopicAndSubtopicValues() throws InterruptedException {
         topicPage.deleteTopicAndSubTopicEntries();
     }
 
@@ -249,7 +249,7 @@ public class GCMSJurisprudenceStepDefTest extends BaseStepDefTest {
     }
 
     @Then("Verify selected value entries using code displayed under Topic and Subtopic fields")
-    public void verifySelectedValueEntriesUsingCodeDisplayedUnderTopicAndSubtopicFields() {
+    public void verifySelectedValueEntriesUsingCodeDisplayedUnderTopicAndSubtopicFields() throws InterruptedException {
         topicVerification.verifyTopicSubTopicEntriesUsingCodeAreDisplayed();
     }
 
