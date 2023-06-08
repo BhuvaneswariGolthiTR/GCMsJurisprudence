@@ -16,8 +16,8 @@ import fun.mike.dmp.Diff;
 import fun.mike.dmp.DiffMatchPatch;
 import fun.mike.dmp.Operation;
 import org.apache.commons.io.FileUtils;
-import org.apache.log4j.Logger;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -60,7 +60,7 @@ public class HelperReadJsonAndCreateClass {
     private HashMap<String, PageObject> pageObjectMap;
 
     // Logger
-    private static final Logger logger = Logger.getLogger(HelperReadJsonAndCreateClass.class);
+    private static final Logger logger = LogManager.getLogger(HelperReadJsonAndCreateClass.class);
 
     public void readJSON() {
         String languageType;
@@ -95,7 +95,7 @@ public class HelperReadJsonAndCreateClass {
             Path path = Paths.get(pageObjectRecordPath);
             if (!Files.exists(path))
                 Files.createDirectories(path);
-                File recordFile = new File(pageObjectRecordPath+ RECORDS_JSON_FILE);
+            File recordFile = new File(pageObjectRecordPath+ RECORDS_JSON_FILE);
             if (recordFile.exists()) {
                 try (FileReader jsonReader = new FileReader(recordFile)) {
                     Records pageObjectRecords = parseJsonToObject(jsonReader, Records.class);

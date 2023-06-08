@@ -75,7 +75,7 @@ public abstract class Locator {
 
         @Override
         public Locator format(String... args) {
-            String dynamicLocator = String.format(getLocatorString(), args);
+            String dynamicLocator = String.format(getLocatorString(), (Object[]) args);
             return new XpathLocator(By.xpath(dynamicLocator), dynamicLocator);
         }
     }
@@ -88,7 +88,7 @@ public abstract class Locator {
 
         @Override
         public Locator format(String... args) {
-            String dynamicLocator = String.format(getLocatorString(), args);
+            String dynamicLocator = String.format(getLocatorString(), (Object[]) args);
             return new ClassNameLocator(By.className(dynamicLocator), dynamicLocator);
         }
     }
@@ -101,7 +101,7 @@ public abstract class Locator {
 
         @Override
         public Locator format(String... args) {
-            String dynamicLocator = String.format(getLocatorString(), args);
+            String dynamicLocator = String.format(getLocatorString(), (Object[]) args);
             return new CssSelectorLocator(By.cssSelector(dynamicLocator), dynamicLocator);
         }
     }
@@ -114,7 +114,7 @@ public abstract class Locator {
 
         @Override
         public Locator format(String... args) {
-            String dynamicLocator = String.format(getLocatorString(), args);
+            String dynamicLocator = String.format(getLocatorString(), (Object[]) args);
             return new IdLocator(By.id(dynamicLocator), dynamicLocator);
         }
     }
@@ -127,7 +127,7 @@ public abstract class Locator {
 
         @Override
         public Locator format(String... args) {
-            String dynamicLocator = String.format(getLocatorString(), args);
+            String dynamicLocator = String.format(getLocatorString(), (Object[]) args);
             return new NameLocator(By.name(dynamicLocator), dynamicLocator);
         }
     }
@@ -140,7 +140,7 @@ public abstract class Locator {
 
         @Override
         public Locator format(String... args) {
-            String dynamicLocator = String.format(getLocatorString(), args);
+            String dynamicLocator = String.format(getLocatorString(), (Object[]) args);
             return new PartialLinkTextLocator(By.partialLinkText(dynamicLocator), dynamicLocator);
         }
     }
@@ -153,7 +153,7 @@ public abstract class Locator {
 
         @Override
         public Locator format(String... args) {
-            String dynamicLocator = String.format(getLocatorString(), args);
+            String dynamicLocator = String.format(getLocatorString(), (Object[]) args);
             return new LinkTextLocator(By.linkText(dynamicLocator), dynamicLocator);
         }
     }
@@ -166,7 +166,7 @@ public abstract class Locator {
 
         @Override
         public Locator format(String... args) {
-            String dynamicLocator = String.format(getLocatorString(), args);
+            String dynamicLocator = String.format(getLocatorString(), (Object[]) args);
             return new TagNameLocator(By.tagName(dynamicLocator), dynamicLocator);
         }
     }

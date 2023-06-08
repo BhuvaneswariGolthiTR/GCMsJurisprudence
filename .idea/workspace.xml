@@ -5,15 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad806cf7-55e6-42e6-8bad-5e62dde67075" name="Changes" comment="EditButton">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GCMSJurisprudenceTopicPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GCMSJurisprudenceTopicPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GcmsCoreDocumentWorkFlowPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GcmsCoreDocumentWorkFlowPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/pages/verifications/GCMSJurisprudenceTopicPageVerification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/pages/verifications/GCMSJurisprudenceTopicPageVerification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/runners/CucumberJunitRunnerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/runners/CucumberJunitRunnerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/stepdefinitions/WorkFlowStepDefTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/stepdefinitions/WorkFlowStepDefTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/gcmsCoreSpainWorkflow.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/gcmsCoreSpainWorkflow.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/gcms.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/gcms.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/system.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/system.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/framework/ui/Locator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/framework/ui/Locator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/framework/ui/PageWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/framework/ui/PageWrapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/framework/ui/driver/DriverManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/framework/ui/driver/DriverManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/framework/ui/pageobjectgenerator/helper/HelperReadJsonAndCreateClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/framework/ui/pageobjectgenerator/helper/HelperReadJsonAndCreateClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/framework/ui/pageobjectgenerator/pageObjectTemplate/PageObjectsTemplateJava.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/framework/ui/pageobjectgenerator/pageObjectTemplate/PageObjectsTemplateJava.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/framework/ui/pageobjectgenerator/pageObjectWriter/PageObjectWriterJava.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/framework/ui/pageobjectgenerator/pageObjectWriter/PageObjectWriterJava.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/framework/ui/pageobjectgenerator/verificationTemplate/PageVerificationTemplateJava.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/framework/ui/pageobjectgenerator/verificationTemplate/PageVerificationTemplateJava.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +76,13 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
@@ -110,7 +121,7 @@
       <recent name="com.epam.stepdefinitions" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.gcmsServiceTests [clean]">
+  <component name="RunManager" selected="Gradle.GCMsJurisprudence [buildDependents]">
     <configuration name="Runner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -147,6 +158,29 @@
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="GCMsJurisprudence [buildDependents]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="buildDependents" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
     <configuration name="GCMsJurisprudence [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -168,6 +202,7 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
     <configuration name="gcmsServiceTests [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -189,6 +224,7 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
     <configuration default="true" type="JetRunConfigurationType">
@@ -206,8 +242,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.gcmsServiceTests [clean]" />
+        <item itemvalue="Gradle.GCMsJurisprudence [buildDependents]" />
         <item itemvalue="Gradle.GCMsJurisprudence [build]" />
+        <item itemvalue="Gradle.gcmsServiceTests [clean]" />
         <item itemvalue="Gradle.CucumberJunitRunnerTest" />
         <item itemvalue="Application.Runner" />
       </list>

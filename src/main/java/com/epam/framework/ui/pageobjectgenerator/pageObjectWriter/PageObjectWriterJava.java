@@ -6,8 +6,8 @@ import com.epam.framework.ui.pageobjectgenerator.pageObjectTemplate.PageObjectsT
 import com.epam.framework.ui.pageobjectgenerator.pojo.Locators;
 import com.epam.framework.ui.pageobjectgenerator.pojo.PageObject;
 import com.epam.framework.ui.pageobjectgenerator.verificationTemplate.PageVerificationTemplate;
-import org.apache.log4j.Logger;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -22,7 +22,7 @@ public class PageObjectWriterJava implements PageObjectWriter {
     PageVerificationTemplate pageVerificationTemplate;
     private FileWriter myWriter;
 
-    private static final Logger logger = Logger.getLogger(PageObjectWriterJava.class);
+    private static final Logger logger = LogManager.getLogger(PageObjectWriterJava.class);
 
     public PageObjectWriterJava(PageObject pageObject, PageObjectsTemplate pageObjectsTemplate,
                                 PageVerificationTemplate pageVerificationTemplate) {
@@ -78,57 +78,57 @@ public class PageObjectWriterJava implements PageObjectWriter {
     private void writeVerificationMethods(FileWriter myWriter) throws IOException {
         for (Locators locator : pageObject.getLocators()) {
             if(!locator.getElementVerificationMethods().equalsIgnoreCase("")){
-            for (String verification : locator.getElementVerificationMethods().split(",")) {
-                boolean methodFound = false;
-                switch (verification.trim().toLowerCase()) {
-                    case "verifyelementstate":
-                        myWriter.write(pageVerificationTemplate.getVerifyElementStateMethod(locator.getElementName()));
-                        methodFound = true;
-                        break;
-                    case "verifyelementvalue":
-                        myWriter.write(pageVerificationTemplate.getVerifyElementValue(locator.getElementName()));
-                        methodFound = true;
-                        break;
-                    case "verifyelementattribute":
-                        myWriter.write(pageVerificationTemplate.getVerifyElementAttribute(locator.getElementName()));
-                        methodFound = true;
-                        break;
-                    case "verifyiselementpresent":
-                        myWriter.write(pageVerificationTemplate.getVerifyElementPresence(locator.getElementName()));
-                        methodFound = true;
-                        break;
-                    case "verifyelementdisplayed":
-                        myWriter.write(pageVerificationTemplate.getVerifyElementDisplay(locator.getElementName()));
-                        methodFound = true;
-                        break;
-                    case "verifydropdownvalues":
-                        myWriter.write(pageVerificationTemplate.getVerifyDropdownValues(locator.getElementName()));
-                        methodFound = true;
-                        break;
-                    case "verifyelementtext":
-                        myWriter.write(pageVerificationTemplate.getVerifyElementText(locator.getElementName()));
-                        methodFound = true;
-                        break;
-                    case "verifyelementchecked":
-                        myWriter.write(pageVerificationTemplate.getVerifyElementIsChecked(locator.getElementName()));
-                        methodFound = true;
-                        break;
-                    case "verifyelementselected":
-                        myWriter.write(pageVerificationTemplate.getVerifyElementIsSelected(locator.getElementName()));
-                        methodFound = true;
-                        break;
-                    default:
-                        break;
+                for (String verification : locator.getElementVerificationMethods().split(",")) {
+                    boolean methodFound = false;
+                    switch (verification.trim().toLowerCase()) {
+                        case "verifyelementstate":
+                            myWriter.write(pageVerificationTemplate.getVerifyElementStateMethod(locator.getElementName()));
+                            methodFound = true;
+                            break;
+                        case "verifyelementvalue":
+                            myWriter.write(pageVerificationTemplate.getVerifyElementValue(locator.getElementName()));
+                            methodFound = true;
+                            break;
+                        case "verifyelementattribute":
+                            myWriter.write(pageVerificationTemplate.getVerifyElementAttribute(locator.getElementName()));
+                            methodFound = true;
+                            break;
+                        case "verifyiselementpresent":
+                            myWriter.write(pageVerificationTemplate.getVerifyElementPresence(locator.getElementName()));
+                            methodFound = true;
+                            break;
+                        case "verifyelementdisplayed":
+                            myWriter.write(pageVerificationTemplate.getVerifyElementDisplay(locator.getElementName()));
+                            methodFound = true;
+                            break;
+                        case "verifydropdownvalues":
+                            myWriter.write(pageVerificationTemplate.getVerifyDropdownValues(locator.getElementName()));
+                            methodFound = true;
+                            break;
+                        case "verifyelementtext":
+                            myWriter.write(pageVerificationTemplate.getVerifyElementText(locator.getElementName()));
+                            methodFound = true;
+                            break;
+                        case "verifyelementchecked":
+                            myWriter.write(pageVerificationTemplate.getVerifyElementIsChecked(locator.getElementName()));
+                            methodFound = true;
+                            break;
+                        case "verifyelementselected":
+                            myWriter.write(pageVerificationTemplate.getVerifyElementIsSelected(locator.getElementName()));
+                            methodFound = true;
+                            break;
+                        default:
+                            break;
+                    }
+
+                    if (!methodFound) {
+                        throw new VerificationMethodCreationException("Verification method " + verification + " not found");
+                    }
+
+
                 }
-
-                if (!methodFound) {
-                    throw new VerificationMethodCreationException("Verification method " + verification + " not found");
-                }
-
-
             }
         }
-    }
         logger.info("Finished Writing Verification Class For "+pageObject.getPageName());
     }
 
@@ -186,10 +186,10 @@ public class PageObjectWriterJava implements PageObjectWriter {
     void writeLocatorMethods(FileWriter myWriter) throws IOException {
         for (Locators locator : pageObject.getLocators()) {
             if(!locator.getElementActionMethods().equalsIgnoreCase("")){
-            String[] locatorActionsList = locator.getElementActionMethods().split(",");
-            writeLocatorActions(locator,locatorActionsList);
+                String[] locatorActionsList = locator.getElementActionMethods().split(",");
+                writeLocatorActions(locator,locatorActionsList);
+            }
         }
-    }
         logger.info("Finished Writing Action Methods For Locators");
     }
 

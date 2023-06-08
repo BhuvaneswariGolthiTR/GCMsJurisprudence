@@ -10,13 +10,12 @@ import org.slf4j.LoggerFactory;
 
 import java.time.Duration;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 /**
  * This class is responsible for managing the driver initialization maintaining the driver instances per thread for parallel execution.
  * This class provides the global way to access the driver once it is initialized.
  *
- * 
+ *
  */
 public class DriverManager {
 

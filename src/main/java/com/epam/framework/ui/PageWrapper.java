@@ -65,7 +65,7 @@ public abstract class PageWrapper extends Browser {
 
     public String formatLocator(String locator, String... formatters) {
         if (LocatorFormatter.getNumberOfFormatters(locator) == formatters.length) {
-            return String.format(locator, formatters);
+            return String.format(locator, (Object[]) formatters);
         } else {
             throw new IncorrectFormattersException(
                     "The number of formatters in locator does not match with number of formatters provided");

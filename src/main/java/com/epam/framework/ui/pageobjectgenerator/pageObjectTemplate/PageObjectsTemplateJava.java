@@ -3,12 +3,13 @@ package com.epam.framework.ui.pageobjectgenerator.pageObjectTemplate;
 import com.epam.framework.core.TestContext;
 import com.epam.framework.core.logging.logger.LogLevel;
 import com.epam.framework.ui.pageobjectgenerator.constant.TemplateConstants;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 
 public class PageObjectsTemplateJava implements PageObjectsTemplate {
 
-    private static final Logger logger = Logger.getLogger(PageObjectsTemplateJava.class);
+    private static final Logger logger = LogManager.getLogger(PageObjectsTemplateJava.class);
 
     @Override
     public String getClassConstructionTemplate(String className) {
@@ -389,7 +390,7 @@ public class PageObjectsTemplateJava implements PageObjectsTemplate {
         TestContext.getLogger().log(LogLevel.INFO,"Writing enter text in comboBox element "+methodName);
 
         return String.format(TemplateConstants.SINGLE_TAB
-                    + "public void enterTextIn%sComboBox(String... formatArgs){"
+                + "public void enterTextIn%sComboBox(String... formatArgs){"
                 + TemplateConstants.SINGLE_NEWLINE
                 + TemplateConstants.DOUBLE_TAB+"enterTextInComboBox(%s,\"%s\", formatArgs);"
                 + TemplateConstants.SINGLE_NEWLINE
@@ -446,6 +447,3 @@ public class PageObjectsTemplateJava implements PageObjectsTemplate {
         return "}\n";
     }
 }
-
-
-

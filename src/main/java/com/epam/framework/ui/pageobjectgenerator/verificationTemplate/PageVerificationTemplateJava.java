@@ -1,7 +1,8 @@
 package com.epam.framework.ui.pageobjectgenerator.verificationTemplate;
 
 import com.epam.framework.ui.pageobjectgenerator.constant.TemplateConstants;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Page Object Verification Template for Java. Contains
@@ -13,16 +14,16 @@ import org.apache.log4j.Logger;
  */
 
 public class PageVerificationTemplateJava implements PageVerificationTemplate {
-    private static final Logger logger = Logger.getLogger(PageVerificationTemplateJava.class);
+    private static final Logger logger = LogManager.getLogger(PageVerificationTemplateJava.class);
 
     @Override
     public String getClassTemplateWithParent(String packagePath, String parentClassName) {
         logger.info("Creating Class "+parentClassName+"Verification");
         return String.format("package %s.verifications;"
-                + TemplateConstants.DOUBLE_NEWLINE+ "import %s"+".actions"+".%s;"
-                + TemplateConstants.SINGLE_NEWLINE+ "import org.openqa.selenium.WebDriver;"
-                + TemplateConstants.DOUBLE_NEWLINE+ "public class %sVerification extends %s {"
-                + TemplateConstants.SINGLE_NEWLINE,
+                        + TemplateConstants.DOUBLE_NEWLINE+ "import %s"+".actions"+".%s;"
+                        + TemplateConstants.SINGLE_NEWLINE+ "import org.openqa.selenium.WebDriver;"
+                        + TemplateConstants.DOUBLE_NEWLINE+ "public class %sVerification extends %s {"
+                        + TemplateConstants.SINGLE_NEWLINE,
                 packagePath, packagePath, parentClassName, parentClassName, parentClassName);
     }
 
@@ -36,7 +37,7 @@ public class PageVerificationTemplateJava implements PageVerificationTemplate {
                 + TemplateConstants.SINGLE_NEWLINE
                 + TemplateConstants.SINGLE_TAB+"}"+ TemplateConstants.DOUBLE_NEWLINE, parentClassName);
     }
-//what is element state?
+    //what is element state?
     @Override
     public String getVerifyElementStateMethod(String locatorName) {
         logger.info("Writing Verify Element Status Method For Element "+locatorName);
