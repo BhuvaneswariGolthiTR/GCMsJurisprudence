@@ -74,7 +74,7 @@ public class GCMSJurisprudenceTopicPageVerification extends GCMSJurisprudenceTop
             System.err.println("Practice Area exists");
             for (int i = 0; i < element.size(); i++) {
                 setRemovePracticeArea();
-                clickOnOkButton();
+                clickOkAfterEditButton();
             }
         } else {
             System.err.println("Practice Area deleted");

@@ -1,6 +1,7 @@
 package com.epam.pages.actions;
 
 import com.epam.framework.ui.PageWrapper;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -128,11 +129,15 @@ public class GcmsCoreDocumentWorkFlowPage extends PageWrapper {
     }
 
     public void clickOnAnalysisValueEllipse() {
-        clickElementUsingJS(analysisValueEllipse, "Analysis Value ellipse button");
+//        clickElementUsingJS(analysisValueEllipse, "Analysis Value ellipse button");
+        WebElement element = webDriver.findElement(By.cssSelector("input#nivel + input"));
+        javascriptExecutor.executeScript("arguments[0].click()",element);
     }
 
     public void clickOnQualityEllipse() {
-        clickElementUsingJS(qualityEllipse, "Quality Value ellipse button");
+//        clickElementUsingJS(qualityEllipse, "Quality Value ellipse button");
+        WebElement element = webDriver.findElement(By.cssSelector("input#calidad + input"));
+        javascriptExecutor.executeScript("arguments[0].click()",element);
     }
 
     public void clickOnExportButton() throws InterruptedException {
@@ -147,19 +152,26 @@ public class GcmsCoreDocumentWorkFlowPage extends PageWrapper {
     }
 
     public void clickOnAddPracticeArea() {
-        clickElementUsingJS(addPracticeArea, "Add Practice Area");
+//        clickElementUsingJS(addPracticeArea, "Add Practice Area");
+        WebElement element = webDriver.findElement(By.name("button.annadirAreas"));
+        javascriptExecutor.executeScript("arguments[0].click()",element);
     }
     public void clickOnAreaValueEllipse() {
-        clickElementUsingJS(areaValueEllipse, "Area Value ellipse button");
+//        clickElementUsingJS(areaValueEllipse, "Area Value ellipse button");
+        WebElement element = webDriver.findElement(By.cssSelector("input[emsg*='Practice Area'] + input"));
+        javascriptExecutor.executeScript("arguments[0].click()",element);
     }
     public void clickOnAnalistaValueEllipse() {
-        clickElementUsingJS(analistaValueEllipse, "Analista Value ellipse button");
+//        clickElementUsingJS(analistaValueEllipse, "Analista Value ellipse button");
+        WebElement element = webDriver.findElement(By.cssSelector("input[id*='.analystName'] + input"));
+        javascriptExecutor.executeScript("arguments[0].click()",element);
     }
+
     public void selectPrincipalDropDownValue() throws AWTException, InterruptedException {
         //clickElementUsingJS(principalDropDown,"principal drop down value");
         //selectItemFromDropdownByValue("S",principalDropDown,"yes button");
         Robot robot = new Robot();
-        WebElement e = getElement(formatLocator(principalDropDown));
+        WebElement e = webDriver.findElement(By.cssSelector("select[id*='.principal']"));
         e.sendKeys("");
         String fine = "Y";
         fine = fine.toUpperCase();

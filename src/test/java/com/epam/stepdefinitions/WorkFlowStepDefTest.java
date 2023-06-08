@@ -52,12 +52,14 @@ public class WorkFlowStepDefTest extends BaseStepDefTest {
         Thread.sleep(5000);
         detailsVerificationPage.clickAnalysisDataLink();
         Thread.sleep(2000);
+        getDriver().switchTo().defaultContent();
+        Thread.sleep(4000);
         detailsVerificationPage.deletePracticeAreaIfExists();
     }
 
     @And("Delete the XML File in the project if exists")
     public void deleteTheXMLFileInTheProjectIfExists() {
-        String filePath = System.getProperty("user.dir")+"\\src\\test\\resources\\Records\\PROV_2019_89063.XML";
+        String filePath = System.getProperty("user.dir") + "\\src\\test\\resources\\reference\\PROV_2019_89063.XML";
         workFlowVerificationPage.deleteTheExistingFile(filePath);
     }
 
@@ -141,7 +143,9 @@ public class WorkFlowStepDefTest extends BaseStepDefTest {
 
     @When("User expands Analysis data section and update analysis level and quality values")
     public void user_expands_Analysis_data_section_and_update_analysis_level_and_quality_values() throws InterruptedException {
-        detailPage.clickAnalysisDataLink();
+//        detailPage.expandAnalysisDataSection();
+        detailsVerificationPage.clickAnalysisDataLink();
+        Thread.sleep(5000);
         workFlowVerificationPage.enterAnalysisAndQualityValuesFromTheList(ImportApplicationVariables.analysisValue, ImportApplicationVariables.qualityValue);
         //need to add verification for added values
     }
@@ -350,7 +354,8 @@ public class WorkFlowStepDefTest extends BaseStepDefTest {
         workFlowVerificationPage.clickOnAreaValueEllipseAndSelectTheValueFromTheList(ImportApplicationVariables.areaValue);
         workFlowVerificationPage.clickOnAnalistaValueEllipseAndSelectTheValueFromTheList(ImportApplicationVariables.analistaValue);
         workFlowPage.selectPrincipalDropDownValue();
-        workFlowPage.clickOnOkButton();
+        detailPage.clickOkAfterEditButton();
+
         Thread.sleep(7000);
     }
 

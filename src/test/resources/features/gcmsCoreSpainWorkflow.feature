@@ -3,7 +3,7 @@
 Feature: Performing gcms core workflow execution
 
   @WorkflowDelete
-#  @Workflow
+  @Workflow
   Scenario: Validate user able to delete existing workflow
     Given User Login to the gcms application "operator"
     When User starts jurisprudence search by marginal value
@@ -15,7 +15,7 @@ Feature: Performing gcms core workflow execution
     And  Delete the XML File in the project if exists
 
   @WorkflowExecution
-#  @Workflow
+  @Workflow
   Scenario: Validate user able to complete a full execution of a workflow by login as operator
     Given User Login to the gcms application "operator"
     When User starts jurisprudence search by marginal value
@@ -28,7 +28,7 @@ Feature: Performing gcms core workflow execution
     Then Verify control data section of the document
     And  User logoff from the application
 
-#  @WorkflowEndPreSelection @Workflow
+  @WorkflowEndPreSelection @Workflow
   Scenario: Validate user by loging as analyst
     Given User Login to the gcms application "Analyst"
     When User navigate to jurisprudence decisions pending inbox
