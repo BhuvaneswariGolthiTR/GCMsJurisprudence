@@ -20,7 +20,7 @@ public class GCMSJurisprudenceSearchPageVerification extends GCMSJurisprudenceSe
         clickOnWipModule();
         navigateToSearchInJurisprudence();
         clickClearSearchField();
-        clickOnSearchDropdown("Original");
+        clickOnSearchDropdown("Original file name");
         sendTextUsingRobot(getSearchField(),"Document",metadataFile);
         clickSearchButton();
     }

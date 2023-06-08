@@ -27,6 +27,9 @@ public class GCMSClassificationEntriesPage extends PageWrapper {
     private static final String okButton = "xpath -> //input[@id='btnOk']";
     private static final String goBackButton = "xpath -> //input[@id='btnGoBack']";
     private static final String newClassificationEntry = "xpath -> //table[@id='fichasAlfabeticas']//td[contains(text(),'%s')]";
+    private static final String text = "xpath -> //input[@id='text']";
+    private static final String classificationDelete = "xpath -> //a[text()='Delete' or text()='Apagar' or text()='Borrar']";
+    private static final String yesButton = "xpath -> //input[@id='btnSubmit']";
 
     public GCMSClassificationEntriesPage(WebDriver webDriver) {
         super(webDriver);
@@ -54,10 +57,6 @@ public class GCMSClassificationEntriesPage extends PageWrapper {
 
     public void clickAnalysisDataLink() {
         clickElementUsingJS(analysisDataLink, "Analysis Data Section");
-    }
-
-    public void clickNewButton() {
-        clickElementUsingJS(newButton, "New Classification Entry");
     }
 
     public void clickThesauriEllipsi() {
@@ -108,7 +107,7 @@ public class GCMSClassificationEntriesPage extends PageWrapper {
 
     public void expandAnalysisDataSection() {
         if(ImportApplicationVariables.region.equals("GULF")){
-            clickElementUsingJS("xpath -> //input[@id='text']","Text");
+            clickElementUsingJS(text,"Text");
         }
         clickAnalysisDataLink();
     }
@@ -118,12 +117,12 @@ public class GCMSClassificationEntriesPage extends PageWrapper {
         scrollInView(classificationEntriesTable);
     }
 
-    public void clickNewButton(String... formatArgs) throws InterruptedException {
+    public void clickNewButton(String... formatArgs){
         moveToClassificationEntriesSection();
         try {
             if (isElementDisplayed(getNewClassificationEntry(ImportApplicationVariables.fullMarginalId))) {
                 deleteClassificationEntry();
-                switchToIframeByElement(classificationEntriesIframe);
+                switchToIframeByElement(classificationEntriesIframe,formatArgs);
             }
         }
         catch (TimeoutException ignored) {
@@ -163,15 +162,15 @@ public class GCMSClassificationEntriesPage extends PageWrapper {
 
     public void deleteClassificationEntry() {
         try{
-            scrollInView("xpath -> //a[text()='Delete' or text()='Apagar' or text()='Borrar']");
-            clickElementUsingJS("xpath -> //a[text()='Delete' or text()='Apagar' or text()='Borrar']", "Delete");
+            scrollInView(classificationDelete);
+            clickElementUsingJS(classificationDelete, "Delete");
         }catch (StaleElementReferenceException e){
-            WebElement delete = getElement("xpath -> //a[text()='Delete' or text()='Apagar' or text()='Borrar']");
-            scrollInView("xpath -> //a[text()='Delete' or text()='Apagar' or text()='Borrar']");
+            WebElement delete = getElement(classificationDelete);
+            javascriptExecutor.executeScript("arguments[0].scrollIntoView()",delete);
             javascriptExecutor.executeScript("arguments[0].click()",delete);
         }
         switchToNewWindow();
-        clickElementUsingJS("xpath -> //input[@id='btnSubmit']", "Yes");
+        clickElementUsingJS(yesButton, "Yes");
         switchToParentWindow();
     }
 

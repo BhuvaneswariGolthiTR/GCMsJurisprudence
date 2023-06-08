@@ -113,6 +113,6 @@ public class GCMSJurisprudenceReportsPage extends PageWrapper {
         robot.keyRelease(KeyEvent.VK_F4);
         robot.keyRelease(KeyEvent.VK_ALT);
 //        Thread.sleep(6000);
-
     }
+
 }

@@ -95,8 +95,8 @@ public class GCMSJurisprudenceSearchPage extends PageWrapper {
     }
 
     public void selectDocumentIdFull() throws AWTException, InterruptedException {
-        selectOptionFromDropDownUsingRobot(marginalDropdown,"Document id (full");
-        selectOptionFromDropDownUsingRobot(marginalDropdownTwo,"Document id (full");
+        selectOptionFromDropDownUsingRobot(marginalDropdown,"Document id (full)");
+        selectOptionFromDropDownUsingRobot(marginalDropdownTwo,"Document id (full)");
     }
 
     public void enterFullMarginalId(String fullMarginalId) throws AWTException, InterruptedException {
@@ -154,35 +154,7 @@ public class GCMSJurisprudenceSearchPage extends PageWrapper {
     }
 
     public void clickOnSearchDropdown(String value) throws AWTException, InterruptedException {
-        Robot robot = new Robot();
-        WebElement e = getElement(formatLocator(searchDropdown));
-        e.sendKeys("");
-        String fine = value;
-        fine = fine.toUpperCase();
-        char[] c = fine.toCharArray();
-        for (int k = 0; k < c.length; k++) {
-            int keyCode = (int) c[k];
-
-            System.err.println("keycodes:" + keyCode + "its value" + c[k]);
-            if(keyCode == 40){
-                robot.keyPress(KeyEvent.VK_SHIFT);
-                Thread.sleep(200);
-                robot.keyPress(KeyEvent.VK_9);
-                Thread.sleep(200);
-                robot.keyRelease(KeyEvent.VK_9);
-                Thread.sleep(200);
-                robot.keyRelease(KeyEvent.VK_SHIFT);
-            }
-            else if (keyCode == 32) {
-                robot.keyPress(KeyEvent.VK_SPACE);
-                Thread.sleep(200);
-                robot.keyRelease(KeyEvent.VK_SPACE);
-            } else {
-                robot.keyPress(keyCode);
-                robot.keyRelease(keyCode);
-            }
-        }
-
+        selectOptionFromDropDownUsingRobot(marginalDropdown,value);
     }
 
     public void clickOnSearchDropdownTwo(String value) throws AWTException, InterruptedException {
@@ -200,10 +172,6 @@ public class GCMSJurisprudenceSearchPage extends PageWrapper {
         clickElementUsingJS(workFlowLink, "workflowLink");
         clickElementUsingJS(analystLink, "analystLink");
         Thread.sleep(3000);
-    }
-
-    public void searchDocument(String value) throws AWTException {
-        sendTextUsingRobot(marginalDropdown,"Search",value);
     }
 
     public void deleteExistingMarginalNumber() throws InterruptedException {

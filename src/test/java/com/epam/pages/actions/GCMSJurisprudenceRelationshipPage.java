@@ -109,10 +109,9 @@ public class GCMSJurisprudenceRelationshipPage extends PageWrapper {
                 deleteMultipleRelationships();
                 switchToIframeByElement(relationshipsIframe);
             }
-        }catch (TimeoutException ignored){
         }
-//        WebElement multipleBtn = getElement(multipleButton);
-//        javascriptExecutor.executeScript("arguments[0].click()",multipleBtn);
+        catch (TimeoutException ignored) {
+        }
         clickAddMultiple();
     }
 
@@ -160,4 +159,3 @@ public class GCMSJurisprudenceRelationshipPage extends PageWrapper {
     }
 
 }
-

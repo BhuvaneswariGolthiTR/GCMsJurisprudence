@@ -17,16 +17,7 @@ public class WorkFlowStepDefTest extends BaseStepDefTest {
     GCMSJurisprudenceTopicPage detailPage = new GCMSJurisprudenceTopicPage(getDriver());
     GCMSJurisprudenceTopicPageVerification detailsVerificationPage = new GCMSJurisprudenceTopicPageVerification(getDriver());
     GcmsCoreDocumentWorkFlowPage workFlowPage = new GcmsCoreDocumentWorkFlowPage(getDriver());
-    GcmsUploadingMetadataPage gcmsUploadingMetadataPage = new GcmsUploadingMetadataPage(getDriver());
     GcmsCoreDocumentWorkFlowVerificationPage workFlowVerificationPage = new GcmsCoreDocumentWorkFlowVerificationPage(getDriver());
-
-    public WorkFlowStepDefTest() throws AWTException {
-    }
-
-//    @When("Expand control data section")
-//    public void expand_control_data_section() {
-//        workFlowPage.expandControlDataSection();
-//    }
 
     @Then("Delete the existing workflow if any")
     public void delete_the_existing_workflow_if_any() {
@@ -128,26 +119,19 @@ public class WorkFlowStepDefTest extends BaseStepDefTest {
     public void click_on_Renumerar_buttom() throws InterruptedException {
         workFlowVerificationPage.clickOnRenumberingButton();
         Thread.sleep(5000);
-        //add verification heere
-//        workFlowPage.clickOnGoBackButton();
-
     }
 
 
     @Then("Click on Edit button and verify document text")
     public void click_on_Edit_button_and_verify_document_text() {
         workFlowPage.clickOnEditButton();
-//        workFlowVerificationPage.verifyDocumentEditionTextPageIsDisplayed();
-
     }
 
     @When("User expands Analysis data section and update analysis level and quality values")
     public void user_expands_Analysis_data_section_and_update_analysis_level_and_quality_values() throws InterruptedException {
-//        detailPage.expandAnalysisDataSection();
         detailsVerificationPage.clickAnalysisDataLink();
         Thread.sleep(5000);
         workFlowVerificationPage.enterAnalysisAndQualityValuesFromTheList(ImportApplicationVariables.analysisValue, ImportApplicationVariables.qualityValue);
-        //need to add verification for added values
     }
 
     @When("Click on End pre-selection button")
@@ -204,7 +188,6 @@ public class WorkFlowStepDefTest extends BaseStepDefTest {
 
     @Then("Verify Citator name added successfully")
     public void verify_Citator_name_added_successfully() {
-        //need to add verification details
 
     }
 
@@ -216,12 +199,6 @@ public class WorkFlowStepDefTest extends BaseStepDefTest {
         String filePath = System.getProperty("user.dir") + "\\src\\test\\resources\\reference\\PROV_2019_89063.XML";
         workFlowVerificationPage.editXMLDocument(filePath);
     }
-
-//    @When("User Select an analyst name from the list box and click in {string} butto")
-//    public void user_Select_an_analyst_name_from_the_list_box_and_click_in_butto(String string) {
-//        // Write code here that turns the phrase above into concrete actions
-//        throw new io.cucumber.java.PendingException();
-//    }
 
     @Then("Verify analyst name added successfully")
     public void verify_analyst_name_added_successfully() {
@@ -240,10 +217,8 @@ public class WorkFlowStepDefTest extends BaseStepDefTest {
     @Then("Check the control section of the document")
     public void check_the_control_section_of_the_document() {
         workFlowPage.expandControlDataSection();
-//        workFlowVerificationPage.switchToControlDataFrame();
         workFlowVerificationPage.verifyAssignedAgentValueIsDisplayed(ImportApplicationVariables.agentValue);
         workFlowVerificationPage.verifyAssignedAgentValueIsDisplayed(ImportApplicationVariables.analysisAgentValue);
-
     }
 
     @When("User starts jurisprudence search by marginal value")
@@ -252,7 +227,6 @@ public class WorkFlowStepDefTest extends BaseStepDefTest {
         searchPage.deleteExistingMarginalNumber();
         searchPage.clickOnSearchDropdownTwo("Document id (full");
         Thread.sleep(7000);
-//        searchPage.searchDocument(ImportApplicationVariables.workFlowMarginalNumber);
         searchPage.enterFullMarginalId(ImportApplicationVariables.workFlowMarginalNumber);
         Thread.sleep(3000);
         searchPage.clickSearchButton();
@@ -269,10 +243,7 @@ public class WorkFlowStepDefTest extends BaseStepDefTest {
     public void userLoginToTheGcmsApplication(String role) throws InterruptedException, AWTException, IOException {
         ImportApplicationVariables.setVariables();
         loginPage.accessURL(ImportApplicationVariables.loginURL);
-        Thread.sleep(5000);
         loginPage.setLanguage();
-        // loginPage.changeLanguageToEnglish();
-        Thread.sleep(2000);
         if (role.equals("operator")) {
             loginPage.setUsername(ImportApplicationVariables.username);
         } else if (role.equals("Analyst")) {
@@ -292,7 +263,7 @@ public class WorkFlowStepDefTest extends BaseStepDefTest {
     }
 
     @Then("Verify control data section of the document after workflow")
-    public void verify_control_data_section_of_the_document_after_workflow() throws InterruptedException {
+    public void verify_control_data_section_of_the_document_after_workflow(){
         workFlowPage.expandControlDataSection();
         workFlowVerificationPage.verifyAssignedAgentValueIsDisplayed(ImportApplicationVariables.agentFilterValue);
         workFlowVerificationPage.verifyAssignedAgentValueIsDisplayed(ImportApplicationVariables.workflowAgentValue);
@@ -302,15 +273,12 @@ public class WorkFlowStepDefTest extends BaseStepDefTest {
     public void verifyControlDataSectionOfTheDocumentAfterAssignCitiator() throws InterruptedException {
         verification.navigateToControlSectionWorkFlow(ImportApplicationVariables.workFlowMarginalNumber);
         workFlowPage.expandControlDataSection();
-//        workFlowVerificationPage.switchToControlDataFrame();
         workFlowVerificationPage.verifyAssignedAgentValueIsDisplayed(ImportApplicationVariables.citatorValue);
     }
 
     @Then("Verify control data section of the document after editing the document")
-    public void verifyControlDataSectionOfTheDocumentaftereditingthedocument() throws InterruptedException {
-//        verification.navigateToControlSectionWorkFlow(CREATED_DOCUMENT);
+    public void verifyControlDataSectionOfTheDocumentaftereditingthedocument(){
         workFlowPage.expandControlDataSection();
-//        workFlowVerificationPage.switchToControlDataFrame();
         workFlowVerificationPage.verifyAssignedAgentValueIsDisplayed(ImportApplicationVariables.citatorAgentValue);
 
     }
@@ -331,17 +299,8 @@ public class WorkFlowStepDefTest extends BaseStepDefTest {
     public void verifyControlDataSectionOfTheDocumentAfterAssigningAnalyst() throws InterruptedException {
         verification.navigateToControlSectionWorkFlow(ImportApplicationVariables.workFlowMarginalNumber);
         workFlowPage.expandControlDataSection();
-//        workFlowVerificationPage.switchToControlDataFrame();
         workFlowVerificationPage.verifyAssignedAgentValueIsDisplayed(ImportApplicationVariables.assignedAgentValue);
-
     }
-
-//    @Then("Check the control section of the document after assigning analyst")
-//    public void checkTheControlSectionOfTheDocumentAfterAssigningAnalyst() throws InterruptedException {
-//        verification.navigateToControlSectionWorkFlow(ImportApplicationVariables.workFlowMarginalNumber);
-//        workFlowPage.expandControlDataSection();
-////        workFlowVerificationPage.verifyAssignedAgentValueIsDisplayed("OTA TGAC-BOT");
-//    }
 
     @Then("Verify end of document display page should display End preselection button")
     public void verifyEndOfDocumentDisplayPageShouldDisplayEndPreselectionButton() {
@@ -355,7 +314,6 @@ public class WorkFlowStepDefTest extends BaseStepDefTest {
         workFlowVerificationPage.clickOnAnalistaValueEllipseAndSelectTheValueFromTheList(ImportApplicationVariables.analistaValue);
         workFlowPage.selectPrincipalDropDownValue();
         detailPage.clickOkAfterEditButton();
-
         Thread.sleep(7000);
     }
 

@@ -63,6 +63,4 @@ public class GcmsUploadingMetadataVerificationPage extends GcmsUploadingMetadata
         Thread.sleep(4000);
     }
 
-
-
 }

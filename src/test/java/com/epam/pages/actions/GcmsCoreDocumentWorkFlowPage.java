@@ -35,7 +35,7 @@ public class GcmsCoreDocumentWorkFlowPage extends PageWrapper {
     private static final String areaValueEllipse = "xpath -> //input[@id='resDTO.resAreasObj[0].texto']/following-sibling::input[@value='...']";
     private static final String analistaValueEllipse = "xpath -> //input[@id='resDTO.resAreasObj[0].analystName']/following-sibling::input[@value='...']";
     private static final String principalDropDown = "xpath -> //select[@id='resDTO.resAreasObj[0].principal']";
-    private static final String selectAnalistaValue= "xpath -> //td[text()='OTA TGAC-BOT [ EXPURGADOR ] ']/..//following::a";
+    private static final String selectAnalistaValue = "xpath -> //td[text()='OTA TGAC-BOT [ EXPURGADOR ] ']/..//following::a";
     private static final String importButton = "xpath ->  //input[@type='button' and  contains(@onclick,'javascript:importTexto')]";
     private static final String endCitiation = "xpath -> //input[@id='btnEndCitationActivity']";
     private static final String endAnalysis = "xpath -> //input[@id='btnEndAnalysis']";
@@ -43,7 +43,7 @@ public class GcmsCoreDocumentWorkFlowPage extends PageWrapper {
     private static final String NMATextField = "xpath -> //input[@id='nma']";
     private static final String NMNTextField = "xpath -> //input[@id='nmn']";
     private static final String removePracticeArea = "xpath -> //input[@name='resDTO.resAreasObj[0].AAA' and @alt='X']";
-    private static final String analystLink= "xpath -> //a[@id='itemTextLink20']";
+    private static final String analystLink = "xpath -> //a[@id='itemTextLink20']";
 
     private static final String decisionsLink = "xpath -> //a[@id='itemTextLink11']";
     private static final String resultSetsLink = "xpath -> //a[@id='itemTextLink13']";
@@ -131,53 +131,54 @@ public class GcmsCoreDocumentWorkFlowPage extends PageWrapper {
     public void clickOnAnalysisValueEllipse() {
 //        clickElementUsingJS(analysisValueEllipse, "Analysis Value ellipse button");
         WebElement element = webDriver.findElement(By.cssSelector("input#nivel + input"));
-        javascriptExecutor.executeScript("arguments[0].click()",element);
+        javascriptExecutor.executeScript("arguments[0].click()", element);
     }
 
     public void clickOnQualityEllipse() {
 //        clickElementUsingJS(qualityEllipse, "Quality Value ellipse button");
         WebElement element = webDriver.findElement(By.cssSelector("input#calidad + input"));
-        javascriptExecutor.executeScript("arguments[0].click()",element);
+        javascriptExecutor.executeScript("arguments[0].click()", element);
     }
 
     public void clickOnExportButton() throws InterruptedException {
-    	//return webDriver.findElement(By.xpath("//td[contains(text(),'Texto Finalizado') or contains(text(),'Finalized text')]/following::a[6]"));
+        //return webDriver.findElement(By.xpath("//td[contains(text(),'Texto Finalizado') or contains(text(),'Finalized text')]/following::a[6]"));
         clickElementUsingJS(exportButton, "Export button");
 
-       // switchToDefaultContent();
+        // switchToDefaultContent();
         // Thread.sleep(2000);
 
-       //switchToNewWindow();
-      // webDriver.manage().window().maximize();
+        //switchToNewWindow();
+        // webDriver.manage().window().maximize();
     }
 
     public void clickOnAddPracticeArea() {
 //        clickElementUsingJS(addPracticeArea, "Add Practice Area");
         WebElement element = webDriver.findElement(By.name("button.annadirAreas"));
-        javascriptExecutor.executeScript("arguments[0].click()",element);
+        javascriptExecutor.executeScript("arguments[0].click()", element);
     }
+
     public void clickOnAreaValueEllipse() {
 //        clickElementUsingJS(areaValueEllipse, "Area Value ellipse button");
         WebElement element = webDriver.findElement(By.cssSelector("input[emsg*='Practice Area'] + input"));
-        javascriptExecutor.executeScript("arguments[0].click()",element);
+        javascriptExecutor.executeScript("arguments[0].click()", element);
     }
+
     public void clickOnAnalistaValueEllipse() {
 //        clickElementUsingJS(analistaValueEllipse, "Analista Value ellipse button");
         WebElement element = webDriver.findElement(By.cssSelector("input[id*='.analystName'] + input"));
-        javascriptExecutor.executeScript("arguments[0].click()",element);
+        javascriptExecutor.executeScript("arguments[0].click()", element);
     }
 
     public void selectPrincipalDropDownValue() throws AWTException, InterruptedException {
-        //clickElementUsingJS(principalDropDown,"principal drop down value");
-        //selectItemFromDropdownByValue("S",principalDropDown,"yes button");
+
         Robot robot = new Robot();
         WebElement e = webDriver.findElement(By.cssSelector("select[id*='.principal']"));
         e.sendKeys("");
         String fine = "Y";
         fine = fine.toUpperCase();
         char[] c = fine.toCharArray();
-        for (int k = 0; k < c.length; k++) {
-            int keyCode = (int) c[k];
+        for (char value : c) {
+            int keyCode = (int) value;
             if (keyCode == 32) {
                 robot.keyPress(KeyEvent.VK_SPACE);
                 Thread.sleep(200);
@@ -188,39 +189,44 @@ public class GcmsCoreDocumentWorkFlowPage extends PageWrapper {
             robot.keyRelease(keyCode);
         }
     }
-    public void selectAnalistaValue()
-    {
-        clickElementUsingJS(selectAnalistaValue,"select analista value");
+
+    public void selectAnalistaValue() {
+        clickElementUsingJS(selectAnalistaValue, "select analista value");
     }
+
     public void clickOnImportButton() {
         clickElementUsingJS(importButton, "Import Button");
     }
+
     public void clickOnEndCitiation() {
         clickElementUsingJS(endCitiation, "End Citiation Button");
     }
+
     public void clickOnEndAnalysisButton() {
         clickElementUsingJS(endAnalysis, "End Analysis Button");
     }
+
     public void clickOnRenumberingButton() {
         clickElementUsingJS(renumberingButton, "Renumbering Button");
     }
+
     public void enterNMAValue(String value) {
-        setTextUsingJS(NMATextField, "NMA value will be entered",value);
+        setTextUsingJS(NMATextField, "NMA value will be entered", value);
     }
+
     public void enterNMNValue(String value) {
-        setTextUsingJS(NMNTextField, "NMN value will be entered",value);
+        setTextUsingJS(NMNTextField, "NMN value will be entered", value);
     }
-    public void setRemovePracticeArea(){
-        clickElementUsingJS(removePracticeArea,"remove practice area");
-    }
+
     public void navigateToJurisprudenceControlDataSection() throws InterruptedException {
         clickElementUsingJS(jurisprudenceLink, "jurisprudenceLink");
         clickElementUsingJS(decisionsLink, "decisionsLink");
         clickElementUsingJS(resultSetsLink, "resultSetLink");
         Thread.sleep(3000);
     }
-    public void clickDocument(String value){
-        clickElementUsingJS(String.format(documentLink,value), "documentId");
+
+    public void clickDocument(String value) {
+        clickElementUsingJS(String.format(documentLink, value), "documentId");
     }
 }
 

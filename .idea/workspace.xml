@@ -5,19 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad806cf7-55e6-42e6-8bad-5e62dde67075" name="Changes" comment="EditButton">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/framework/ui/Locator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/framework/ui/Locator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/BR/LGL_2002_4_TESTING_text.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/BR/LGL_2002_4_por.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/GULF/UAELEG-AD-LAW_1983_4_eng.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/GULF/UAELEG-AD-LAW_1983_4_text.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/MEX/LEG_2012_260_TESTING_text.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/framework/ui/PageWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/framework/ui/PageWrapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/framework/ui/driver/DriverManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/framework/ui/driver/DriverManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/framework/ui/pageobjectgenerator/helper/HelperReadJsonAndCreateClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/framework/ui/pageobjectgenerator/helper/HelperReadJsonAndCreateClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/framework/ui/pageobjectgenerator/pageObjectTemplate/PageObjectsTemplateJava.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/framework/ui/pageobjectgenerator/pageObjectTemplate/PageObjectsTemplateJava.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/framework/ui/pageobjectgenerator/pageObjectWriter/PageObjectWriterJava.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/framework/ui/pageobjectgenerator/pageObjectWriter/PageObjectWriterJava.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/framework/ui/pageobjectgenerator/verificationTemplate/PageVerificationTemplateJava.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/framework/ui/pageobjectgenerator/verificationTemplate/PageVerificationTemplateJava.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GCMSClassificationEntriesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GCMSClassificationEntriesPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GCMSJurisprudenceRelationshipPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GCMSJurisprudenceRelationshipPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GCMSJurisprudenceReportsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GCMSJurisprudenceReportsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GCMSJurisprudenceSearchPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GCMSJurisprudenceSearchPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GCMSJurisprudenceTopicPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GCMSJurisprudenceTopicPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GCMSWinScpServerConnectionPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GCMSWinScpServerConnectionPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GcmsCoreDocumentWorkFlowPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GcmsCoreDocumentWorkFlowPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GcmsJurisprudenceLoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GcmsJurisprudenceLoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GcmsUploadingMetadataPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/pages/actions/GcmsUploadingMetadataPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/pages/verifications/GCMSJurisprudenceSearchPageVerification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/pages/verifications/GCMSJurisprudenceSearchPageVerification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/pages/verifications/GcmsCoreDocumentWorkFlowVerificationPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/pages/verifications/GcmsCoreDocumentWorkFlowVerificationPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/pages/verifications/GcmsJurisprudenceLoginPageVerification.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/pages/verifications/GcmsUploadingMetadataVerificationPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/pages/verifications/GcmsUploadingMetadataVerificationPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/stepdefinitions/GCMSJurisprudenceStepDefTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/stepdefinitions/GCMSJurisprudenceStepDefTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/stepdefinitions/UploadMetaDataStepDefTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/stepdefinitions/UploadMetaDataStepDefTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/stepdefinitions/WorkFlowStepDefTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/stepdefinitions/WorkFlowStepDefTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +168,6 @@
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
     <configuration name="GCMsJurisprudence [buildDependents]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -180,7 +189,6 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
     <configuration name="GCMsJurisprudence [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -202,7 +210,6 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
     <configuration name="gcmsServiceTests [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -224,7 +231,6 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
     <configuration default="true" type="JetRunConfigurationType">

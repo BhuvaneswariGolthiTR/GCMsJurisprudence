@@ -25,7 +25,6 @@ public class UploadMetaDataStepDefTest extends BaseStepDefTest {
 
     ChannelSftp channelSftp;
     boolean flag;
-    String serverName;
 
     @When("Click on administration tab")
     public void click_on_administration_tab() throws InterruptedException {
@@ -88,29 +87,12 @@ public class UploadMetaDataStepDefTest extends BaseStepDefTest {
         Thread.sleep(20000);
         if (GCMSWinScpServerConnectionPage.findFile(ImportApplicationVariables.serverName, ImportApplicationVariables.fileName, ImportApplicationVariables.metadataLoadedFolder)) {
             System.err.println("File Exits in the metaData loaded folder");
-            boolean flag = true;
-            this.flag = flag;
+            this.flag = true;
         } else if (GCMSWinScpServerConnectionPage.findFile(ImportApplicationVariables.serverName, ImportApplicationVariables.fileName, ImportApplicationVariables.metadataRejectedFolder)) {
             System.err.println("File Exits in the metaData rejected folder");
-            boolean flag = false;
-            this.flag = flag;
+            this.flag = false;
         }
     }
-
-//    @Then("Click on document Link and click on delete link")
-//    public void clickOnDocumentLinkAndClickOnDeleteLink() throws InterruptedException {
-//        searchPage.clickDocument(ImportApplicationVariables.metadataFileName);
-//        Thread.sleep(10000);
-//
-//    }
-//
-//    @And("Navigate to search table and verify for the document")
-//    public void navigateToSearchTableAndVerifyForTheDocument() throws InterruptedException, AWTException {
-//        searchPage.deleteExistingMarginalNumber();
-//        searchVerification.sendTextUsingRobot(ImportApplicationVariables.metadataFileName);
-//        searchPage.clickSearch();
-//        Thread.sleep(3000);
-//    }
 
     @And("User verify load was successful and document is displayed under resultset")
     public void userVerifyLoadWasSuccessfulAndDocumentIsDisplayedUnderResultset() throws InterruptedException, AWTException {

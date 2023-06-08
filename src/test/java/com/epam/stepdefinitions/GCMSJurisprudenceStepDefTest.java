@@ -25,8 +25,6 @@ public class GCMSJurisprudenceStepDefTest extends BaseStepDefTest {
     GCMSJurisprudenceRelationshipPageVerification relationshipVerification = new GCMSJurisprudenceRelationshipPageVerification(getDriver());
     GCMSJurisprudenceTopicPageVerification topicVerification = new GCMSJurisprudenceTopicPageVerification(getDriver());
 
-    public GCMSJurisprudenceStepDefTest() throws AWTException {
-    }
 
     @Given("User is logged to into the application")
     public void userIsLoggedToIntoTheApplication() throws IOException, InterruptedException, AWTException {
@@ -54,7 +52,7 @@ public class GCMSJurisprudenceStepDefTest extends BaseStepDefTest {
     }
 
     @And("Clicks on the document to view the details")
-    public void clicksOnTheDocumentToViewTheDetails() throws InterruptedException {
+    public void clicksOnTheDocumentToViewTheDetails(){
         searchPage.clickMarginalIdLink();
     }
 
@@ -72,7 +70,7 @@ public class GCMSJurisprudenceStepDefTest extends BaseStepDefTest {
     }
 
     @Then("User expands {string} section")
-    public void userExpandsSection(String arg0) throws InterruptedException {
+    public void userExpandsSection() throws InterruptedException {
         classificationEntryPage.expandAnalysisDataSection();
         Thread.sleep(4000);
     }
@@ -81,7 +79,7 @@ public class GCMSJurisprudenceStepDefTest extends BaseStepDefTest {
     public void userClicksOnButtonUnderSection(String button, String section) throws InterruptedException {
         switch (section) {
             case "Classification Entries":
-                classificationEntryPage.clickNewButton(button);
+                classificationEntryPage.clickNewButton();
                 break;
             case "Relationships":
                 relationshipPage.clickAddMultipleButton();
@@ -106,28 +104,24 @@ public class GCMSJurisprudenceStepDefTest extends BaseStepDefTest {
     }
 
     @And("User click {string} and {string} button")
-    public void userClickAndButton(String arg0, String arg1) {
+    public void userClickAndButton() {
         classificationEntryPage.clickOkButton();
         classificationEntryPage.clickGoBackButton();
     }
 
     @Then("User validates if new entries are added in {string} or not")
-    public void userValidatesIfNewEntriesAreAddedInOrNot(String arg0) {
+    public void userValidatesIfNewEntriesAreAddedInOrNot() {
         classificationEntryVerify.verifyDisplayOfNewClassificationEntry();
     }
 
     @And("User clicks on {string} button to remove added classification entry")
-    public void userClicksOnButtonToRemoveAddedClassificationEntry(String arg0) {
+    public void userClicksOnButtonToRemoveAddedClassificationEntry() {
         classificationEntryPage.deleteClassificationEntry();
     }
 
-    @Then("Verify if Classification Entries section is empty or not")
-    public void verifyIfClassificationEntriesSectionIsEmptyOrNot() {
-
-    }
 
     @When("User selects {string} and {string} parameters and passes the values")
-    public void userSelectsAndParametersAndPassesTheValues(String arg0, String arg1) throws InterruptedException, AWTException {
+    public void userSelectsAndParametersAndPassesTheValues() throws InterruptedException, AWTException {
         reportsPage.selectDocumentYear();
         reportsPage.setYear();
         reportsPage.selectDocumentNumber();
@@ -145,7 +139,7 @@ public class GCMSJurisprudenceStepDefTest extends BaseStepDefTest {
     }
 
     @Then("User moves to {string} and selects report format")
-    public void userMovesToAndSelectsReportFormat(String arg0) throws InterruptedException {
+    public void userMovesToAndSelectsReportFormat() throws InterruptedException {
         reportsPage.clickReportsButton();
         Thread.sleep(5000);
         reportsPage.clickReviewFormat();
@@ -171,7 +165,7 @@ public class GCMSJurisprudenceStepDefTest extends BaseStepDefTest {
     }
 
     @Then("User fills fields in Multiple Relationship Page")
-    public void userFillsFieldsInMultipleRelationshipPage() throws InterruptedException {
+    public void userFillsFieldsInMultipleRelationshipPage(){
         relationshipPage.fillDetailsInAffectedField();
         relationshipPage.fillDetailsInRelationShipData();
         relationshipPage.clickTickMark();
@@ -194,7 +188,7 @@ public class GCMSJurisprudenceStepDefTest extends BaseStepDefTest {
     }
 
     @Then("User clicks on {string} link to delete both created relationships")
-    public void userClicksOnLinkToDeleteBothCreatedRelationships(String arg0) {
+    public void userClicksOnLinkToDeleteBothCreatedRelationships() {
         relationshipPage.deleteMultipleRelationships();
     }
 

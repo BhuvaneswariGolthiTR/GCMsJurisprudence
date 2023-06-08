@@ -3,7 +3,6 @@ package com.epam.pages.actions;
 import com.epam.framework.ui.PageWrapper;
 import com.epam.setup.systemsettings.ImportApplicationVariables;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -11,7 +10,6 @@ import java.util.List;
 
 public class GCMSJurisprudenceTopicPage extends PageWrapper {
 
-    private static final String topicIframe = "xpath -> //iframe[@id='listaMateriaSubmateria']";
     private static final String topicNewButton = "xpath -> //input[@id='btnNewTopic']";
     private static final String topicValueFilter = "xpath -> //input[@id='txtFilter']";
     private static final String topicEllipsiButton = "xpath -> //input[@id='btnFilter']";
@@ -26,7 +24,6 @@ public class GCMSJurisprudenceTopicPage extends PageWrapper {
     private static final String transferButton = " xpath -> //input[@id='btnSubmit']";
     private static final String deleteTopic = "xpath -> //input[@id='btnDeleteTopic']";
     private static final String okButton = "xpath -> //input[@type='button' and contains(@onclick,'disabled') or @id='btnEdit' or @type='submit']";
-    private static final String removePracticeArea = "xpath -> //input[@name='resDTO.resAreasObj[0].AAA' and @alt='X']";
     private static final String analysisDataSection = "xpath -> //img[@id='clicker_datosAnalisisFichas']";
 
     public GCMSJurisprudenceTopicPage(WebDriver webDriver) {
@@ -46,7 +43,6 @@ public class GCMSJurisprudenceTopicPage extends PageWrapper {
     }
 
     public void switchToTopicFrame() throws InterruptedException {
-//        switchToIframeByElement(topicIframe);
         webDriver.switchTo().frame("listaMateriaSubmateria");
         Thread.sleep(7000);
     }
@@ -134,7 +130,6 @@ public class GCMSJurisprudenceTopicPage extends PageWrapper {
     }
 
     public void deleteTopicAndSubTopicEntries() throws InterruptedException {
-//        clickSubTopicDeleteButton();
         List<WebElement> entries = getElements(subTopic);
         for (int i = 0; i < entries.size(); i++) {
             clickElementUsingJS(subTopic, "Sub Topic Entry");
@@ -153,23 +148,13 @@ public class GCMSJurisprudenceTopicPage extends PageWrapper {
 
 
     public void setRemovePracticeArea(){
-//        clickElementUsingJS(removePracticeArea,"remove practice area");
         WebElement element = webDriver.findElement(By.name("resDTO.resAreasObj[0].AAA"));
         javascriptExecutor.executeScript("arguments[0].click()",element);
-    }
-
-
-    public void clickOnOkButton() {
-        clickElementUsingJS(okButton, "ok button");
     }
 
     public void clickOkAfterEditButton(){
         WebElement element = webDriver.findElement(By.id("btnEdit"));
         javascriptExecutor.executeScript("arguments[0].click()",element);
-    }
-
-    public void expandAnalysisDataSection() {
-        clickElementUsingJS(analysisDataSection, "analysisDataSection" );
     }
 
 }

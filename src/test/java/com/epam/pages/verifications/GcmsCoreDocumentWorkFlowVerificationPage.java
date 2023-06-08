@@ -240,15 +240,14 @@ public class GcmsCoreDocumentWorkFlowVerificationPage extends GcmsCoreDocumentWo
             DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
             Document doc = docBuilder.parse(filepath);
 
-            // Get the root element
             Node data= doc.getFirstChild();
 
-            Node startdate = doc.getElementsByTagName("en-origen").item(0);
+            Node startDate = doc.getElementsByTagName("en-origen").item(0);
 
             // I am not doing any thing with it just for showing you
-            String currentStartdate = startdate.getNodeValue();
-            System.err.println("present value:" +currentStartdate);
-            startdate.setTextContent("CITEDVERSION T.S.J.ASTURIAS SALA CIV/PE");
+            String currentStartDate = startDate.getNodeValue();
+            System.err.println("present value:" +currentStartDate);
+            startDate.setTextContent("CITEDVERSION T.S.J.ASTURIAS SALA CIV/PE");
 
             // write the content into xml file
             TransformerFactory transformerFactory = TransformerFactory
@@ -288,21 +287,6 @@ public class GcmsCoreDocumentWorkFlowVerificationPage extends GcmsCoreDocumentWo
         Thread.sleep(5000);
 
     }
-
-//    public boolean deletePracticeArea() {
-//        if (webDriver.findElements(By.xpath("//input[@name='resDTO.resAreasObj[0].AAA' and @alt='X']")).size() > 0) ;
-//        {
-//            System.err.println("Practice Area exists");
-//            setRemovePracticeArea();
-//            clickOnOkButton();
-//        }
-//       else{
-//            System.err.println("Practice Area Deleted");
-//
-//       }
-
-
-    // }
     public void navigateToControlSectionWorkFlow(String value) throws InterruptedException {
         navigateToJurisprudenceControlDataSection();
         clickDocument(value);
