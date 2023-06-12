@@ -24,17 +24,9 @@ public class GcmsCoreDocumentWorkFlowPage extends PageWrapper {
     private static final String okButton = "xpath -> //input[@type='button' and contains(@onclick,'disabled') or @id='btnEdit' or @type='submit']";
     private static final String logoffButton = "xpath -> //a[@id='lnkHeaderLogOut']";
     private static final String editButton = "xpath -> //input[@id='btnEdit']";
-    private static final String textButton = "xpath ->  //input[@id='btnText']";
     private static final String endPreSelectionButton = "xpath ->  //input[@id='btnEndPreSelection']";
     private static final String goBackButton = "xpath -> //input[@type='button' and contains(@onclick,'javascript:doCloseR();') or @id='btnBack']";
-    private static final String analysisValueEllipse = "xpath -> //input[@id='nivel']/following-sibling::input[@value='...']";
-    private static final String qualityEllipse = "xpath -> //input[@id='calidad']/following-sibling::input[@value='...']";
     private static final String exportButton = "xpath -> //td[contains(text(),'Texto Finalizado') or contains(text(),'Finalized text')]/following::a[6]";
-    //"//td[contains(text(),'Finalized text')]/following::a[6]";
-    private static final String addPracticeArea = "xpath -> //input[@name='button.annadirAreas']";
-    private static final String areaValueEllipse = "xpath -> //input[@id='resDTO.resAreasObj[0].texto']/following-sibling::input[@value='...']";
-    private static final String analistaValueEllipse = "xpath -> //input[@id='resDTO.resAreasObj[0].analystName']/following-sibling::input[@value='...']";
-    private static final String principalDropDown = "xpath -> //select[@id='resDTO.resAreasObj[0].principal']";
     private static final String selectAnalistaValue = "xpath -> //td[text()='OTA TGAC-BOT [ EXPURGADOR ] ']/..//following::a";
     private static final String importButton = "xpath ->  //input[@type='button' and  contains(@onclick,'javascript:importTexto')]";
     private static final String endCitiation = "xpath -> //input[@id='btnEndCitationActivity']";
@@ -42,12 +34,47 @@ public class GcmsCoreDocumentWorkFlowPage extends PageWrapper {
     private static final String renumberingButton = "xpath -> //input[@type='button' and  @onclick='javascript:submitValor()']";
     private static final String NMATextField = "xpath -> //input[@id='nma']";
     private static final String NMNTextField = "xpath -> //input[@id='nmn']";
-    private static final String removePracticeArea = "xpath -> //input[@name='resDTO.resAreasObj[0].AAA' and @alt='X']";
-    private static final String analystLink = "xpath -> //a[@id='itemTextLink20']";
-
     private static final String decisionsLink = "xpath -> //a[@id='itemTextLink11']";
     private static final String resultSetsLink = "xpath -> //a[@id='itemTextLink13']";
     private static final String documentLink = "xpath -> //a[contains(text(),'%s')]";
+    private static final String fileBrowseButton = "xpath -> //input[@name='fichero']";
+    private static final String cupFileBrowseButton = "xpath -> //input[@name='ficheroTroceado']";
+    private static final String agentValue = "xpath -> //td[contains(text(),'%s')]";
+    private static final String successMessage = "xpath -> //b[@id='successMessage']";
+    private static final String importFilePath = "xpath -> //input[@id='myFile']";
+    private static final String messageHeader = "xpath -> //td[@class='messageHeader']";
+
+    public String getFileBrowseButton() {
+        return formatLocator(fileBrowseButton);
+    }
+
+    public String getImportFilePath() {
+        return formatLocator(importFilePath);
+    }
+
+    public String getMessageHeader() {
+        return formatLocator(messageHeader);
+    }
+
+    public String getImportButton() {
+        return formatLocator(importButton);
+    }
+
+    public String getAgentValue(String value) {
+        return formatLocator(String.format(agentValue, value));
+    }
+
+    public String getSuccessMessage() {
+        return formatLocator(successMessage);
+    }
+
+    public String getEndPreSelectionButton() {
+        return formatLocator(endPreSelectionButton);
+    }
+
+    public String getCutUpFileBrowseButton() {
+        return formatLocator(cupFileBrowseButton);
+    }
 
     public GcmsCoreDocumentWorkFlowPage(WebDriver webDriver) {
         super(webDriver);
@@ -80,13 +107,6 @@ public class GcmsCoreDocumentWorkFlowPage extends PageWrapper {
         Thread.sleep(3000);
     }
 
-    public void navigateToWorkflowAssignToAnalyst() throws InterruptedException {
-        clickElementUsingJS(jurisprudenceLink, "jurisprudenceLink");
-        clickElementUsingJS(workflowLink, "workflowLink");
-        clickElementUsingJS(analystLink, "analystLink");
-        Thread.sleep(3000);
-    }
-
     public void clickOnEllipseButton() {
         clickElementUsingJS(ellipseButton, "EllipseButton");
     }
@@ -112,10 +132,8 @@ public class GcmsCoreDocumentWorkFlowPage extends PageWrapper {
     }
 
     public void clickOnEditButton() {
-//        scrollToBottomOfPage();
         clickElementUsingJS(editButton, "Edit button");
         System.err.println("Edit");
-//        scrollToBottomOfPage();
     }
 
     public void clickOnEndPreSelectionButton() throws InterruptedException {
@@ -129,48 +147,35 @@ public class GcmsCoreDocumentWorkFlowPage extends PageWrapper {
     }
 
     public void clickOnAnalysisValueEllipse() {
-//        clickElementUsingJS(analysisValueEllipse, "Analysis Value ellipse button");
         WebElement element = webDriver.findElement(By.cssSelector("input#nivel + input"));
         javascriptExecutor.executeScript("arguments[0].click()", element);
     }
 
     public void clickOnQualityEllipse() {
-//        clickElementUsingJS(qualityEllipse, "Quality Value ellipse button");
         WebElement element = webDriver.findElement(By.cssSelector("input#calidad + input"));
         javascriptExecutor.executeScript("arguments[0].click()", element);
     }
 
-    public void clickOnExportButton() throws InterruptedException {
-        //return webDriver.findElement(By.xpath("//td[contains(text(),'Texto Finalizado') or contains(text(),'Finalized text')]/following::a[6]"));
+    public void clickOnExportButton() {
         clickElementUsingJS(exportButton, "Export button");
-
-        // switchToDefaultContent();
-        // Thread.sleep(2000);
-
-        //switchToNewWindow();
-        // webDriver.manage().window().maximize();
     }
 
     public void clickOnAddPracticeArea() {
-//        clickElementUsingJS(addPracticeArea, "Add Practice Area");
         WebElement element = webDriver.findElement(By.name("button.annadirAreas"));
         javascriptExecutor.executeScript("arguments[0].click()", element);
     }
 
     public void clickOnAreaValueEllipse() {
-//        clickElementUsingJS(areaValueEllipse, "Area Value ellipse button");
         WebElement element = webDriver.findElement(By.cssSelector("input[emsg*='Practice Area'] + input"));
         javascriptExecutor.executeScript("arguments[0].click()", element);
     }
 
     public void clickOnAnalistaValueEllipse() {
-//        clickElementUsingJS(analistaValueEllipse, "Analista Value ellipse button");
         WebElement element = webDriver.findElement(By.cssSelector("input[id*='.analystName'] + input"));
         javascriptExecutor.executeScript("arguments[0].click()", element);
     }
 
     public void selectPrincipalDropDownValue() throws AWTException, InterruptedException {
-
         Robot robot = new Robot();
         WebElement e = webDriver.findElement(By.cssSelector("select[id*='.principal']"));
         e.sendKeys("");
@@ -228,6 +233,7 @@ public class GcmsCoreDocumentWorkFlowPage extends PageWrapper {
     public void clickDocument(String value) {
         clickElementUsingJS(String.format(documentLink, value), "documentId");
     }
+
 }
 
 

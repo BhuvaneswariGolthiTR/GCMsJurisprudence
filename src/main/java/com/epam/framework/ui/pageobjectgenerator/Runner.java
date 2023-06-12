@@ -8,32 +8,38 @@ package com.epam.framework.ui.pageobjectgenerator;
 import com.epam.framework.ui.pageobjectgenerator.helper.HelperReadJsonAndCreateClass;
 import org.jasypt.util.text.BasicTextEncryptor;
 
+import java.awt.*;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.DataFlavor;
+import java.awt.datatransfer.Transferable;
+import java.awt.datatransfer.UnsupportedFlavorException;
+import java.io.IOException;
 import java.util.Random;
 import java.util.regex.Pattern;
 
 public class Runner {
-    public static void main(String[] strings) {
+    public static void main(String[] strings) throws IOException, UnsupportedFlavorException {
 //        HelperReadJsonAndCreateClass helperReadJsonAndCreateClass = new HelperReadJsonAndCreateClass();
 //        helperReadJsonAndCreateClass.cleanRecordDirectory();
 //        helperReadJsonAndCreateClass.readJSON();
 
 
-        BasicTextEncryptor textEncryptor = new BasicTextEncryptor();
-        textEncryptor.setPasswordCharArray("Value".toCharArray());
-        String encryptUsername = textEncryptor.encrypt("C290276");
-        System.out.println(encryptUsername);
-//        String encryptPassword=textEncryptor.encrypt("***");
-//        System.out.println(encryptPassword);
-//        String str = "Test: 286/202";
-//        String reg = "Test: [0-9]+/[0-9]+";
+//        BasicTextEncryptor textEncryptor = new BasicTextEncryptor();
+//        textEncryptor.setPasswordCharArray("Value".toCharArray());
+//        String encryptUsername = textEncryptor.encrypt("C290276");
+//        System.out.println(encryptUsername);
+//        String encryptPassword=textEncryptor.encrypt("2EsteEsNuestro!LifeSaver");
+//        System.out.println("Encrypted Password :"+encryptPassword);
 //
-//       if(str.matches(reg)){
-//           System.out.println("Testyjf");
-//       }
-//        int number = 1;
-//        String name = "Name[%s]";
-//        System.out.println("The name is "+String.format(name,String.valueOf(number)));
 
+        Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+        Transferable contents = clipboard.getContents(null);
+        String x = (String) contents.getTransferData(DataFlavor.stringFlavor);
+        System.out.println("Text is"+x);
+        String original = "Arz=DESCRIPCIÓN DE LA RESOLUCIÓN";
+        if(x.equals(original)){
+            System.err.println("TRUE");
+        }
 
     }
 

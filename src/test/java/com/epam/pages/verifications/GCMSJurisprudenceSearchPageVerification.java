@@ -12,7 +12,6 @@ public class GCMSJurisprudenceSearchPageVerification extends GCMSJurisprudenceSe
     }
 
     public void verifyDocumentSearch(String value){
-//        verifyElementText("Document is not loaded Successfully",getDocumentID(value),value);
         verifyIsElementDisplayed("Document is not displayed",getDocumentID(value),true,"Document ID");
     }
 
@@ -20,7 +19,7 @@ public class GCMSJurisprudenceSearchPageVerification extends GCMSJurisprudenceSe
         clickOnWipModule();
         navigateToSearchInJurisprudence();
         clickClearSearchField();
-        clickOnSearchDropdown("Original file name");
+        clickOnSearchDropdown("Original");
         sendTextUsingRobot(getSearchField(),"Document",metadataFile);
         clickSearchButton();
     }
@@ -29,4 +28,5 @@ public class GCMSJurisprudenceSearchPageVerification extends GCMSJurisprudenceSe
             navigateToJurisprudenceControlDataSection();
             clickDocument(value);
     }
+
 }

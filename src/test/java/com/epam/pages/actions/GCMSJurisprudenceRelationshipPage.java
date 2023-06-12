@@ -13,6 +13,7 @@ import java.util.List;
 public class GCMSJurisprudenceRelationshipPage extends PageWrapper {
 
     private static final String relationshipsIframe = "xpath -> //iframe[@id='fichas_relaciones']";
+    private static final String relationship = "xpath -> //td[contains(text(),'RELATIONSHIPS')]";
     private static final String relationshipTable = "xpath -> //table[@id='tablaRelaciones']";
     private static final String multipleButton = "xpath -> //input[@id='btnAddMultiple']";
     private static final String newRelationIframe = "xpath -> //iframe[@name='nuevaRelacion']";
@@ -103,6 +104,7 @@ public class GCMSJurisprudenceRelationshipPage extends PageWrapper {
 
     public void clickAddMultipleButton() {
         switchToIframeByElement(relationshipsIframe);
+        scrollInView(relationship);
         try {
             if (isElementDisplayed(getCommonRelationship(ImportApplicationVariables.relationshipDataValue))) {
                 switchToDefaultContent();

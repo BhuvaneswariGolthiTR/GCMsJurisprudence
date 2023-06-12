@@ -19,7 +19,7 @@ public class GCMSJurisprudenceRelationshipPageVerification extends GCMSJurisprud
         int relationshipCount = relationships.size();
         if (relationshipCount == 2) {
             for (int i = 1; i <= relationshipCount; i++) {
-                verifyElementText("Relationship is not created",getCommonRelationship(ImportApplicationVariables.relationshipDataValue) , ImportApplicationVariables.relationshipDataValue);
+                verifyElementText("Relationship is not created", getCommonRelationship(ImportApplicationVariables.relationshipDataValue), ImportApplicationVariables.relationshipDataValue);
             }
         }
         switchToDefaultContent();
@@ -27,9 +27,10 @@ public class GCMSJurisprudenceRelationshipPageVerification extends GCMSJurisprud
 
     public void verifyRelationshipsDeletion() {
         switchToIframeByElement(getRelationshipsIframe());
-        try{
-            verifyIsElementDisplayed("Deletion is not performed successfully",getDeleteLink(),true,"Relationships");
-        }catch (TimeoutException e){
+        try {
+            verifyIsElementDisplayed("Deletion is not performed successfully", getDeleteLink(), true, "Relationships");
+        }
+        catch (TimeoutException e) {
             System.err.println("Added Relationships are deleted");
         }
         switchToDefaultContent();

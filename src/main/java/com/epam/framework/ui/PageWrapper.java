@@ -24,10 +24,8 @@ import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.io.FileReader;
-import java.util.Iterator;
+import java.util.*;
 import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 import static com.epam.framework.ui.driver.DriverManager.getDriver;
@@ -618,20 +616,16 @@ public abstract class PageWrapper extends Browser {
         }
     }
 
-    public void selectOptionFromDropDownUsingRobot(String dropDownLocator,String option) throws AWTException, InterruptedException {
+    public void selectOptionFromDropDownUsingRobot(String dropDownLocator, String option) throws AWTException, InterruptedException {
         Robot robot = new Robot();
         WebElement e = getElement(formatLocator(dropDownLocator));
-        String optionLocator = dropDownLocator+"/option[@selected='selected']";
         e.sendKeys("");
-        String uppercaseOption = option.toUpperCase();
-        char[] c = uppercaseOption.toCharArray();
-        for (char value : c) {
-            WebElement selectedOption = getElement(optionLocator);
-            if (selectedOption.getText().equals(option)) {
-                break;
-            }
-            Thread.sleep(2000);
-            if ((int) value == 40) {
+        String fine = option;
+        fine = fine.toUpperCase();
+        char[] c = fine.toCharArray();
+        for (int k = 0; k < c.length; k++) {
+            int keyCode = (int) c[k];
+            if (keyCode == 40) {
                 robot.keyPress(KeyEvent.VK_SHIFT);
                 Thread.sleep(200);
                 robot.keyPress(KeyEvent.VK_9);
@@ -639,17 +633,44 @@ public abstract class PageWrapper extends Browser {
                 robot.keyRelease(KeyEvent.VK_9);
                 Thread.sleep(200);
                 robot.keyRelease(KeyEvent.VK_SHIFT);
-            } else if ((int) value == 32) {
+            } else if (keyCode == 32) {
                 robot.keyPress(KeyEvent.VK_SPACE);
                 Thread.sleep(200);
                 robot.keyRelease(KeyEvent.VK_SPACE);
             } else {
-                robot.keyPress((int) value);
-                Thread.sleep(200);
-                robot.keyRelease((int) value);
+                robot.keyPress(keyCode);
+                robot.keyRelease(keyCode);
             }
         }
     }
+
+//            Robot robot = new Robot();
+//            WebElement e = getElement(formatLocator(dropDownLocator));
+//            e.sendKeys("");
+//            String fine = option;
+//            fine = fine.toUpperCase();
+//            char[] c = fine.toCharArray();
+//            for (int k = 0; k < c.length; k++) {
+//                int keyCode = (int) c[k];
+//                if(keyCode == 40){
+//                    robot.keyPress(KeyEvent.VK_SHIFT);
+//                    Thread.sleep(200);
+//                    robot.keyPress(KeyEvent.VK_9);
+//                    Thread.sleep(200);
+//                    robot.keyRelease(KeyEvent.VK_9);
+//                    Thread.sleep(200);
+//                    robot.keyRelease(KeyEvent.VK_SHIFT);
+//                }
+//                else if (keyCode == 32) {
+//                    robot.keyPress(KeyEvent.VK_SPACE);
+//                    Thread.sleep(200);
+//                    robot.keyRelease(KeyEvent.VK_SPACE);
+//                } else {
+//                    robot.keyPress(keyCode);
+//                    robot.keyRelease(keyCode);
+//                }
+//            }
+
 
     public void saveAsFileUsingRobot(String filePath) throws InterruptedException, AWTException {
         Robot robot = new Robot();

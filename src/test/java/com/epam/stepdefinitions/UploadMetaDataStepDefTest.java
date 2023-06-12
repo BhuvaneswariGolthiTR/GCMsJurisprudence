@@ -5,7 +5,7 @@ import com.epam.pages.actions.GCMSJurisprudenceTopicPage;
 import com.epam.pages.actions.GcmsUploadingMetadataPage;
 import com.epam.pages.actions.GCMSWinScpServerConnectionPage;
 import com.epam.pages.verifications.GCMSJurisprudenceSearchPageVerification;
-import com.epam.pages.verifications.GcmsUploadingMetadataVerificationPage;
+import com.epam.pages.verifications.GcmsUploadingMetadataPageVerification;
 import com.epam.setup.systemsettings.ImportApplicationVariables;
 import com.jcraft.jsch.ChannelSftp;
 import com.jcraft.jsch.JSchException;
@@ -17,7 +17,7 @@ import java.io.IOException;
 
 public class UploadMetaDataStepDefTest extends BaseStepDefTest {
     GcmsUploadingMetadataPage uploadingMetadataPage = new GcmsUploadingMetadataPage(getDriver());
-    GcmsUploadingMetadataVerificationPage uploadingMetadataVerificationPage = new GcmsUploadingMetadataVerificationPage(getDriver());
+    GcmsUploadingMetadataPageVerification uploadingMetadataVerificationPage = new GcmsUploadingMetadataPageVerification(getDriver());
     GCMSJurisprudenceSearchPage searchPage = new GCMSJurisprudenceSearchPage(getDriver());
     GCMSJurisprudenceSearchPageVerification searchVerification = new GCMSJurisprudenceSearchPageVerification(getDriver());
     GCMSJurisprudenceTopicPage topicPage = new GCMSJurisprudenceTopicPage(getDriver());

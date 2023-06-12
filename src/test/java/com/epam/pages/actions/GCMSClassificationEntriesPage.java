@@ -117,7 +117,7 @@ public class GCMSClassificationEntriesPage extends PageWrapper {
         scrollInView(classificationEntriesTable);
     }
 
-    public void clickNewButton(String... formatArgs){
+    public void clickNewButton(String... formatArgs) throws InterruptedException {
         moveToClassificationEntriesSection();
         try {
             if (isElementDisplayed(getNewClassificationEntry(ImportApplicationVariables.fullMarginalId))) {
@@ -129,6 +129,7 @@ public class GCMSClassificationEntriesPage extends PageWrapper {
             scrollInView(newButton);
         }
         WebElement newBtn = getElement(newButton);
+        Thread.sleep(3000);
         javascriptExecutor.executeScript("arguments[0].click()",newBtn);
     }
 

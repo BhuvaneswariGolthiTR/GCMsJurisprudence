@@ -30,22 +30,19 @@ public class GCMSWinScpServerConnectionPage {
     }
 
     public static void putFile(ChannelSftp setup, String fileName, String filePath) throws JSchException, SftpException, UnknownHostException {
-        ChannelSftp channelSftp = setup;
-        channelSftp.connect();
-        Session session = channelSftp.getSession();
+        setup.connect();
+        Session session = setup.getSession();
         System.err.println("Is session connected= " + session.isConnected());
         String localFile = "src//test//resources//reference//" + fileName;
         String remoteDirectory = filePath + "//" + fileName;
-        //channelSftp.rm();
         System.out.println(localFile);
         System.out.println(remoteDirectory);
-
-        channelSftp.put(localFile, remoteDirectory);
+        setup.put(localFile, remoteDirectory);
         System.err.println("File has been kept");
-        channelSftp.exit();
-        channelSftp.disconnect();
+        setup.exit();
+        setup.disconnect();
         session.disconnect();
-        System.err.println(channelSftp.isConnected());
+        System.err.println(setup.isConnected());
     }
 
     public static void deleteFile(String serverUrl, String fileName, String filePath) throws JSchException, SftpException, IOException {
@@ -55,7 +52,7 @@ public class GCMSWinScpServerConnectionPage {
         System.err.println("Is session connected= " + session.isConnected());
         String remoteDirectory = filePath + "//" + fileName;
         channelSftp.rm(remoteDirectory);
-        System.out.println(remoteDirectory);
+        System.err.println(remoteDirectory);
         System.err.println("File has been deleted");
         channelSftp.exit();
         channelSftp.disconnect();
@@ -69,7 +66,6 @@ public class GCMSWinScpServerConnectionPage {
         Session session = channelSftp.getSession();
         System.err.println("Is session connected= " + session.isConnected());
         boolean flag = false;
-
         String remoteDirectory = filePath + "/" + fileName;
         System.out.println(remoteDirectory);
         try {
@@ -93,6 +89,3 @@ public class GCMSWinScpServerConnectionPage {
     }
 
 }
-
-
-

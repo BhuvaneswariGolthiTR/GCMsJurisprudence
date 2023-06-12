@@ -61,12 +61,14 @@ public class ImportApplicationVariables {
     public static String analysisAgentValue;
     public static String marginalAgentValue;
     public static String workFlowMarginalNumber;
+    public static String topicUsingCode;
+    public static String subTopicUsingCode;
     public static Properties prop;
 
     public static void setVariables() throws IOException {
         prop = new Properties();
         String userPath = System.getProperty("user.dir");
-        FileInputStream fs = new FileInputStream(userPath + "\\src\\test\\resources\\gcms-arz-client.properties");
+        FileInputStream fs = new FileInputStream(userPath + "\\src\\test\\resources\\gcms.properties");
         prop.load(fs);
 
         loginURL = prop.getProperty("gcms.login.url");
@@ -92,45 +94,50 @@ public class ImportApplicationVariables {
         relationshipDataNoteOne = prop.getProperty("gcms.relationship.dataNoteOne");
         relationshipDataNoteTwo = prop.getProperty("gcms.relationship.dataNoteTwo");
 
-        topic = prop.getProperty("gcms.topicValue");
-        subTopic = prop.getProperty("gcms.subTopicValue");
+        topic = prop.getProperty("gcms.filter.topicValue");
+        subTopic = prop.getProperty("gcms.filter.subTopicValue");
 
         topicSubtopicCode = prop.getProperty("gcms.topicSubTopicCode");
 
-        hostFileName = prop.getProperty("hostFileName");
-        serverUsername = prop.getProperty("username");
-        serverPassword = prop.getProperty("password");
-        serverName = prop.getProperty("serverName");
-        fileName = prop.getProperty("file");
-        metadataLoadedFolder = prop.getProperty("metadataLoadedFolder");
-        metadataRejectedFolder = prop.getProperty("metadataRejectedFolder");
-        metadataAcceptedFolder = prop.getProperty("metadataAcceptedFolder");
-//		url = prop.getProperty("gcms.br.direct.url");
-        metadataInputFolder = prop.getProperty("metadataInputFolderPath");
-        metadataOutputFolder = prop.getProperty("metadataOutputFolderPath");
-        metadataLoadProcessFile = prop.getProperty("metadataLoadProcessFile");
-        metadataFileName = prop.getProperty("metadataFileName");
-        documentName = prop.getProperty("documentName");
+        hostFileName = prop.getProperty("gcms.uploadMetaData.hostFileName");
+        serverUsername = prop.getProperty("gcms.uploadMetaData.server.username");
+        serverPassword = prop.getProperty("gcms.uploadMetaData.server.password");
+        serverName = prop.getProperty("gcms.uploadMetaData.serverName");
+        fileName = prop.getProperty("gcms.uploadMetaData.file");
+        metadataLoadedFolder = prop.getProperty("gcms.uploadMetaData.loadedFolder");
+        metadataRejectedFolder = prop.getProperty("gcms.uploadMetaData.rejectedFolder");
+        metadataAcceptedFolder = prop.getProperty("gcms.uploadMetaData.acceptedFolder");
+        metadataInputFolder = prop.getProperty("gcms.uploadMetaData.inputFolderPath");
+        metadataOutputFolder = prop.getProperty("gcms.uploadMetaData.outputFolderPath");
+        metadataLoadProcessFile = prop.getProperty("gcms.uploadMetaData.loadProcessFile");
+        metadataFileName = prop.getProperty("gcms.uploadMetaData.fileName");
+        documentName = prop.getProperty("gcms.uploadMetaData.documentName");
         marginalNumber = prop.getProperty("marginalNumber");
 
-        agentValue = prop.getProperty("agentValue");
-        agentFilterValue = prop.getProperty("agentFilterValue");
-        areaValue = prop.getProperty("areaValue");
-        analistaValue = prop.getProperty("analistaValue");
-        analysisValue = prop.getProperty("AnalysisValue");
-        NMNValue = prop.getProperty("NMNValue");
-        NMAValue = prop.getProperty("NMAValue");
-        citatorValue = prop.getProperty("citatorValue");
-        qualityValue = prop.getProperty("QualityValue");
-        workFlowMarginalNumber = prop.getProperty("workFlowMarginalNumber");
-        workflowAgentValue = prop.getProperty("workflowValue");
-        citatorAgentValue = prop.getProperty("citatorAgentValue");
-        assignedAgentValue = prop.getProperty("assignedAgentValue");
-        analysisAgentValue = prop.getProperty("analysisAgentValue");
-        marginalAgentValue = prop.getProperty("marginalAgentValue");
+        agentValue = prop.getProperty("gcms.workflow.agentValue");
+        agentFilterValue = prop.getProperty("gcms.workflow.agentFilterValue");
+        areaValue = prop.getProperty("gcms.workflow.areaValue");
+        analistaValue = prop.getProperty("gcms.workflow.analistaValue");
+        analysisValue = prop.getProperty("gcms.workflow.analysisValue");
+        NMNValue = prop.getProperty("gcms.workflow.NMNValue");
+        NMAValue = prop.getProperty("gcms.workflow.NMAValue");
+        citatorValue = prop.getProperty("gcms.workflow.citatorValue");
+        qualityValue = prop.getProperty("gcms.workflow.qualityValue");
+        workFlowMarginalNumber = prop.getProperty("gcms.workflow.marginalNumber");
+        workflowAgentValue = prop.getProperty("gcms.workflow.value");
+        citatorAgentValue = prop.getProperty("gcms.workflow.citator.agentValue");
+        assignedAgentValue = prop.getProperty("gcms.workflow.assignedAgentValue");
 
-        analystUsername = PageWrapper.decode(prop.getProperty("analyst.username"));
-        citatorUsername = PageWrapper.decode(prop.getProperty("citator.username"));
+
+        analystUsername = PageWrapper.decode(prop.getProperty("gcms.workflow.analyst.username"));
+        citatorUsername = PageWrapper.decode(prop.getProperty("gcms.workflow.citator.username"));
+
+        marginalAgentValue = prop.getProperty("gcms.workflow.marginalAgentValue");
+        analysisAgentValue = prop.getProperty("gcms.workflow.analysisAgentValue");
+
+
+        topicUsingCode = prop.getProperty("gcms.code.topic");
+        subTopicUsingCode = prop.getProperty("gcms.code.subTopic");
     }
 
 }

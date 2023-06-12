@@ -18,24 +18,7 @@ public class GcmsJurisprudenceLoginPage extends PageWrapper {
     private static final String password = "xpath -> //input[normalize-space(@name)='password']";
     private static final String languageDropdown = "xpath -> //select[@id='selectedLanguage']";
     private static final String loginButton = "xpath -> //input[normalize-space(@type)='submit']";
-    private static final String gcmsHomePageHeader = "xpath -> //table[@class='headerTopMenu']//h1";
     private static final String gulfHeader = "xpath -> //h1[contains(text(),'GULF')]";
-
-    public String getUsername(String... formatArgs) {
-        return formatLocator(username, formatArgs);
-    }
-
-    public String getPassword(String... formatArgs) {
-        return formatLocator(password, formatArgs);
-    }
-
-    public String getLoginButton(String... formatArgs) {
-        return formatLocator(loginButton, formatArgs);
-    }
-
-    public String getGcmsHomePageHeader(String... formatArgs) {
-        return formatLocator(gcmsHomePageHeader, formatArgs);
-    }
 
     public void accessURL(String gcmsLoginURL) {
         getDriver().get(gcmsLoginURL);
@@ -54,7 +37,6 @@ public class GcmsJurisprudenceLoginPage extends PageWrapper {
     }
 
     public void setLanguage() throws AWTException, InterruptedException {
-
         boolean isGulf = false;
         try {
             isGulf = isElementDisplayed(gulfHeader);
@@ -62,7 +44,8 @@ public class GcmsJurisprudenceLoginPage extends PageWrapper {
         catch (Exception ignored) {
         }
         if (!isGulf) {
-            selectOptionFromDropDownUsingRobot(languageDropdown, "English");
+            selectOptionFromDropDownUsingRobot(languageDropdown, "Eng");
         }
     }
+
 }

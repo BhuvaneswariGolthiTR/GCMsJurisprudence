@@ -2,7 +2,7 @@
 
 Feature: Performing Upload Metadata for documenting and deleting
 
-  @uploadingMetadata @spain
+  @uploadingMetadata @spain @gulf @brazil @mexico
   Scenario: Uploading metadata for document
     Given User is logged to into the application
     And  User deleted the document if already existing

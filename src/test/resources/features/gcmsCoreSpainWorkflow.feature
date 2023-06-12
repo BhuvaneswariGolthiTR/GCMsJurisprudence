@@ -3,7 +3,7 @@
 Feature: Performing gcms core workflow execution
 
   @WorkflowDelete
-  @Workflow
+  @Workflow @spain
   Scenario: Validate user able to delete existing workflow
     Given User Login to the gcms application "operator"
     When User starts jurisprudence search by marginal value
@@ -15,7 +15,7 @@ Feature: Performing gcms core workflow execution
     And  Delete the XML File in the project if exists
 
   @WorkflowExecution
-  @Workflow
+  @Workflow @spain
   Scenario: Validate user able to complete a full execution of a workflow by login as operator
     Given User Login to the gcms application "operator"
     When User starts jurisprudence search by marginal value
@@ -28,7 +28,7 @@ Feature: Performing gcms core workflow execution
     Then Verify control data section of the document
     And  User logoff from the application
 
-  @WorkflowEndPreSelection @Workflow
+  @WorkflowEndPreSelection @Workflow @spain
   Scenario: Validate user by loging as analyst
     Given User Login to the gcms application "Analyst"
     When User navigate to jurisprudence decisions pending inbox
@@ -40,8 +40,8 @@ Feature: Performing gcms core workflow execution
     And  Click on End pre-selection button
     Then Verify control data section of the document after workflow
     And  User logoff from the application
-#
-  @AssignCitatorName @Workflow
+
+  @AssignCitatorName @Workflow @spain
   Scenario: Validate user able to assign citator name by login as operator
     Given User Login to the gcms application "operator"
     When User starts jurisprudence search by marginal value
@@ -52,7 +52,7 @@ Feature: Performing gcms core workflow execution
     Then Verify control data section of the document after assign citiator
     And  Verify Text section of the document import button should not be displayed
 
-  @EditDocumentText @Workflow
+  @EditDocumentText @Workflow @spain
   Scenario: Validate user able to edit the document text by login as citiator
     Given User Login to the gcms application "citiator"
     When  User navigate to jurisprudence decisions pending inbox
@@ -65,7 +65,7 @@ Feature: Performing gcms core workflow execution
     Then  Verify control data section of the document after editing the document
     And   User logoff from the application
 
-  @AssignAnalystName @Workflow
+  @AssignAnalystName @Workflow @spain
   Scenario: Validate user able to assign analyst name by login as operator
     Given User Login to the gcms application "operator"
     When User starts jurisprudence search by marginal value
@@ -76,7 +76,7 @@ Feature: Performing gcms core workflow execution
     Then Verify control data section of the document after assigning analyst
     And  User logoff from the application
 
-  @EndAnalysis @Workflow
+  @EndAnalysis @Workflow @spain
   Scenario: Validate user able to click on end analysis login as operator
     Given User Login to the gcms application "Analyst"
     When User starts jurisprudence search by marginal value
@@ -85,7 +85,7 @@ Feature: Performing gcms core workflow execution
     Then Check the control section of the document
     And  User logoff from the application
 
-  @WorkflowTextDownload @Workflow
+  @WorkflowTextDownload @Workflow @spain
   Scenario: Validate user by login as operator
     Given User Login to the gcms application "operator"
     When User starts jurisprudence search by marginal value

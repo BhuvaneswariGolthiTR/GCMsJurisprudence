@@ -1,10 +1,7 @@
 package com.epam.stepdefinitions;
 
 import com.epam.pages.actions.*;
-import com.epam.pages.verifications.GCMSClassificationEntriesPageVerification;
-import com.epam.pages.verifications.GCMSJurisprudenceRelationshipPageVerification;
-import com.epam.pages.verifications.GCMSJurisprudenceSearchPageVerification;
-import com.epam.pages.verifications.GCMSJurisprudenceTopicPageVerification;
+import com.epam.pages.verifications.*;
 import com.epam.setup.systemsettings.ImportApplicationVariables;
 
 import io.cucumber.java.en.*;
@@ -24,16 +21,18 @@ public class GCMSJurisprudenceStepDefTest extends BaseStepDefTest {
     GCMSClassificationEntriesPageVerification classificationEntryVerify = new GCMSClassificationEntriesPageVerification(getDriver());
     GCMSJurisprudenceRelationshipPageVerification relationshipVerification = new GCMSJurisprudenceRelationshipPageVerification(getDriver());
     GCMSJurisprudenceTopicPageVerification topicVerification = new GCMSJurisprudenceTopicPageVerification(getDriver());
+    GCMSJurisprudenceReportsPageVerification reportsPageVerification = new GCMSJurisprudenceReportsPageVerification(getDriver());
 
 
     @Given("User is logged to into the application")
     public void userIsLoggedToIntoTheApplication() throws IOException, InterruptedException, AWTException {
         ImportApplicationVariables.setVariables();
         loginPage.accessURL(ImportApplicationVariables.loginURL);
-        Thread.sleep(4000);
+        Thread.sleep(6000);
         loginPage.setLanguage();
         Thread.sleep(4000);
         loginPage.setUsername(ImportApplicationVariables.username);
+        Thread.sleep(2000);
         loginPage.setPassword(ImportApplicationVariables.password);
         loginPage.clickLoginButton();
     }
@@ -52,7 +51,7 @@ public class GCMSJurisprudenceStepDefTest extends BaseStepDefTest {
     }
 
     @And("Clicks on the document to view the details")
-    public void clicksOnTheDocumentToViewTheDetails(){
+    public void clicksOnTheDocumentToViewTheDetails() {
         searchPage.clickMarginalIdLink();
     }
 
@@ -70,7 +69,7 @@ public class GCMSJurisprudenceStepDefTest extends BaseStepDefTest {
     }
 
     @Then("User expands {string} section")
-    public void userExpandsSection() throws InterruptedException {
+    public void userExpandsSection(String args0) throws InterruptedException {
         classificationEntryPage.expandAnalysisDataSection();
         Thread.sleep(4000);
     }
@@ -104,28 +103,31 @@ public class GCMSJurisprudenceStepDefTest extends BaseStepDefTest {
     }
 
     @And("User click {string} and {string} button")
-    public void userClickAndButton() {
+    public void userClickAndButton(String args0, String args1) {
         classificationEntryPage.clickOkButton();
         classificationEntryPage.clickGoBackButton();
     }
 
     @Then("User validates if new entries are added in {string} or not")
-    public void userValidatesIfNewEntriesAreAddedInOrNot() {
+    public void userValidatesIfNewEntriesAreAddedInOrNot(String args0) {
         classificationEntryVerify.verifyDisplayOfNewClassificationEntry();
     }
 
     @And("User clicks on {string} button to remove added classification entry")
-    public void userClicksOnButtonToRemoveAddedClassificationEntry() {
+    public void userClicksOnButtonToRemoveAddedClassificationEntry(String args0) {
         classificationEntryPage.deleteClassificationEntry();
     }
 
 
     @When("User selects {string} and {string} parameters and passes the values")
-    public void userSelectsAndParametersAndPassesTheValues() throws InterruptedException, AWTException {
+    public void userSelectsAndParametersAndPassesTheValues(String args0, String args1) throws InterruptedException, AWTException {
+        Thread.sleep(2000);
         reportsPage.selectDocumentYear();
+        Thread.sleep(2000);
         reportsPage.setYear();
+        Thread.sleep(2000);
         reportsPage.selectDocumentNumber();
-        Thread.sleep(4000);
+        Thread.sleep(2000);
         reportsPage.selectOperator();
         reportsPage.setNumber(ImportApplicationVariables.reportNumber);
         Thread.sleep(5000);
@@ -139,7 +141,7 @@ public class GCMSJurisprudenceStepDefTest extends BaseStepDefTest {
     }
 
     @Then("User moves to {string} and selects report format")
-    public void userMovesToAndSelectsReportFormat() throws InterruptedException {
+    public void userMovesToAndSelectsReportFormat(String arg0) throws InterruptedException {
         reportsPage.clickReportsButton();
         Thread.sleep(5000);
         reportsPage.clickReviewFormat();
@@ -149,23 +151,28 @@ public class GCMSJurisprudenceStepDefTest extends BaseStepDefTest {
     @And("User moves to JURISPRUDENCE Report section to view reports")
     public void userMovesToJURISPRUDENCEReportSectionToViewReports() throws InterruptedException {
         reportsPage.clickJurisprudenceReports();
+        reportsPageVerification.verifyCreationOfReport();
         reportsPage.clickViewLink();
     }
 
     @Then("User opens reports")
     public void userOpensReports() throws AWTException, InterruptedException {
-        reportsPage.downloadReportWith_RTF_Format();
+        reportsPage.openReport();
     }
 
-    @Then("User deletes the generated reports")
-    public void userDeletesTheGeneratedReports() throws InterruptedException, AWTException {
+    @And("User deletes the generated reports")
+    public void userDeletesTheGeneratedReports() throws InterruptedException {
         reportsPage.clickCheckBoxToDelete();
         reportsPage.clickDiscard();
-        reportsPage.openDownloadedReport();
+    }
+
+    @Then("Validate reports are deleted successfully or not")
+    public void validateReportsAreDeletedSuccessfullyOrNot() {
+        reportsPageVerification.validateDeletionOfReports();
     }
 
     @Then("User fills fields in Multiple Relationship Page")
-    public void userFillsFieldsInMultipleRelationshipPage(){
+    public void userFillsFieldsInMultipleRelationshipPage() {
         relationshipPage.fillDetailsInAffectedField();
         relationshipPage.fillDetailsInRelationShipData();
         relationshipPage.clickTickMark();
@@ -188,7 +195,7 @@ public class GCMSJurisprudenceStepDefTest extends BaseStepDefTest {
     }
 
     @Then("User clicks on {string} link to delete both created relationships")
-    public void userClicksOnLinkToDeleteBothCreatedRelationships() {
+    public void userClicksOnLinkToDeleteBothCreatedRelationships(String arg0) {
         relationshipPage.deleteMultipleRelationships();
     }
 
@@ -202,15 +209,19 @@ public class GCMSJurisprudenceStepDefTest extends BaseStepDefTest {
     }
 
     @And("Search and select the {string} value in the filter box")
-    public void searchAndSelectTheTopicValueInTheFilterBox(String section) {
+    public void searchAndSelectTheTopicValueInTheFilterBox(String section) throws InterruptedException {
         switch (section) {
             case "Topic":
                 topicPage.searchTopicValue();
+                Thread.sleep(3000);
                 topicPage.selectTopicValue();
+                Thread.sleep(3000);
                 break;
             case "SubTopic":
                 topicPage.searchSubTopicValue();
+                Thread.sleep(3000);
                 topicPage.selectSubTopicValue();
+                Thread.sleep(3000);
                 break;
         }
 
@@ -244,7 +255,9 @@ public class GCMSJurisprudenceStepDefTest extends BaseStepDefTest {
 
     @Then("Verify selected value entries using code displayed under Topic and Subtopic fields")
     public void verifySelectedValueEntriesUsingCodeDisplayedUnderTopicAndSubtopicFields() throws InterruptedException {
-        topicVerification.verifyTopicSubTopicEntriesUsingCodeAreDisplayed();
+        topicVerification.switchToTopicFrame();
+        topicVerification.verifyTopicSubTopicEntriesUsingCodeAreDisplayed(ImportApplicationVariables.topicUsingCode);
+        topicVerification.verifyTopicSubTopicEntriesUsingCodeAreDisplayed(ImportApplicationVariables.subTopicUsingCode);
     }
 
 }

@@ -4,13 +4,13 @@ Feature: Performing CRUD operations after Jurisprudence search
     Given User is logged to into the application
     When User navigates to search option in JURISPRUDENCE
 
-  @search @spain
+  @search @spain @brazil @mexico @gulf
   Scenario: Validate Searching and Displaying full document in JURISPRUDENCE
     When User searches the document
     And Clicks on the document to view the details
     Then User validates if document is displayed successfully or not
 
-  @classificationEntry @spain
+  @classificationEntry @spain @brazil @mexico @gulf
   Scenario: Validate user able to add and delete unique "Classification Entries" in the Analysis section
     When User views the searched document details
     Then User expands "Analysis Data" section
@@ -21,16 +21,17 @@ Feature: Performing CRUD operations after Jurisprudence search
     And User clicks on "Delete" button to remove added classification entry
     Then Verify if "Classification Entries" section is empty or not
 
-  @reports @spain
+  @reports @spain @brazil @mexico @gulf
   Scenario: Validate user able view and delete the created reports from Result list
     When User selects "year" and "number" parameters and passes the values
     And User clicks on search button to get list of matching documents
     Then User moves to "Reports" and selects report format
     And User moves to JURISPRUDENCE Report section to view reports
     Then User opens reports
-    Then User deletes the generated reports
+    And User deletes the generated reports
+    Then Validate reports are deleted successfully or not
 
-  @multipleRelationships @spain
+  @multipleRelationships @spain @brazil @mexico @gulf
   Scenario: Validate user able to add and delete multiple "Relationship" in the Analysis report section
     When User views the searched document details
     Then User expands "Analysis Data" section
@@ -42,7 +43,7 @@ Feature: Performing CRUD operations after Jurisprudence search
     Then User clicks on "Delete" link to delete both created relationships
     Then Verify if "Relationships" section is empty or not
 
-  @subTopicUsingFilter @spain
+  @subTopicUsingFilter @spain @gulf
   Scenario: Validate user able to add topic-subtopic entries using filter
     When User views the searched document details
     Then User expands "Analysis Data" section

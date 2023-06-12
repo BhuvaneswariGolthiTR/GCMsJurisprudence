@@ -15,38 +15,41 @@ public class GCMSJurisprudenceTopicPageVerification extends GCMSJurisprudenceTop
     public GCMSJurisprudenceTopicPageVerification(WebDriver webDriver) {
         super(webDriver);
     }
+
     public boolean flag;
+
     public void verifySelectedTopicValueDisplayed() throws InterruptedException {
         switchToTopicFrame();
         scrollInView(getSubTopic());
-        verifyElementText("Selected Topic value is not displayed",getTopic(),ImportApplicationVariables.topic);
+        verifyElementText("Selected Topic value is not displayed", getTopic(), ImportApplicationVariables.topic);
     }
 
     public void verifySelectedSubTopicValueDisplayed() {
         scrollInView(getSubTopic());
-        verifyElementText("Selected SubTopic value is not displayed",getSubTopic(),ImportApplicationVariables.subTopic);
+        verifyElementText("Selected SubTopic value is not displayed", getSubTopic(), ImportApplicationVariables.subTopic);
     }
 
     public void verifySubTopicDeletion() {
         try {
             verifyIsElementDisplayed("Selected Topic-SubTopic are not deleted", getSubTopic(), false, "Topic-SubTopic Entry");
-        }catch (TimeoutException e){
+        }
+        catch (TimeoutException e) {
             System.err.println("Added Topic-SubTopic Entries are deleted successfully");
         }
     }
 
-    public void verifyTopicSubTopicEntriesUsingCodeAreDisplayed() throws InterruptedException {
-        switchToTopicFrame();
-        verifyIsElementDisplayed("Selected Topic value displayed", String.format("xpath -> //td[text()[normalize-space()='%s']]","Actividades y sectores"),true, "topic value");
-        verifyIsElementDisplayed("Selected sub topic value displayed", String.format("xpath -> //td[text()[normalize-space()='%s']]","Agricultura"),true, "sub topic value");
+    public void verifyTopicSubTopicEntriesUsingCodeAreDisplayed(String value) {
+        verifyIsElementDisplayed("Selected Topic value displayed", getTopicAndSubTopicCodeValues(value), true, "topic value");
+        verifyIsElementDisplayed("Selected sub topic value displayed", getTopicAndSubTopicCodeValues(value), true, "sub topic value");
     }
 
     public boolean verifyTopicAndSubTopicDataIsPresent() throws InterruptedException {
         switchToTopicFrame();
+        Thread.sleep(6000);
         List<WebElement> listMemo = webDriver.findElements(By.xpath("//td[text()='Topic:' or text()='Materia:']/following::input[@name='listaMateria']"));
-        System.err.println("size is"+listMemo.size());
+        System.err.println("size is" + listMemo.size());
         if (listMemo.size() > 0) {
-            for(int i=0;i<listMemo.size();i++){
+            for (int i = 0; i < listMemo.size(); i++) {
                 System.err.println("Topic and SubTopic Data exists");
                 clickOnTopicDeleteButton();
                 switchToNewWindow();
@@ -65,7 +68,7 @@ public class GCMSJurisprudenceTopicPageVerification extends GCMSJurisprudenceTop
     }
 
     public void deleteExistingTopicAndSubTopics() throws InterruptedException {
-            verifyTopicAndSubTopicDataIsPresent();
+        verifyTopicAndSubTopicDataIsPresent();
     }
 
     public void deletePracticeAreaIfExists() {

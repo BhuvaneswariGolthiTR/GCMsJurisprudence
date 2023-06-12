@@ -6,6 +6,7 @@ import com.epam.setup.systemsettings.ImportApplicationVariables;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -14,7 +15,7 @@ public class GCMSJurisprudenceSearchPage extends PageWrapper {
     private static final String jurisprudenceLink = "xpath -> //a[@id='itemTextLink10']";
     private static final String decisionsLink = "xpath -> //a[@id='itemTextLink11']";
     private static final String searchLink = "xpath -> //a[@id='itemTextLink12']";
-    private static final String marginalDropdown = "xpath -> //select[@id='searchFields0']";
+    protected static final String marginalDropdown = "xpath -> //select[@id='searchFields0']";
     private static final String marginalDropdownTwo = "xpath -> //select[@id='searchFields1']";
     private static final String clearSearchField = "xpath -> //input[@id='delete0']";
     private static final String searchField = "xpath -> //input[@id='consulta0']";
@@ -28,9 +29,8 @@ public class GCMSJurisprudenceSearchPage extends PageWrapper {
     private static final String pendingInboxLink = "xpath -> //a[@id='itemTextLink14']";
     private static final String workFlowLink = "xpath -> //a[@id='itemTextLink18']";
     private static final String assignTextToCitiatorLink = "xpath -> //a[@id='itemTextLink21']";
-    private static final String searchDropdown = "xpath -> //select[@name='searchFields[0]']";
-    private static final String assignMarginalNumberLink= "xpath -> //a[@id='itemTextLink26']";
-    private static final String analystLink= "xpath -> //a[@id='itemTextLink20']";
+    private static final String assignMarginalNumberLink = "xpath -> //a[@id='itemTextLink26']";
+    private static final String analystLink = "xpath -> //a[@id='itemTextLink20']";
     private static final String deleteSearchField = "xpath -> //input[@id='delete0']";
     public boolean flag;
 
@@ -38,32 +38,32 @@ public class GCMSJurisprudenceSearchPage extends PageWrapper {
         super(webDriver);
     }
 
-    public String getMarginalIdLink(String id,String... formatArgs){
-        return formatLocator(String.format(marginalIdLink,id),formatArgs);
+    public String getMarginalIdLink(String id, String... formatArgs) {
+        return formatLocator(String.format(marginalIdLink, id), formatArgs);
     }
 
-    public String getDocumentID(String id,String... formatArgs){
-        return formatLocator(String.format(documentID,id),formatArgs);
+    public String getDocumentID(String id, String... formatArgs) {
+        return formatLocator(String.format(documentID, id), formatArgs);
     }
 
-    public String getSearchField(String...formatArgs){
-        return formatLocator(searchField,formatArgs);
+    public String getSearchField(String... formatArgs) {
+        return formatLocator(searchField, formatArgs);
     }
 
     public void setSearchField(String value) throws AWTException {
-        sendTextUsingRobot(searchField,"Search Field",value);
+        sendTextUsingRobot(searchField, "Search Field", value);
     }
 
-    public void clickJurisprudenceLink(String... formatArgs){
-        clickElementUsingJS(jurisprudenceLink,"JURISPRUDENCE",formatArgs);
+    public void clickJurisprudenceLink(String... formatArgs) {
+        clickElementUsingJS(jurisprudenceLink, "JURISPRUDENCE", formatArgs);
     }
 
-    public void clickDecisionsLink(String... formatArgs){
-        clickElementUsingJS(decisionsLink,"Decisions",formatArgs);
+    public void clickDecisionsLink(String... formatArgs) {
+        clickElementUsingJS(decisionsLink, "Decisions", formatArgs);
     }
 
-    public void clickSearchLink(String... formatArgs){
-        clickElementUsingJS(searchLink,"Search",formatArgs);
+    public void clickSearchLink(String... formatArgs) {
+        clickElementUsingJS(searchLink, "Search", formatArgs);
     }
 
     public void clickClearSearchField() {
@@ -71,11 +71,11 @@ public class GCMSJurisprudenceSearchPage extends PageWrapper {
     }
 
     public void clickSearchButton() {
-        clickElementUsingJS(searchButton,"Search Button");
+        clickElementUsingJS(searchButton, "Search Button");
     }
 
     public void clickMarginalIdLink() {
-        clickElementUsingJS(getMarginalIdLink("'"+ ImportApplicationVariables.fullMarginalId+"'"),"Searched Document");
+        clickElementUsingJS(getMarginalIdLink("'" + ImportApplicationVariables.fullMarginalId + "'"), "Searched Document");
     }
 
 
@@ -87,7 +87,7 @@ public class GCMSJurisprudenceSearchPage extends PageWrapper {
         clickElementUsingJS(deleteButton, "delete");
         switchToNewWindow();
     }
-    
+
     public void navigateToSearchInJurisprudence() {
         clickJurisprudenceLink();
         clickDecisionsLink();
@@ -95,8 +95,8 @@ public class GCMSJurisprudenceSearchPage extends PageWrapper {
     }
 
     public void selectDocumentIdFull() throws AWTException, InterruptedException {
-        selectOptionFromDropDownUsingRobot(marginalDropdown,"Document id (full)");
-        selectOptionFromDropDownUsingRobot(marginalDropdownTwo,"Document id (full)");
+        selectOptionFromDropDownUsingRobot(marginalDropdown, "Document id (full");
+        selectOptionFromDropDownUsingRobot(marginalDropdownTwo, "Document id (full");
     }
 
     public void enterFullMarginalId(String fullMarginalId) throws AWTException, InterruptedException {
@@ -154,19 +154,50 @@ public class GCMSJurisprudenceSearchPage extends PageWrapper {
     }
 
     public void clickOnSearchDropdown(String value) throws AWTException, InterruptedException {
-        selectOptionFromDropDownUsingRobot(marginalDropdown,value);
+        Robot robot = new Robot();
+        WebElement e = getElement(formatLocator(marginalDropdown));
+        e.sendKeys("");
+        String fine = value;
+        fine = fine.toUpperCase();
+        char[] c = fine.toCharArray();
+        for (int k = 0; k < c.length; k++) {
+            int keyCode = (int) c[k];
+
+            System.err.println("keycodes:" + keyCode + "its value" + c[k]);
+            if (keyCode == 40) {
+                robot.keyPress(KeyEvent.VK_SHIFT);
+                Thread.sleep(200);
+                robot.keyPress(KeyEvent.VK_9);
+                Thread.sleep(200);
+                robot.keyRelease(KeyEvent.VK_9);
+                Thread.sleep(200);
+                robot.keyRelease(KeyEvent.VK_SHIFT);
+            } else if (keyCode == 32) {
+                robot.keyPress(KeyEvent.VK_SPACE);
+                Thread.sleep(200);
+                robot.keyRelease(KeyEvent.VK_SPACE);
+            } else {
+                robot.keyPress(keyCode);
+                robot.keyRelease(keyCode);
+            }
+        }
+
+
     }
 
+
     public void clickOnSearchDropdownTwo(String value) throws AWTException, InterruptedException {
-        selectOptionFromDropDownUsingRobot(marginalDropdown,value);
-        selectOptionFromDropDownUsingRobot(marginalDropdownTwo,value);
+        selectOptionFromDropDownUsingRobot(marginalDropdown, value);
+        selectOptionFromDropDownUsingRobot(marginalDropdownTwo, value);
     }
+
     public void navigateToWorkflowAssignPublicationMarginalNumber() throws InterruptedException {
         clickElementUsingJS(jurisprudenceLink, "jurisprudenceLink");
         clickElementUsingJS(workFlowLink, "workflowLink");
         clickElementUsingJS(assignMarginalNumberLink, "assign publication marginal number");
         Thread.sleep(3000);
     }
+
     public void navigateToWorkflowAssignTextToAnalyst() throws InterruptedException {
         clickElementUsingJS(jurisprudenceLink, "jurisprudenceLink");
         clickElementUsingJS(workFlowLink, "workflowLink");

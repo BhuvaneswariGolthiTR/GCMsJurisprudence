@@ -3,7 +3,7 @@ package com.epam.stepdefinitions;
 import com.epam.pages.actions.*;
 import com.epam.pages.verifications.GCMSJurisprudenceSearchPageVerification;
 import com.epam.pages.verifications.GCMSJurisprudenceTopicPageVerification;
-import com.epam.pages.verifications.GcmsCoreDocumentWorkFlowVerificationPage;
+import com.epam.pages.verifications.GcmsCoreDocumentWorkFlowPageVerification;
 import com.epam.setup.systemsettings.ImportApplicationVariables;
 import io.cucumber.java.en.*;
 
@@ -17,7 +17,7 @@ public class WorkFlowStepDefTest extends BaseStepDefTest {
     GCMSJurisprudenceTopicPage detailPage = new GCMSJurisprudenceTopicPage(getDriver());
     GCMSJurisprudenceTopicPageVerification detailsVerificationPage = new GCMSJurisprudenceTopicPageVerification(getDriver());
     GcmsCoreDocumentWorkFlowPage workFlowPage = new GcmsCoreDocumentWorkFlowPage(getDriver());
-    GcmsCoreDocumentWorkFlowVerificationPage workFlowVerificationPage = new GcmsCoreDocumentWorkFlowVerificationPage(getDriver());
+    GcmsCoreDocumentWorkFlowPageVerification workFlowVerificationPage = new GcmsCoreDocumentWorkFlowPageVerification(getDriver());
 
     @Then("Delete the existing workflow if any")
     public void delete_the_existing_workflow_if_any() {
@@ -74,17 +74,14 @@ public class WorkFlowStepDefTest extends BaseStepDefTest {
     public void expand_and_check_control_data_section() throws InterruptedException {
         workFlowPage.expandControlDataSection();
         Thread.sleep(2000);
-        //verifications need to be added
     }
 
     @Then("Expand and check analysis data section and text section")
     public void expand_and_check_analysis_data_section_and_text_section() throws InterruptedException {
         detailPage.clickAnalysisDataLink();
         Thread.sleep(2000);
-        //verifications need to be added
         workFlowPage.clickOnTextSection();
         Thread.sleep(2000);
-        //verifications need to be added
     }
 
     @When("User navigate to workflow pre assign section and update agent details")
@@ -99,7 +96,6 @@ public class WorkFlowStepDefTest extends BaseStepDefTest {
         workFlowPage.expandControlDataSection();
         Thread.sleep(2000);
         workFlowVerificationPage.verifyAssignedAgentValueIsDisplayed(ImportApplicationVariables.agentFilterValue);
-        //verification pending for checking end pre selection button
     }
 
     @Then("User logoff from the application")
@@ -188,7 +184,7 @@ public class WorkFlowStepDefTest extends BaseStepDefTest {
 
     @Then("Verify Citator name added successfully")
     public void verify_Citator_name_added_successfully() {
-
+        workFlowVerificationPage.verifyOperationSuccessMessageIsDisplayed();
     }
 
     @Then("Verify Text section of the document import button should not be displayed")
@@ -263,7 +259,7 @@ public class WorkFlowStepDefTest extends BaseStepDefTest {
     }
 
     @Then("Verify control data section of the document after workflow")
-    public void verify_control_data_section_of_the_document_after_workflow(){
+    public void verify_control_data_section_of_the_document_after_workflow() {
         workFlowPage.expandControlDataSection();
         workFlowVerificationPage.verifyAssignedAgentValueIsDisplayed(ImportApplicationVariables.agentFilterValue);
         workFlowVerificationPage.verifyAssignedAgentValueIsDisplayed(ImportApplicationVariables.workflowAgentValue);
@@ -277,7 +273,7 @@ public class WorkFlowStepDefTest extends BaseStepDefTest {
     }
 
     @Then("Verify control data section of the document after editing the document")
-    public void verifyControlDataSectionOfTheDocumentaftereditingthedocument(){
+    public void verifyControlDataSectionOfTheDocumentaftereditingthedocument() {
         workFlowPage.expandControlDataSection();
         workFlowVerificationPage.verifyAssignedAgentValueIsDisplayed(ImportApplicationVariables.citatorAgentValue);
 

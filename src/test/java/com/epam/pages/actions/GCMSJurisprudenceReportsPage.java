@@ -5,7 +5,9 @@ import com.epam.setup.systemsettings.ImportApplicationVariables;
 import org.openqa.selenium.WebDriver;
 
 import java.awt.*;
+import java.awt.datatransfer.UnsupportedFlavorException;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
 
 public class GCMSJurisprudenceReportsPage extends PageWrapper {
 
@@ -19,7 +21,8 @@ public class GCMSJurisprudenceReportsPage extends PageWrapper {
     private static final String reviewFormat = "xpath -> //td[@id='txtoriginal']/preceding-sibling::td/input";
     private static final String okButton = "xpath -> //input[@value='Ok' or @value='Aceitar']";
     private static final String jurisprudenceReports = "xpath -> //a[@id='itemTextLink15']";
-    private static final String viewLink = "xpath -> (//a[text()='View' or text()='Visualizar'])[1]";//td[contains(text(),'Correct')]//following::a
+    private static final String reports = "xpath -> //table[@class='tableContent']//tr//td[contains(text(),'RTF')]";
+    private static final String viewLink = "xpath -> //td[contains(text(),'RTF')]//following-sibling::td/a";
     private static final String checkBoxesToDelete = "xpath -> //input[@id='botonSeleccionar']";
     private static final String discard = "xpath -> //input[@value='Discard marked' or @value='Excluir seleção']";
 
@@ -27,12 +30,16 @@ public class GCMSJurisprudenceReportsPage extends PageWrapper {
         super(webDriver);
     }
 
+    public String getReports() {
+        return formatLocator(reports);
+    }
+
     public void selectDocumentYear() throws AWTException, InterruptedException {
-        selectOptionFromDropDownUsingRobot(marginalDropdownOne,"Document id (year");
+        selectOptionFromDropDownUsingRobot(marginalDropdownOne, "Document id (year");
     }
 
     public void selectDocumentNumber() throws AWTException, InterruptedException {
-        selectOptionFromDropDownUsingRobot(marginalDropdownTwo,"Document id (number");
+        selectOptionFromDropDownUsingRobot(marginalDropdownTwo, "Document id (number");
     }
 
     public void selectOperator() {
@@ -62,13 +69,13 @@ public class GCMSJurisprudenceReportsPage extends PageWrapper {
     }
 
     public void clickJurisprudenceReports() throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(10000);
         clickElementUsingJS(jurisprudenceReports, "Reports");
     }
 
-    public void clickViewLink() {
+    public void clickViewLink() throws InterruptedException {
+        Thread.sleep(3000);
         clickElementUsingJS(viewLink, "View");
-
     }
 
     public void clickCheckBoxToDelete() {
@@ -80,39 +87,21 @@ public class GCMSJurisprudenceReportsPage extends PageWrapper {
         Thread.sleep(5000);
     }
 
-    public void downloadReportWith_RTF_Format() throws AWTException, InterruptedException {
+    public void openReport() throws AWTException, InterruptedException {
         Robot robot = new Robot();
         robot.delay(250);
-        robot.keyPress(KeyEvent.VK_DOWN);
-        robot.keyRelease(KeyEvent.VK_DOWN);
-        robot.keyPress(KeyEvent.VK_ENTER);
-        robot.keyRelease(KeyEvent.VK_ENTER);
-        Thread.sleep(10000);
-//        switchToNewWindow();
-//        switchToParentWindow();
-        Thread.sleep(6000);
-    }
-
-    public void setYear() {
-        setTextUsingJS(year,"Year", ImportApplicationVariables.reportYear);
-    }
-
-    public void openDownloadedReport() throws AWTException, InterruptedException {
-        Robot robot = new Robot();
-        robot.delay(250);
-        robot.keyPress(KeyEvent.VK_CONTROL);
-        robot.keyPress(KeyEvent.VK_J);
-        robot.keyRelease(KeyEvent.VK_J);
-        robot.keyRelease(KeyEvent.VK_CONTROL);
-        Thread.sleep(3000);
         robot.keyPress(KeyEvent.VK_ENTER);
         robot.keyRelease(KeyEvent.VK_ENTER);
         Thread.sleep(20000);
+
         robot.keyPress(KeyEvent.VK_ALT);
         robot.keyPress(KeyEvent.VK_F4);
         robot.keyRelease(KeyEvent.VK_F4);
         robot.keyRelease(KeyEvent.VK_ALT);
-//        Thread.sleep(6000);
+    }
+
+    public void setYear() {
+        setTextUsingJS(year, "Year", ImportApplicationVariables.reportYear);
     }
 
 }

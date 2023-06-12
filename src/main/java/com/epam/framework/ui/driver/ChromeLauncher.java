@@ -93,7 +93,7 @@ public class ChromeLauncher implements DriverLauncher {
 
     private MutableCapabilities getSauceCapabilities(String scenarioName) {
         MutableCapabilities sauceCapabilities = new MutableCapabilities();
-        sauceCapabilities.setCapability("username", SauceUtils.USER_NAME);
+        sauceCapabilities.setCapability("gcms.uploadMetaData.server.username", SauceUtils.USER_NAME);
         sauceCapabilities.setCapability("accessKey", SauceUtils.ACCESS_KEY);
         sauceCapabilities.setCapability("seleniumVersion", "3.141.59");
         sauceCapabilities.setCapability("name", scenarioName);

@@ -23,8 +23,7 @@ public class GCMSJurisprudenceTopicPage extends PageWrapper {
     private static final String addNewUsingCodeSearch = " xpath -> //input[@id='listaSubmaterias']";
     private static final String transferButton = " xpath -> //input[@id='btnSubmit']";
     private static final String deleteTopic = "xpath -> //input[@id='btnDeleteTopic']";
-    private static final String okButton = "xpath -> //input[@type='button' and contains(@onclick,'disabled') or @id='btnEdit' or @type='submit']";
-    private static final String analysisDataSection = "xpath -> //img[@id='clicker_datosAnalisisFichas']";
+    private static final String topicAndSubTopicFilterValues = "xpath ->  //td[text()[normalize-space()='%s']]";
 
     public GCMSJurisprudenceTopicPage(WebDriver webDriver) {
         super(webDriver);
@@ -36,6 +35,10 @@ public class GCMSJurisprudenceTopicPage extends PageWrapper {
 
     public String getSubTopic(String... formatArgs) {
         return formatLocator(subTopic, formatArgs);
+    }
+
+    public String getTopicAndSubTopicCodeValues(String value, String... formatArgs) {
+        return formatLocator(String.format(topicAndSubTopicFilterValues, value), formatArgs);
     }
 
     public void setTopicValueFilter(String value) {
@@ -70,11 +73,13 @@ public class GCMSJurisprudenceTopicPage extends PageWrapper {
 
     public void clickOnAddNewCodeButton() throws InterruptedException {
         switchToTopicFrame();
-        clickElementUsingJS(addNewUsingCodeButton,"Add new using code");
+        clickElementUsingJS(addNewUsingCodeButton, "Add new using code");
+        switchToNewWindow();
+        Thread.sleep(4000);
     }
 
     public void clickOnYesButton() throws InterruptedException {
-        clickElementUsingJS(yesButton, "Yes button" );
+        clickElementUsingJS(yesButton, "Yes button");
         switchToParentWindow();
         Thread.sleep(2000);
     }
@@ -84,12 +89,12 @@ public class GCMSJurisprudenceTopicPage extends PageWrapper {
     }
 
     public void clickOnTransferButton() {
-        clickElementUsingJS(transferButton, "Transfer Button" );
+        clickElementUsingJS(transferButton, "Transfer Button");
         switchToParentWindow();
     }
 
     public void clickOnTopicDeleteButton() {
-        clickElementUsingJS(deleteTopic, "topic delete button" );
+        clickElementUsingJS(deleteTopic, "topic delete button");
         switchToNewWindow();
     }
 
@@ -142,19 +147,18 @@ public class GCMSJurisprudenceTopicPage extends PageWrapper {
     }
 
     public void enterTopicSuTopicValuesUsingCode() {
-        switchToNewWindow();
         setTextUsingJS(addNewUsingCodeSearch, "add new using code search", ImportApplicationVariables.topicSubtopicCode);
     }
 
 
-    public void setRemovePracticeArea(){
+    public void setRemovePracticeArea() {
         WebElement element = webDriver.findElement(By.name("resDTO.resAreasObj[0].AAA"));
-        javascriptExecutor.executeScript("arguments[0].click()",element);
+        javascriptExecutor.executeScript("arguments[0].click()", element);
     }
 
-    public void clickOkAfterEditButton(){
+    public void clickOkAfterEditButton() {
         WebElement element = webDriver.findElement(By.id("btnEdit"));
-        javascriptExecutor.executeScript("arguments[0].click()",element);
+        javascriptExecutor.executeScript("arguments[0].click()", element);
     }
 
 }

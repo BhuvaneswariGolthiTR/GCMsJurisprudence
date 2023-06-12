@@ -10,7 +10,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.CapabilityType;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -84,7 +83,7 @@ public class FirefoxLauncher implements DriverLauncher {
 
     private MutableCapabilities getSauceCapabilities(String scenarioName) {
         MutableCapabilities sauceCapabilities = new MutableCapabilities();
-        sauceCapabilities.setCapability("username", SauceUtils.USER_NAME);
+        sauceCapabilities.setCapability("gcms.uploadMetaData.server.username", SauceUtils.USER_NAME);
         sauceCapabilities.setCapability("accessKey", SauceUtils.ACCESS_KEY);
         sauceCapabilities.setCapability("seleniumVersion", "3.141.59");
         sauceCapabilities.setCapability("name", scenarioName);

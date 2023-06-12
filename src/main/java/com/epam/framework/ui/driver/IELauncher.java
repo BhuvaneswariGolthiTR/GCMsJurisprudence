@@ -5,7 +5,6 @@ import com.epam.framework.ui.UiConstants;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -106,7 +105,7 @@ public class IELauncher implements DriverLauncher {
 
     private MutableCapabilities getSauceCapabilities(String scenarioName) {
         MutableCapabilities sauceCapabilities = new MutableCapabilities();
-        sauceCapabilities.setCapability("username", SauceUtils.USER_NAME);
+        sauceCapabilities.setCapability("gcms.uploadMetaData.server.username", SauceUtils.USER_NAME);
         sauceCapabilities.setCapability("accessKey", SauceUtils.ACCESS_KEY);
         sauceCapabilities.setCapability("seleniumVersion", "3.141.59");
         sauceCapabilities.setCapability("name", scenarioName);

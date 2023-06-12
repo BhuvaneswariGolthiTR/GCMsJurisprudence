@@ -88,7 +88,7 @@ public class EdgeLauncher implements DriverLauncher {
 
     private MutableCapabilities getSauceCapabilities(String scenarioName) {
         MutableCapabilities sauceCapabilities = new MutableCapabilities();
-        sauceCapabilities.setCapability("username", SauceUtils.USER_NAME);
+        sauceCapabilities.setCapability("gcms.uploadMetaData.server.username", SauceUtils.USER_NAME);
         sauceCapabilities.setCapability("accessKey", SauceUtils.ACCESS_KEY);
         sauceCapabilities.setCapability("name", scenarioName);
         sauceCapabilities.setCapability("build", SauceUtils.BUILD_NAME);
